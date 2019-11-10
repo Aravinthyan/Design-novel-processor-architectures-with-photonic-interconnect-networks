@@ -1,0 +1,264 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/mnt/d/Documents/University/Year_3/Project/Software/Computer
+vALU
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1573393553
+!i10b 1
+!s100 4@7RN8MHeVLI1:UhObPKc0
+IMJMe5DE4CoTfUG>^4o68I3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 !s105 computer_sv_unit
+S1
+Z4 d/mnt/d/Documents/University/Year_3/Project/Microprocessor/Software/Computer
+Z5 w1573036872
+8../Components/ALU/ALU.sv
+F../Components/ALU/ALU.sv
+L0 1
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1573393553.000000
+Z8 !s107 ../Components/Data_Memory/data_memory.sv|../Components/Instruction_Memory/instruction_memory.sv|../Components/Control_Unit/control_unit.sv|../Components/Register_File/register_file.sv|../Components/Register/register.sv|../Components/Multiplexer/multiplexer.sv|../Components/ALU/ALU.sv|../Datapath/datapath.sv|../Processor/processor.sv|computer.sv|
+Z9 !s90 -reportprogress|300|computer.sv|
+!i113 1
+Z10 tCvgOpt 0
+n@a@l@u
+vcomputer
+R0
+R1
+!i10b 1
+!s100 S>n?P@ZG2F5WISk_e=89:0
+I?X<Dck42U2D6mA8MOjYGK3
+R2
+R3
+S1
+R4
+R5
+8computer.sv
+Fcomputer.sv
+L0 5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vcomputer_tb
+R0
+!s110 1573393556
+!i10b 1
+!s100 :j9`gMK`<HB;RoJ<ldBG>2
+IR^;CK:iBCENV?CZN08liC3
+R2
+!s105 computer_tb_sv_unit
+S1
+R4
+R5
+8computer_tb.sv
+Fcomputer_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1573393556.000000
+!s107 computer_tb.sv|
+!s90 -reportprogress|300|computer_tb.sv|
+!i113 1
+R10
+vcontrol_unit
+R0
+R1
+!i10b 1
+!s100 SVc[Kh8d;bzcO=XH]E[?I0
+IP2eoVdchV_WHiMCfN@[W11
+R2
+R3
+S1
+R4
+w1573392216
+8../Components/Control_Unit/control_unit.sv
+F../Components/Control_Unit/control_unit.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vdata_memory
+R0
+R1
+!i10b 1
+!s100 Z_@o0VAK;NaPTIJkn`XUQ0
+IKT74?HREhQb[:VIVJDbbe3
+R2
+R3
+S1
+R4
+R5
+8../Components/Data_Memory/data_memory.sv
+F../Components/Data_Memory/data_memory.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vdatapath
+R0
+R1
+!i10b 1
+!s100 cPgR51d3@oY5?JlQ_h]aZ1
+IAT8k`L]UBnQFN<WIPGlUS1
+R2
+R3
+S1
+R4
+w1573393212
+8../Datapath/datapath.sv
+F../Datapath/datapath.sv
+L0 10
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vinstruction_memory
+R0
+R1
+!i10b 1
+!s100 6UiC=eeK5h=dbTKi_Cc?A1
+IkK];N=_FlzX^M[:BXR9bc2
+R2
+R3
+S1
+R4
+R5
+8../Components/Instruction_Memory/instruction_memory.sv
+F../Components/Instruction_Memory/instruction_memory.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vmultiplexer
+R0
+R1
+!i10b 1
+!s100 QfRdm6O7Xd9N9d3Nh5[3`1
+IG8U_elXH9=<^Kf?_BY7gZ2
+R2
+R3
+S1
+R4
+R5
+8../Components/Multiplexer/multiplexer.sv
+F../Components/Multiplexer/multiplexer.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vprocessor
+R0
+R1
+!i10b 1
+!s100 76O20nUjY8QaG[3zP[lLI0
+IVzeaoHAO@V[JiB9FQ>>5a1
+R2
+R3
+S1
+R4
+w1573376661
+8../Processor/processor.sv
+F../Processor/processor.sv
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vregister
+R0
+R1
+!i10b 1
+!s100 26Z8[YG6`^M0?E80^6iX^2
+I_L^ca1dizOVJIji84N?RB3
+R2
+R3
+S1
+R4
+R5
+8../Components/Register/register.sv
+F../Components/Register/register.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vregister_file
+R0
+R1
+!i10b 1
+!s100 K:0G3__]OTPKaLZi;Z=n?3
+IbL0[6LBndkf=9A]81[]?H3
+R2
+R3
+S1
+R4
+R5
+8../Components/Register_File/register_file.sv
+F../Components/Register_File/register_file.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10

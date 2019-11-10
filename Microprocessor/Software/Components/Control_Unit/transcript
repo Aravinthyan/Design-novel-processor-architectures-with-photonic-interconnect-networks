@@ -1,0 +1,141 @@
+vlog control_unit.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:25:06 on Nov 10,2019
+# vlog -reportprogress 300 control_unit.sv 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 13:25:06 on Nov 10,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog control_unit_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:25:10 on Nov 10,2019
+# vlog -reportprogress 300 control_unit_tb.sv 
+# -- Compiling module control_unit_tb
+# 
+# Top level modules:
+# 	control_unit_tb
+# End time: 13:25:10 on Nov 10,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.control_unit_tb
+# vsim work.control_unit_tb 
+# Start time: 13:25:15 on Nov 10,2019
+# Loading sv_std.std
+# Loading work.control_unit_tb
+# Loading work.control_unit
+add wave -position insertpoint  \
+sim:/control_unit_tb/clk \
+sim:/control_unit_tb/opcode \
+sim:/control_unit_tb/stack_control \
+sim:/control_unit_tb/pc_increment_control \
+sim:/control_unit_tb/pc_control \
+sim:/control_unit_tb/general_register_write_enable \
+sim:/control_unit_tb/stack_write_enable \
+sim:/control_unit_tb/write_data_enable \
+sim:/control_unit_tb/ALU_source_2 \
+sim:/control_unit_tb/ALU_control \
+sim:/control_unit_tb/branch \
+sim:/control_unit_tb/memory_write_enable \
+sim:/control_unit_tb/general_register_result_select
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+add wave -position insertpoint  \
+sim:/control_unit_tb/clk \
+sim:/control_unit_tb/opcode \
+sim:/control_unit_tb/stack_control \
+sim:/control_unit_tb/pc_increment_control \
+sim:/control_unit_tb/pc_control \
+sim:/control_unit_tb/general_register_write_enable \
+sim:/control_unit_tb/stack_write_enable \
+sim:/control_unit_tb/write_data_enable \
+sim:/control_unit_tb/ALU_source_2 \
+sim:/control_unit_tb/ALU_control \
+sim:/control_unit_tb/branch \
+sim:/control_unit_tb/memory_write_enable \
+sim:/control_unit_tb/general_register_result_select
+add wave -position insertpoint  \
+sim:/control_unit_tb/clk \
+sim:/control_unit_tb/opcode \
+sim:/control_unit_tb/stack_control \
+sim:/control_unit_tb/pc_increment_control \
+sim:/control_unit_tb/pc_control \
+sim:/control_unit_tb/general_register_write_enable \
+sim:/control_unit_tb/stack_write_enable \
+sim:/control_unit_tb/write_data_enable \
+sim:/control_unit_tb/ALU_source_2 \
+sim:/control_unit_tb/ALU_control \
+sim:/control_unit_tb/branch \
+sim:/control_unit_tb/memory_write_enable \
+sim:/control_unit_tb/general_register_result_select
+add wave -position insertpoint  \
+sim:/control_unit_tb/clk \
+sim:/control_unit_tb/opcode \
+sim:/control_unit_tb/stack_control \
+sim:/control_unit_tb/pc_increment_control \
+sim:/control_unit_tb/pc_control \
+sim:/control_unit_tb/general_register_write_enable \
+sim:/control_unit_tb/stack_write_enable \
+sim:/control_unit_tb/write_data_enable \
+sim:/control_unit_tb/ALU_source_2 \
+sim:/control_unit_tb/ALU_control \
+sim:/control_unit_tb/branch \
+sim:/control_unit_tb/memory_write_enable \
+sim:/control_unit_tb/general_register_result_select
+add wave -position insertpoint  \
+sim:/control_unit_tb/clk \
+sim:/control_unit_tb/opcode \
+sim:/control_unit_tb/stack_control \
+sim:/control_unit_tb/pc_increment_control \
+sim:/control_unit_tb/pc_control \
+sim:/control_unit_tb/general_register_write_enable \
+sim:/control_unit_tb/stack_write_enable \
+sim:/control_unit_tb/write_data_enable \
+sim:/control_unit_tb/ALU_source_2 \
+sim:/control_unit_tb/ALU_control \
+sim:/control_unit_tb/branch \
+sim:/control_unit_tb/memory_write_enable \
+sim:/control_unit_tb/general_register_result_select
+add wave -position insertpoint  \
+sim:/control_unit_tb/clk \
+sim:/control_unit_tb/opcode \
+sim:/control_unit_tb/stack_control \
+sim:/control_unit_tb/pc_increment_control \
+sim:/control_unit_tb/pc_control \
+sim:/control_unit_tb/general_register_write_enable \
+sim:/control_unit_tb/stack_write_enable \
+sim:/control_unit_tb/write_data_enable \
+sim:/control_unit_tb/ALU_source_2 \
+sim:/control_unit_tb/ALU_control \
+sim:/control_unit_tb/branch \
+sim:/control_unit_tb/memory_write_enable \
+sim:/control_unit_tb/general_register_result_select
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+pwd
+# /mnt/d/Documents/University/Year_3/Project/Microprocessor/Software/Components/Control_Unit
+exit
+# End time: 13:40:21 on Nov 10,2019, Elapsed time: 0:15:06
+# Errors: 0, Warnings: 1

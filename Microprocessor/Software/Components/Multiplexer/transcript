@@ -1,0 +1,43 @@
+cd /mnt/d/Documents/University/Year_3/Project/Software/Instruction_Memory
+vlib work
+vlog instruction_memory.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:22:17 on Nov 01,2019
+# vlog -reportprogress 300 instruction_memory.sv 
+# -- Compiling module instruction_memory
+# 
+# Top level modules:
+# 	instruction_memory
+# End time: 15:22:17 on Nov 01,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog instruction_memory_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:22:21 on Nov 01,2019
+# vlog -reportprogress 300 instruction_memory_tb.sv 
+# -- Compiling module instruction_memory_tb
+# 
+# Top level modules:
+# 	instruction_memory_tb
+# End time: 15:22:21 on Nov 01,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.instruction_memory_tb
+# vsim work.instruction_memory_tb 
+# Start time: 15:22:37 on Nov 01,2019
+# Loading sv_std.std
+# Loading work.instruction_memory_tb
+# Loading work.instruction_memory
+add wave -position insertpoint  \
+sim:/instruction_memory_tb/clk \
+sim:/instruction_memory_tb/address_1 \
+sim:/instruction_memory_tb/address_2 \
+sim:/instruction_memory_tb/read_data_1 \
+sim:/instruction_memory_tb/read_data_2
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+# End time: 16:34:32 on Nov 01,2019, Elapsed time: 1:11:55
+# Errors: 0, Warnings: 1

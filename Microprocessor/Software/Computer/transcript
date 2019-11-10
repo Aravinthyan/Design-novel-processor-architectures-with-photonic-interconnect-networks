@@ -1,0 +1,170 @@
+vlog computer.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:45:53 on Nov 10,2019
+# vlog -reportprogress 300 computer.sv 
+# -- Compiling module ALU
+# -- Compiling module multiplexer
+# -- Compiling module register
+# -- Compiling module register_file
+# -- Compiling module datapath
+# -- Compiling module control_unit
+# -- Compiling module processor
+# -- Compiling module instruction_memory
+# -- Compiling module data_memory
+# -- Compiling module computer
+# 
+# Top level modules:
+# 	computer
+# End time: 13:45:53 on Nov 10,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog computer_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:45:56 on Nov 10,2019
+# vlog -reportprogress 300 computer_tb.sv 
+# -- Compiling module computer_tb
+# 
+# Top level modules:
+# 	computer_tb
+# End time: 13:45:56 on Nov 10,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.computer_tb
+# vsim work.computer_tb 
+# Start time: 13:46:53 on Nov 10,2019
+# Loading sv_std.std
+# Loading work.computer_tb
+# Loading work.computer
+# Loading work.processor
+# Loading work.datapath
+# Loading work.multiplexer
+# Loading work.register
+# Loading work.ALU
+# Loading work.register_file
+# Loading work.control_unit
+# Loading work.instruction_memory
+# Loading work.data_memory
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(97): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(97): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(106): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_increment_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(106): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(115): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/stack_access_subber File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(115): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(121): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/return_address_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(121): [TFMPC] - Missing connection for port 'zero'.
+add wave -position insertpoint  \
+sim:/computer_tb/clk \
+sim:/computer_tb/rst
+add wave -position insertpoint  \
+sim:/computer_tb/computer_test/cpu/read_address_2
+add wave -position insertpoint  \
+sim:/computer_tb/computer_test/cpu/datapath_processor/ALU_out
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+restart -f
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(97): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(97): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(106): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_increment_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(106): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(115): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/stack_access_subber File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(115): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(121): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/return_address_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(121): [TFMPC] - Missing connection for port 'zero'.
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+add wave -position insertpoint  \
+sim:/computer_tb/computer_test/cpu/datapath_processor/next_PC
+run 100
+restart -f
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(97): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(97): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(106): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_increment_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(106): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(115): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/stack_access_subber File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(115): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(121): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/return_address_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(121): [TFMPC] - Missing connection for port 'zero'.
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+restart -f
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(97): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(97): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(106): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_increment_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(106): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(115): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/stack_access_subber File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(115): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(121): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/return_address_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(121): [TFMPC] - Missing connection for port 'zero'.
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+restart -f
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(97): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(97): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(106): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_increment_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(106): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(115): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/stack_access_subber File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(115): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(121): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/return_address_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(121): [TFMPC] - Missing connection for port 'zero'.
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+restart -f
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(97): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(97): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(106): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/pc_increment_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(106): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(115): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/stack_access_subber File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(115): [TFMPC] - Missing connection for port 'zero'.
+# ** Warning: (vsim-3017) ../Datapath/datapath.sv(121): [TFMPC] - Too few port connections. Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /computer_tb/computer_test/cpu/datapath_processor/return_address_adder File: ../Components/ALU/ALU.sv
+# ** Warning: (vsim-3722) ../Datapath/datapath.sv(121): [TFMPC] - Missing connection for port 'zero'.
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+# End time: 14:20:23 on Nov 10,2019, Elapsed time: 0:33:30
+# Errors: 0, Warnings: 54

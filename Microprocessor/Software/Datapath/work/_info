@@ -1,0 +1,241 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/mnt/d/Documents/University/Year_3/Project/Software/Datapath
+vadder
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1572987920
+!i10b 1
+!s100 EY==_5bXEK^[K0XCQYA]42
+I;jDlHb41SDHIUIicBAE>83
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 !s105 datapath_sv_unit
+S1
+R0
+w1572599450
+8../Components/Adder/adder.sv
+F../Components/Adder/adder.sv
+L0 3
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1572987920.000000
+!s107 ../Components/Register_File/register_file.sv|../Components/Register/register.sv|../Components/Multiplexer/multiplexer.sv|../Components/Adder/../ALU/ALU.sv|../Components/Adder/adder.sv|datapath.sv|
+Z5 !s90 -reportprogress|300|datapath.sv|
+!i113 1
+Z6 tCvgOpt 0
+vALU
+R1
+Z7 !s110 1573393231
+!i10b 1
+!s100 4@7RN8MHeVLI1:UhObPKc0
+IMJMe5DE4CoTfUG>^4o68I3
+R2
+R3
+S1
+Z8 d/mnt/d/Documents/University/Year_3/Project/Microprocessor/Software/Datapath
+Z9 w1573036872
+8../Components/ALU/ALU.sv
+F../Components/ALU/ALU.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z10 !s108 1573393231.000000
+Z11 !s107 ../Components/Register_File/register_file.sv|../Components/Register/register.sv|../Components/Multiplexer/multiplexer.sv|../Components/ALU/ALU.sv|datapath.sv|
+R5
+!i113 1
+R6
+n@a@l@u
+vcontrol_unit
+R1
+Z12 !s110 1573393235
+!i10b 1
+!s100 SVc[Kh8d;bzcO=XH]E[?I0
+IP2eoVdchV_WHiMCfN@[W11
+R2
+Z13 !s105 datapath_tb_sv_unit
+S1
+R8
+w1573392216
+8../Components/Control_Unit/control_unit.sv
+F../Components/Control_Unit/control_unit.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z14 !s108 1573393235.000000
+Z15 !s107 ../Components/Control_Unit/control_unit.sv|../Components/Data_Memory/data_memory.sv|../Components/Instruction_Memory/instruction_memory.sv|datapath_tb.sv|
+Z16 !s90 -reportprogress|300|datapath_tb.sv|
+!i113 1
+R6
+vdata_memory
+R1
+R12
+!i10b 1
+!s100 Z_@o0VAK;NaPTIJkn`XUQ0
+IKT74?HREhQb[:VIVJDbbe3
+R2
+R13
+S1
+R8
+R9
+8../Components/Data_Memory/data_memory.sv
+F../Components/Data_Memory/data_memory.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R6
+vdatapath
+R1
+R7
+!i10b 1
+!s100 cPgR51d3@oY5?JlQ_h]aZ1
+IFQ5HdK:m]nn`@a`:hEQ5i1
+R2
+R3
+S1
+R8
+w1573393212
+8datapath.sv
+Fdatapath.sv
+L0 10
+R4
+r1
+!s85 0
+31
+R10
+R11
+R5
+!i113 1
+R6
+vdatapath_tb
+R1
+!s110 1573393236
+!i10b 1
+!s100 GikOgH68mhV`<D]m1SS031
+I8aK01fhGYV>jX5KH=`a9Z2
+R2
+R13
+S1
+R8
+w1573393210
+8datapath_tb.sv
+Fdatapath_tb.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R6
+vinstruction_memory
+R1
+R12
+!i10b 1
+!s100 6UiC=eeK5h=dbTKi_Cc?A1
+IkK];N=_FlzX^M[:BXR9bc2
+R2
+R13
+S1
+R8
+R9
+8../Components/Instruction_Memory/instruction_memory.sv
+F../Components/Instruction_Memory/instruction_memory.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R6
+vmultiplexer
+R1
+R7
+!i10b 1
+!s100 QfRdm6O7Xd9N9d3Nh5[3`1
+IG8U_elXH9=<^Kf?_BY7gZ2
+R2
+R3
+S1
+R8
+R9
+8../Components/Multiplexer/multiplexer.sv
+F../Components/Multiplexer/multiplexer.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+R11
+R5
+!i113 1
+R6
+vregister
+R1
+R7
+!i10b 1
+!s100 26Z8[YG6`^M0?E80^6iX^2
+I_L^ca1dizOVJIji84N?RB3
+R2
+R3
+S1
+R8
+R9
+8../Components/Register/register.sv
+F../Components/Register/register.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+R11
+R5
+!i113 1
+R6
+vregister_file
+R1
+R7
+!i10b 1
+!s100 K:0G3__]OTPKaLZi;Z=n?3
+IbL0[6LBndkf=9A]81[]?H3
+R2
+R3
+S1
+R8
+R9
+8../Components/Register_File/register_file.sv
+F../Components/Register_File/register_file.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+R11
+R5
+!i113 1
+R6
