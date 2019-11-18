@@ -1,9 +1,7 @@
 /*
- * Design Unit:
- * File name:
- * Description:
- * Author:
- * Version:
+ * File name: preprocess.c
+ * Description: This file has functions which remove comments and labels were replaced with addresses
+ * Author: Sreethyan Aravinthan
 */
 
 // standard header files
@@ -86,8 +84,9 @@ void remove_label(void)
 	unsigned int labels_index = 0;	// this is an index to traverse the labels array
 	unsigned int label_address_index = 0;	// this is an index to traverse the label_address array
 
-	char two_space_instr[8][5];
-
+	// hold the instructions that will take two 16 bit values in instruction memory in a multi-dimmesional array 
+	char two_space_instr[16][5];
+	// copythe values in
 	strcpy(two_space_instr[0],"jz");
 	strcpy(two_space_instr[1], "jmp");
 	strcpy(two_space_instr[2], "movi");
@@ -96,14 +95,26 @@ void remove_label(void)
 	strcpy(two_space_instr[5], "andi");
 	strcpy(two_space_instr[6], "ori");
 	strcpy(two_space_instr[7], "call");
-
+	strcpy(two_space_instr[8],"jb");
+	strcpy(two_space_instr[9],"jbe");
+	strcpy(two_space_instr[10],"ja");
+	strcpy(two_space_instr[11],"jae");
+	strcpy(two_space_instr[12],"jg");
+	strcpy(two_space_instr[13],"jge");
+	strcpy(two_space_instr[14],"jl");
+	strcpy(two_space_instr[15],"jle");
+	
 	labels_and_addresses_file file_data;
 	file_data.index = 0;
 	
 	// find the labels and the corresponding address
 	while(fgets(line, LENGTH_OF_INSTR, no_comment_code) != NULL)
 	{
+		// check if the line has a colon
 		token = strstr(line, colon);
+
+		// if the line does have a colon get the label
+		// else calculate the next address 
 		if(token != NULL)
 		{
 			int index = 0;
@@ -118,8 +129,11 @@ void remove_label(void)
 		}
 		else
 		{
+			// flag to indicate if the address needs to be jumped by 2
 			char plus_2 = 0;
-			for(int i = 0; i < 8; i++)
+
+			// check to see if the current instruction has an instruction which takes up 2 16 bit fields
+			for(int i = 0; i < 16; i++)
 			{
 				if(strstr(line, two_space_instr[i]) != NULL)
 				{
@@ -127,7 +141,8 @@ void remove_label(void)
 					break;
 				}
 			}
-
+			
+			// if yes add 2 or else add 1
 			if(plus_2 == 1)
 			{
 				address += 2;

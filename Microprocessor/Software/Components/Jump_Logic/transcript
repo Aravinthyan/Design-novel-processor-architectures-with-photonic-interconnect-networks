@@ -1,0 +1,302 @@
+pwd
+# /mnt/d/Documents/University/Year_3/Project/Solution/Microprocessor/Software/Components/Jump_Logic
+vlib work
+vlog jump_logic.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:39 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic.sv 
+# -- Compiling module jump_logic
+# 
+# Top level modules:
+# 	jump_logic
+# End time: 15:56:39 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog jump_logic_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:56:41 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic_tb.sv 
+# -- Compiling module jump_logic_tb
+# 
+# Top level modules:
+# 	jump_logic_tb
+# End time: 15:56:42 on Nov 16,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.jump_logic_tb
+# vsim work.jump_logic_tb 
+# Start time: 15:56:51 on Nov 16,2019
+# Loading sv_std.std
+# Loading work.jump_logic_tb
+# Loading work.jump_logic
+add wave -position insertpoint  \
+sim:/jump_logic_tb/clk \
+sim:/jump_logic_tb/jump_zero_control \
+sim:/jump_logic_tb/jump_below_control \
+sim:/jump_logic_tb/jump_below_equal_control \
+sim:/jump_logic_tb/jump_above_control \
+sim:/jump_logic_tb/jump_above_equal_control \
+sim:/jump_logic_tb/jump_greater_control \
+sim:/jump_logic_tb/jump_greater_equal_control \
+sim:/jump_logic_tb/jump_less_control \
+sim:/jump_logic_tb/jump_less_equal_control \
+sim:/jump_logic_tb/zero_flag \
+sim:/jump_logic_tb/carry_flag \
+sim:/jump_logic_tb/sign_flag \
+sim:/jump_logic_tb/overflow_flag \
+sim:/jump_logic_tb/jump_logic_out
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog jump_logic_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:04:15 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic_tb.sv 
+# -- Compiling module jump_logic_tb
+# 
+# Top level modules:
+# 	jump_logic_tb
+# End time: 16:04:15 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.jump_logic_tb
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog jump_logic_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:05:46 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic_tb.sv 
+# -- Compiling module jump_logic_tb
+# 
+# Top level modules:
+# 	jump_logic_tb
+# End time: 16:05:46 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.jump_logic_tb
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+add wave -position insertpoint  \
+sim:/jump_logic_tb/clk
+add wave -position insertpoint  \
+sim:/jump_logic_tb/jl_test/jz_out \
+sim:/jump_logic_tb/jl_test/jb_out \
+sim:/jump_logic_tb/jl_test/jbe_out \
+sim:/jump_logic_tb/jl_test/jbe_1_out \
+sim:/jump_logic_tb/jl_test/ja_out \
+sim:/jump_logic_tb/jl_test/ja_1_out \
+sim:/jump_logic_tb/jl_test/jae_out \
+sim:/jump_logic_tb/jl_test/jae_1_out \
+sim:/jump_logic_tb/jl_test/jg_out \
+sim:/jump_logic_tb/jl_test/jg_1_out \
+sim:/jump_logic_tb/jl_test/jg_2_out \
+sim:/jump_logic_tb/jl_test/jg_3_out \
+sim:/jump_logic_tb/jl_test/jge_out \
+sim:/jump_logic_tb/jl_test/jge_1_out \
+sim:/jump_logic_tb/jl_test/jl_out \
+sim:/jump_logic_tb/jl_test/jl_1_out \
+sim:/jump_logic_tb/jl_test/jle_out \
+sim:/jump_logic_tb/jl_test/jle_1_out \
+sim:/jump_logic_tb/jl_test/jle_2_out
+restart -f
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog jump_logic.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:11:43 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic.sv 
+# -- Compiling module jump_logic
+# 
+# Top level modules:
+# 	jump_logic
+# End time: 16:11:43 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.jump_logic
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+
+add wave -position insertpoint  \
+sim:/jump_logic_tb/jump_logic_out
+vlog jump_logic_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:13:31 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic_tb.sv 
+# -- Compiling module jump_logic_tb
+# 
+# Top level modules:
+# 	jump_logic_tb
+# End time: 16:13:31 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.jump_logic_tb
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog jump_logic_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:16 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic_tb.sv 
+# -- Compiling module jump_logic_tb
+# 
+# Top level modules:
+# 	jump_logic_tb
+# End time: 16:17:16 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.jump_logic_tb
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog jump_logic.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:18:32 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic.sv 
+# -- Compiling module jump_logic
+# 
+# Top level modules:
+# 	jump_logic
+# End time: 16:18:32 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.jump_logic
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog jump_logic.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:13 on Nov 16,2019
+# vlog -reportprogress 300 jump_logic.sv 
+# -- Compiling module jump_logic
+# 
+# Top level modules:
+# 	jump_logic
+# End time: 16:21:13 on Nov 16,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.jump_logic
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+exit
+# End time: 16:24:07 on Nov 16,2019, Elapsed time: 0:27:16
+# Errors: 0, Warnings: 9
