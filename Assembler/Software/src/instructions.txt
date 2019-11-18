@@ -17,3 +17,11 @@ push
 pop
 call
 return
+jb
+jbe
+ja
+jae
+jg
+jge
+jl
+jle

@@ -1,9 +1,10 @@
-// `include "../Components/Adder/adder.sv"
 `include "../Components/ALU/ALU.sv"
+`include "../Components/ALU_advanced/ALU_advanced.sv"
 `include "../Components/Multiplexer/multiplexer.sv"
 `include "../Components/Register/register.sv"
 `include "../Components/Register_File/register_file.sv"
-
+`include "../Components/Flags_Register/flags_register.sv"
+`include "../Components/Jump_Logic/jump_logic.sv"
 
 // inputs are the outputs of other components
 
@@ -21,16 +22,25 @@ module datapath
         output logic [15:0]data_in,
         input logic [15:0]data_out,
 	// Control signals
-        input logic stack_control,
 	input logic pc_increment_control,
-        input logic [1:0]pc_control,
-        input logic general_register_write_enable,
-        input logic stack_write_enable,
-        input logic write_data_enable,
-        input logic [1:0]ALU_soure_2,
-        input logic [1:0]ALU_control,
-        input logic branch,
-        input logic [1:0]general_register_result_select
+	input logic [1:0] pc_control,
+	input logic general_register_write_enable,
+	input logic stack_write_enable,
+	input logic stack_control,
+	input logic write_data_enable,
+	input logic [1:0] ALU_soure_2,
+	input logic [1:0] ALU_control,
+	input logic flags_write_enable,
+	input logic jump_zero_control,
+	input logic jump_below_control,
+	input logic jump_below_equal_control,
+	input logic jump_above_control,
+	input logic jump_above_equal_control,
+	input logic jump_greater_control,
+	input logic jump_greater_equal_control,
+	input logic jump_less_control,
+	input logic jump_less_equal_control,
+	input logic [1:0] general_register_result_select
 );
 
 	// constants
@@ -53,10 +63,16 @@ module datapath
 	logic [15:0] ALU_source_2_data_mux[3:0];
 	logic [15:0] ALU_source_2_mux_out;
 	logic zero_flag;
+	logic carry_flag;
+	logic sign_flag;
+	logic overflow_flag;
+	logic ALU_zero_flag;
 	logic [15:0] general_register_result_select_data_mux [3:0];
 	logic [15:0] reg_read_data_1;
 	logic [15:0] stack_control_data_mux [1:0];
 	logic [15:0] stack_control_mux_out;
+	logic flags_in [3:0];
+	logic flags_out [3:0];
 
 	always_comb
 	begin
@@ -82,6 +98,11 @@ module datapath
 
 		stack_control_data_mux[0] = zero;
 		stack_control_data_mux[1] = one;
+
+		flags_in[3] = zero_flag;
+		flags_in[2] = carry_flag;
+		flags_in[1] = sign_flag;
+		flags_in[0] = overflow_flag;
 	end
 
 	// instantiating branch multiplexer
@@ -124,11 +145,14 @@ module datapath
 	multiplexer #(2, 16) ALU_source_2_multiplexer(ALU_soure_2, ALU_source_2_data_mux, ALU_source_2_mux_out);
 
 	// instantiate ALU
-	ALU #(16) ALU_0(reg_read_data_1, ALU_source_2_mux_out, ALU_control, ALU_out, zero_flag);
+	ALU_advanced #(16) ALU_0(reg_read_data_1, ALU_source_2_mux_out, ALU_control, ALU_out, zero_flag, carry_flag, sign_flag, overflow_flag);
+	
+	// instantiate zero register
+	flags_register flag_reg(clk, rst, flags_write_enable, flags_in, flags_out);
 
-	// instantiate and gate for branching
-	and branch_choose(branch_result, branch, zero_flag);
-
+	// instantiate jump logic
+	jump_logic jump_logic_0(jump_zero_control, jump_below_control, jump_below_equal_control, jump_above_control, jump_above_equal_control, jump_greater_control, jump_greater_equal_control, jump_less_control, jump_less_equal_control, flags_out[3], flags_out[2], flags_out[1], flags_out[0], branch_result);
+	
 	// instantiate general register result selector
 	multiplexer #(2, 16) general_register_result_select_multiplexer(general_register_result_select, general_register_result_select_data_mux, general_register_result_select_out);
 
