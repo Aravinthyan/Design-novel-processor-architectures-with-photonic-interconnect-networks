@@ -1,9 +1,7 @@
 /*
- * Design Unit:
- * File name:
- * Description:
- * Author:
- * Version:
+ * File name: extra.c
+ * Description: This file has extra tools that are used for converting to machine code
+ * Author: Sreethyan Aravinthan
 */
 
 // standard header files
@@ -60,11 +58,14 @@ void * xrealloc(void *ptr, size_t size)
 
 int positive_binary(unsigned short int immediate, char * binary_form, unsigned int index)
 {
+	// check if the value is greater than 1
         if(immediate > 1)
         {
                 index = positive_binary(immediate/2, binary_form, index);
         }
-
+	
+	// if the moduls is 1 then set that index value to 1
+	// else 0
         if(immediate % 2 == 1)
         {
                 binary_form[index] = '1';
@@ -73,8 +74,10 @@ int positive_binary(unsigned short int immediate, char * binary_form, unsigned i
         {
                 binary_form[index] = '0';
         }
+	// increment index for the next binary number
         index++;
-
+	
+	// return index for the next binary number which was called in a recursive manner
         return index;
 }
 
@@ -110,9 +113,12 @@ void twos_complement(char * binary_form, unsigned char width)
 
 char * convert_to_binary(unsigned short int immediate, char negative, unsigned char width)
 {
+	// this will contain the positive binary form of a number
         char * pos_binary = (char *)malloc(sizeof(char) * width);
+	// this variable will hold the pointer to which the correct number of bits of the binary number should be
         char * pos_binary_form = (char *)malloc(sizeof(char) * width);
-        int length = 0;
+        // set the length to 0 which hold the length of the initial postive version of the binary number
+	int length = 0;
         // get the positive version of the number passed in
         length = positive_binary(immediate, pos_binary, 0);
         // add null terminator
@@ -122,7 +128,8 @@ char * convert_to_binary(unsigned short int immediate, char negative, unsigned c
 
         int i = 0;
         int j = 0;
-
+	
+	// create the positive binary number with the correct width
         for(i = 0; i < width - length; i++)
         {
                 pos_binary_form[i] = '0';
@@ -138,9 +145,15 @@ char * convert_to_binary(unsigned short int immediate, char negative, unsigned c
         {
                 twos_complement(pos_binary_form, width);
         }
+	
+	// place null terminator
 	pos_binary_form[width] = '\0';
+	// free the earlier version of the positive binary number
 	free(pos_binary);
+
         // printf("%s\n", pos_binary_form);
+	
+	// return the pointer to the positive binary number
 	return pos_binary_form;
 }
 

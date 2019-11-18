@@ -16,17 +16,26 @@ module datapath_tb;
         logic [15:0]data_in;
         logic [15:0]data_out;
 	// Control signals
-        logic stack_control;
 	logic pc_increment_control;
-        logic [1:0]pc_control;
-        logic general_register_write_enable;
-        logic stack_write_enable;
-        logic write_data_enable;
-        logic [1:0]ALU_soure_2;
-        logic [1:0]ALU_control;
-        logic branch;
-        logic memory_write_enable;
-        logic [1:0]general_register_result_select;
+	logic [1:0] pc_control;
+	logic general_register_write_enable;
+	logic stack_write_enable;
+	logic stack_control;
+	logic write_data_enable;
+	logic [1:0] ALU_soure_2;
+	logic [1:0] ALU_control;
+	logic flags_write_enable;
+	logic jump_zero_control;
+	logic jump_below_control;
+	logic jump_below_equal_control;
+	logic jump_above_control;
+	logic jump_above_equal_control;
+	logic jump_greater_control;
+	logic jump_greater_equal_control;
+	logic jump_less_control;
+	logic jump_less_equal_control;
+	logic memory_write_enable;
+	logic [1:0] general_register_result_select;
 
 	datapath datapath_tb(clk,
 			     rst,
@@ -37,16 +46,26 @@ module datapath_tb;
 	        	     address_rw,
 	        	     data_in,
 	        	     data_out,
-	        	     stack_control,
 			     pc_increment_control,
-	        	     pc_control,
-	        	     general_register_write_enable,
-	        	     stack_write_enable,
-	        	     write_data_enable,
-	        	     ALU_soure_2,
-	        	     ALU_control,
-	        	     branch,
-	        	     general_register_result_select);
+			     pc_control,
+			     general_register_write_enable,
+			     stack_write_enable,
+			     stack_control,
+			     write_data_enable,
+			     ALU_soure_2,
+			     ALU_control,
+			     flags_write_enable,
+			     jump_zero_control,
+			     jump_below_control,
+			     jump_below_equal_control,
+			     jump_above_control,
+			     jump_above_equal_control,
+			     jump_greater_control,
+			     jump_greater_equal_control,
+			     jump_less_control,
+			     jump_less_equal_control,
+			     memory_write_enable,
+			     general_register_result_select);
 
 	instruction_memory #(16, 16, "test.mem") im_test(address_1,
 			     				 address_2,
@@ -60,17 +79,26 @@ module datapath_tb;
 			  	  data_out);
 	
 	control_unit cu_test (read_address_1[15:10],
-		      	      stack_control,
 			      pc_increment_control,
-        	      	      pc_control,
-        	      	      general_register_write_enable,
-        	      	      stack_write_enable,
-        	      	      write_data_enable,
-        	      	      ALU_soure_2,
-        	      	      ALU_control,
-        	      	      branch,
-        	      	      memory_write_enable,
-        	      	      general_register_result_select);
+			      pc_control,
+			      general_register_write_enable,
+			      stack_write_enable,
+			      stack_control,
+			      write_data_enable,
+			      ALU_soure_2,
+			      ALU_control,
+			      flags_write_enable,
+			      jump_zero_control,
+			      jump_below_control,
+			      jump_below_equal_control,
+			      jump_above_control,
+			      jump_above_equal_control,
+			      jump_greater_control,
+			      jump_greater_equal_control,
+			      jump_less_control,
+			      jump_less_equal_control,
+			      memory_write_enable,
+			      general_register_result_select);
 			  
 	initial
 	begin

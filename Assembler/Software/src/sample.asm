@@ -1,11 +1,9 @@
-	movi reg1, #10
 	movi reg0, #0
-	movi reg2, #3
+	movi reg1, #10
+	movi reg2, #10
 	call test
-	subi reg1, #1
+	addi reg1, #10
 test:
-	addi reg2, #0
-	addi reg1, #1
+	addi reg1, #10
+	subi reg2, #10
 	return
-	add reg1, reg2
-	; hello

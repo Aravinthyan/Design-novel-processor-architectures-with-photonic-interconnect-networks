@@ -1,0 +1,82 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/mnt/d/Documents/University/Year_3/Project/Solution/Microprocessor/Software/Components/ALU_advanced
+vALU_advanced
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1573668118
+!i10b 1
+!s100 aMg1c=8me8Ye^1PNMUmbi1
+IizcD7WghCGW9Sc^GKAzQ^1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 ALU_advanced_sv_unit
+S1
+R0
+w1573668111
+8ALU_advanced.sv
+FALU_advanced.sv
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1573668118.000000
+!s107 ALU_advanced.sv|
+!s90 -reportprogress|300|ALU_advanced.sv|
+!i113 1
+Z4 tCvgOpt 0
+n@a@l@u_advanced
+vALU_tb_1
+R1
+!s110 1573667981
+!i10b 1
+!s100 6M22cMH?T^6DBmfmRQ=6?2
+IZTOoD6g]?TNTQE9lAHdTQ0
+R2
+!s105 ALU_tb_1_sv_unit
+S1
+R0
+w1573667968
+8ALU_tb_1.sv
+FALU_tb_1.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1573667981.000000
+!s107 ALU_tb_1.sv|
+!s90 -reportprogress|300|ALU_tb_1.sv|
+!i113 1
+R4
+n@a@l@u_tb_1
+vALU_tb_2
+R1
+!s110 1573668490
+!i10b 1
+!s100 EIjJ24T[[8EDBf3ohDaUH3
+I5@[]^lo7VT2Db]LN0Q]j=3
+R2
+!s105 ALU_tb_2_sv_unit
+S1
+R0
+w1573668479
+8ALU_tb_2.sv
+FALU_tb_2.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1573668490.000000
+!s107 ALU_tb_2.sv|
+!s90 -reportprogress|300|ALU_tb_2.sv|
+!i113 1
+R4
+n@a@l@u_tb_2
