@@ -47,7 +47,7 @@ int main(int argc, char * argv[])
 	// check if three arguments are supplied
 	if(argc < 2)
 	{
-		printf("Too few arguements\nNeed atleast two arguements");
+		printf("Too few arguements\nNeed atleast two arguements\n");
 		return 0;
 	}
 	else	// one file assembly

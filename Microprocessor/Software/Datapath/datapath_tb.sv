@@ -64,7 +64,6 @@ module datapath_tb;
 			     jump_greater_equal_control,
 			     jump_less_control,
 			     jump_less_equal_control,
-			     memory_write_enable,
 			     general_register_result_select);
 
 	instruction_memory #(16, 16, "test.mem") im_test(address_1,

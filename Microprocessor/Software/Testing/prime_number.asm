@@ -1,5 +1,5 @@
 	movi reg0, #0	; initalise the stack pointer
-	movi reg5, #11	; value to determine if prime
+	movi reg5, #10	; value to determine if prime
 	call check_prime
 	jmp end
 check_prime:

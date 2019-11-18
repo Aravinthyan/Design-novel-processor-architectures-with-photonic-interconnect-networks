@@ -1,8 +1,15 @@
-pwd
-# /mnt/d/Documents/University/Year_3/Project/Solution/Microprocessor/Software/Processor
+vlog processor
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:42:56 on Nov 18,2019
+# vlog -reportprogress 300 processor 
+# ** Error: (vlog-7) Failed to open design unit file "processor" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 13:42:56 on Nov 18,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/sreethyan/intelFPGA_lite/18.1/modelsim_ase/linuxaloem/vlog failed.
 vlog processor.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:28:23 on Nov 17,2019
+# Start time: 13:42:58 on Nov 18,2019
 # vlog -reportprogress 300 processor.sv 
 # -- Compiling module ALU
 # -- Compiling module ALU_advanced
@@ -17,11 +24,11 @@ vlog processor.sv
 # 
 # Top level modules:
 # 	processor
-# End time: 07:28:23 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:42:58 on Nov 18,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog processor_tb.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:28:26 on Nov 17,2019
+# Start time: 13:43:00 on Nov 18,2019
 # vlog -reportprogress 300 processor_tb.sv 
 # -- Compiling module instruction_memory
 # -- Compiling module data_memory
@@ -29,11 +36,11 @@ vlog processor_tb.sv
 # 
 # Top level modules:
 # 	processor_tb
-# End time: 07:28:26 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:43:00 on Nov 18,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vsim work.processor_tb
 # vsim work.processor_tb 
-# Start time: 07:28:39 on Nov 17,2019
+# Start time: 13:43:17 on Nov 18,2019
 # Loading sv_std.std
 # Loading work.processor_tb
 # Loading work.processor
@@ -48,18 +55,6 @@ vsim work.processor_tb
 # Loading work.control_unit
 # Loading work.instruction_memory
 # Loading work.data_memory
-# ** Warning: (vsim-3017) ../Datapath/datapath.sv(118): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /processor_tb/processor_test/datapath_processor/pc_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) ../Datapath/datapath.sv(118): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) ../Datapath/datapath.sv(127): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /processor_tb/processor_test/datapath_processor/pc_increment_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) ../Datapath/datapath.sv(127): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) ../Datapath/datapath.sv(136): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /processor_tb/processor_test/datapath_processor/stack_access_subber File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) ../Datapath/datapath.sv(136): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) ../Datapath/datapath.sv(142): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /processor_tb/processor_test/datapath_processor/return_address_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) ../Datapath/datapath.sv(142): [TFMPC] - Missing connection for port 'zero'.
 add wave -position insertpoint  \
 sim:/processor_tb/clk \
 sim:/processor_tb/rst \
@@ -67,15 +62,24 @@ sim:/processor_tb/address_1 \
 sim:/processor_tb/address_2 \
 sim:/processor_tb/read_address_1 \
 sim:/processor_tb/read_address_2
-add wave -position insertpoint  \
-sim:/processor_tb/processor_test/datapath_processor/ALU_out
 run 100
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 run 100
+run 100
+
+add wave -position insertpoint  \
+sim:/processor_tb/processor_test/datapath_processor/ALU_out
+restart 
+restart -f
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+
 run 100
 run 100
 run 100
 run 100
 exit
-# End time: 07:29:35 on Nov 17,2019, Elapsed time: 0:00:56
-# Errors: 0, Warnings: 9
+# End time: 13:44:10 on Nov 18,2019, Elapsed time: 0:00:53
+# Errors: 0, Warnings: 2
