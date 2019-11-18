@@ -1,51 +1,6 @@
-vlog datapath.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:48:23 on Nov 16,2019
-# vlog -reportprogress 300 datapath.sv 
-# -- Compiling module ALU
-# -- Compiling module ALU_advanced
-# -- Compiling module multiplexer
-# -- Compiling module register
-# -- Compiling module register_file
-# ** Error: datapath.sv(6): Cannot open `include file "../Components/Flags_Register/flag_register.sv".
-# -- Compiling module jump_logic
-# -- Compiling module datapath
-# End time: 18:48:23 on Nov 16,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# /home/sreethyan/intelFPGA_lite/18.1/modelsim_ase/linuxaloem/vlog failed.
-vlog datapath.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:49:16 on Nov 16,2019
-# vlog -reportprogress 300 datapath.sv 
-# -- Compiling module ALU
-# -- Compiling module ALU_advanced
-# -- Compiling module multiplexer
-# -- Compiling module register
-# -- Compiling module register_file
-# -- Compiling module flags_register
-# -- Compiling module jump_logic
-# -- Compiling module datapath
-# 
-# Top level modules:
-# 	datapath
-# End time: 18:49:16 on Nov 16,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog datapath_tb.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:53:26 on Nov 16,2019
-# vlog -reportprogress 300 datapath_tb.sv 
-# -- Compiling module instruction_memory
-# -- Compiling module data_memory
-# -- Compiling module control_unit
-# -- Compiling module datapath_tb
-# 
-# Top level modules:
-# 	datapath_tb
-# End time: 18:53:26 on Nov 16,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
 vsim work.datapath_tb
 # vsim work.datapath_tb 
-# Start time: 18:54:21 on Nov 16,2019
+# Start time: 13:40:42 on Nov 18,2019
 # Loading sv_std.std
 # Loading work.datapath_tb
 # Loading work.datapath
@@ -59,83 +14,6 @@ vsim work.datapath_tb
 # Loading work.instruction_memory
 # Loading work.data_memory
 # Loading work.control_unit
-# ** Warning: (vsim-3017) datapath.sv(119): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/pc_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(119): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) datapath.sv(128): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/pc_increment_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(128): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) datapath.sv(137): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/stack_access_subber File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(137): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) datapath.sv(143): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/return_address_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(143): [TFMPC] - Missing connection for port 'zero'.
-# ** Error (suppressible): (vsim-12027) datapath.sv(152): Array connection type 'reg$[3:0]' is incompatible with 'wire[3:0]' for  port (d):  Can't mix packed and unpacked types.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/flag_reg File: ../Components/Flags_Register/flags_register.sv
-# ** Error (suppressible): (vsim-12027) datapath.sv(152): Array connection type 'reg$[3:0]' is incompatible with 'reg[3:0]' for  port (q):  Can't mix packed and unpacked types.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/flag_reg File: ../Components/Flags_Register/flags_register.sv
-# Error loading design
-# End time: 18:54:21 on Nov 16,2019, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 8
-vlog datapath.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:03:42 on Nov 16,2019
-# vlog -reportprogress 300 datapath.sv 
-# -- Compiling module ALU
-# -- Compiling module ALU_advanced
-# -- Compiling module multiplexer
-# -- Compiling module register
-# -- Compiling module register_file
-# -- Compiling module flags_register
-# -- Compiling module jump_logic
-# -- Compiling module datapath
-# 
-# Top level modules:
-# 	datapath
-# End time: 19:03:42 on Nov 16,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog datapath_tb.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:03:44 on Nov 16,2019
-# vlog -reportprogress 300 datapath_tb.sv 
-# -- Compiling module instruction_memory
-# -- Compiling module data_memory
-# -- Compiling module control_unit
-# -- Compiling module datapath_tb
-# 
-# Top level modules:
-# 	datapath_tb
-# End time: 19:03:44 on Nov 16,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vsim work.datapath_tb
-# vsim work.datapath_tb 
-# Start time: 19:03:45 on Nov 16,2019
-# Loading sv_std.std
-# Loading work.datapath_tb
-# Loading work.datapath
-# Loading work.multiplexer
-# Loading work.register
-# Loading work.ALU
-# Loading work.register_file
-# Loading work.ALU_advanced
-# Loading work.flags_register
-# Loading work.jump_logic
-# Loading work.instruction_memory
-# Loading work.data_memory
-# Loading work.control_unit
-# ** Warning: (vsim-3017) datapath.sv(119): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/pc_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(119): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) datapath.sv(128): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/pc_increment_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(128): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) datapath.sv(137): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/stack_access_subber File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(137): [TFMPC] - Missing connection for port 'zero'.
-# ** Warning: (vsim-3017) datapath.sv(143): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/datapath_tb/return_address_adder File: ../Components/ALU/ALU.sv
-# ** Warning: (vsim-3722) datapath.sv(143): [TFMPC] - Missing connection for port 'zero'.
 add wave -position insertpoint  \
 sim:/datapath_tb/clk \
 sim:/datapath_tb/rst \
@@ -144,12 +22,17 @@ sim:/datapath_tb/address_2 \
 sim:/datapath_tb/read_address_1 \
 sim:/datapath_tb/read_address_2
 add wave -position insertpoint  \
-sim:/datapath_tb/datapath_tb/ALU_0/ALU_out
+sim:/datapath_tb/datapath_tb/ALU_out
+add wave -position insertpoint  \
+sim:/datapath_tb/datapath_tb/next_PC
 run 100
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 run 100
 run 100
 run 100
 run 100
-# End time: 23:44:21 on Nov 16,2019, Elapsed time: 4:40:36
-# Errors: 0, Warnings: 9
+run 100
+run 100
+exit
+# End time: 13:42:41 on Nov 18,2019, Elapsed time: 0:01:59
+# Errors: 0, Warnings: 1

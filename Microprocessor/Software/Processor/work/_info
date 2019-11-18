@@ -10,15 +10,15 @@ cModel Technology
 d/mnt/d/Documents/University/Year_3/Project/Software/Processor
 vALU
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1573975703
+Z1 !s110 1574084578
 !i10b 1
-!s100 4@7RN8MHeVLI1:UhObPKc0
-IMJMe5DE4CoTfUG>^4o68I3
+!s100 iWO5KdN57kPzH1P3iJSPN3
+I@3EG7ok2?;i>3L4XDKO?90
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 !s105 processor_sv_unit
 S1
 Z4 d/mnt/d/Documents/University/Year_3/Project/Solution/Microprocessor/Software/Processor
-w1573497291
+w1574083750
 8../Components/ALU/ALU.sv
 F../Components/ALU/ALU.sv
 L0 1
@@ -26,7 +26,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1573975703.000000
+Z6 !s108 1574084578.000000
 Z7 !s107 ../Components/Control_Unit/control_unit.sv|../Components/Jump_Logic/jump_logic.sv|../Components/Flags_Register/flags_register.sv|../Components/Register_File/register_file.sv|../Components/Register/register.sv|../Components/Multiplexer/multiplexer.sv|../Components/ALU_advanced/ALU_advanced.sv|../Components/ALU/ALU.sv|../Datapath/datapath.sv|processor.sv|
 Z8 !s90 -reportprogress|300|processor.sv|
 !i113 1
@@ -66,7 +66,7 @@ R2
 R3
 S1
 R4
-w1573927660
+w1573984197
 8../Components/Control_Unit/control_unit.sv
 F../Components/Control_Unit/control_unit.sv
 L0 1
@@ -81,7 +81,7 @@ R8
 R9
 vdata_memory
 R0
-Z10 !s110 1573975706
+Z10 !s110 1574084580
 !i10b 1
 !s100 Z_@o0VAK;NaPTIJkn`XUQ0
 IKT74?HREhQb[:VIVJDbbe3
@@ -97,7 +97,7 @@ R5
 r1
 !s85 0
 31
-Z13 !s108 1573975706.000000
+Z13 !s108 1574084580.000000
 Z14 !s107 ../Components/Data_Memory/data_memory.sv|../Components/Instruction_Memory/instruction_memory.sv|processor_tb.sv|
 Z15 !s90 -reportprogress|300|processor_tb.sv|
 !i113 1
@@ -106,13 +106,13 @@ vdatapath
 R0
 R1
 !i10b 1
-!s100 48GY>V9kWFJfPjME0WaMX0
-I409Sn3ECVPz4f8OY1jf2>1
+!s100 BQc@dzmmC=PFQLL`h4UPC1
+I:eMBZobM_FAN3?UQ>Jz7Y3
 R2
 R3
 S1
 R4
-w1573975536
+w1574083240
 8../Datapath/datapath.sv
 F../Datapath/datapath.sv
 L0 11

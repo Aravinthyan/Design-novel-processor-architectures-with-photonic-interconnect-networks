@@ -66,7 +66,6 @@ module datapath
 	logic carry_flag;
 	logic sign_flag;
 	logic overflow_flag;
-	logic ALU_zero_flag;
 	logic [15:0] general_register_result_select_data_mux [3:0];
 	logic [15:0] reg_read_data_1;
 	logic [15:0] stack_control_data_mux [1:0];
