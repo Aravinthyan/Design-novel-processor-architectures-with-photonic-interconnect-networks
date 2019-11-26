@@ -1,11 +1,13 @@
 module transmitter_tb_2;
 	
 	logic clk;
-	logic [1:0] tx_in;
-	logic control;
-	logic [1:0] tx_out;
-
-	transmitter #(2) tx_test(tx_in, control, tx_out);
+	logic [1:0] dest_id;
+	logic [1:0] data;
+	logic [1:0] src_id;
+	logic enable;
+	logic [5:0] tx_out;
+	
+	transmitter #(2, 2) tx_test(dest_id, data, src_id, enable, tx_out);
 
 	initial
 	begin
@@ -15,36 +17,48 @@ module transmitter_tb_2;
 
 	initial
 	begin
-		control = 1'b0;
-		tx_in = 2'b00;
-		#100ps;
+		enable = 1'b0;
 
-		control = 1'b0;
-		tx_in = 2'b01;
+		dest_id = 2'b00;
+		data = 2'b00;
+		src_id = 2'b00;
 		#100ps;
-
-		control = 1'b0;
-		tx_in = 2'b10;
+		
+		dest_id = 2'b01;
+		data = 2'b01;
+		src_id = 2'b10;
 		#100ps;
-
-		control = 1'b0;
-		tx_in = 2'b11;
+		
+		dest_id = 2'b10;
+		data = 2'b10;
+		src_id = 2'b01;
 		#100ps;
-
-		control = 1'b1;
-		tx_in = 2'b00;
+		
+		dest_id = 2'b11;
+		data = 2'b11;
+		src_id = 2'b11;
 		#100ps;
-
-		control = 1'b1;
-		tx_in = 2'b01;
+		
+		enable = 1'b1;
+		
+		dest_id = 2'b00;
+		data = 2'b00;
+		src_id = 2'b00;
 		#100ps;
-
-		control = 1'b1;
-		tx_in = 2'b10;
+		
+		dest_id = 2'b01;
+		data = 2'b01;
+		src_id = 2'b10;
 		#100ps;
-
-		control = 1'b1;
-		tx_in = 2'b11;
+		
+		dest_id = 2'b10;
+		data = 2'b10;
+		src_id = 2'b01;
+		#100ps;
+		
+		dest_id = 2'b11;
+		data = 2'b11;
+		src_id = 2'b11;
 		#100ps;
 	end
 	
