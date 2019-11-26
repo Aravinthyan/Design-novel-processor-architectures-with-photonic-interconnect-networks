@@ -1,4 +1,4 @@
-module register_file_tb_1;
+module general_purpose_register_file_tb_1;
 
 	logic clk;
 	logic general_register_write_enable;
@@ -10,8 +10,9 @@ module register_file_tb_1;
 	logic stack_register_write_data;
 	logic read_data_1;
 	logic read_data_2;
+	logic id;
 
-	register_file #(2, 1) rf_test(clk, general_register_write_enable, stack_write_enable, address_1, address_2, address_3, general_register_write_data, stack_register_write_data, read_data_1, read_data_2);
+	general_purpose_register_file #(2, 1) rf_test(clk, general_register_write_enable, stack_write_enable, address_1, address_2, address_3, general_register_write_data, stack_register_write_data, read_data_1, read_data_2, id);
 
 	initial
 	begin

@@ -2,7 +2,7 @@
 `include "../Components/ALU_advanced/ALU_advanced.sv"
 `include "../Components/Multiplexer/multiplexer.sv"
 `include "../Components/Register/register.sv"
-`include "../Components/Register_File/register_file.sv"
+`include "../Components/General_Purpose_Register_File/general_purpose_register_file.sv"
 `include "../Components/Flags_Register/flags_register.sv"
 `include "../Components/Jump_Logic/jump_logic.sv"
 
@@ -40,7 +40,9 @@ module datapath
 	input logic jump_greater_equal_control,
 	input logic jump_less_control,
 	input logic jump_less_equal_control,
-	input logic [1:0] general_register_result_select
+	input logic [1:0] general_register_result_select,
+	// other output signal
+	output logic [15:0] id
 );
 
 	// constants
@@ -126,7 +128,7 @@ module datapath
 	ALU #(16) pc_increment_adder(address_1, pc_increment_mux_out, 2'b00, branch_mux_data[0]);
 
 	// instantiate register file
-	register_file #(5, 16) register_file_0(clk, general_register_write_enable, stack_write_enable, read_address_1[9:5], read_address_1[4:0], read_address_1[4:0], general_register_result_select_out, ALU_out, reg_read_data_1, WD_control_data_mux[0]);
+	general_purpose_register_file #(5, 16) register_file_0(clk, general_register_write_enable, stack_write_enable, read_address_1[9:5], read_address_1[4:0], read_address_1[4:0], general_register_result_select_out, ALU_out, reg_read_data_1, WD_control_data_mux[0], id);
 
 	// instantiate stack control multiplexer
 	multiplexer #(1, 16) stack_control_multiplexer(stack_control, stack_control_data_mux, stack_control_mux_out);
