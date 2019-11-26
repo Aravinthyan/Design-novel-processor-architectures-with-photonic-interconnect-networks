@@ -1,20 +1,30 @@
 module transmitter
 #(
-	parameter WIDTH = 1
+	parameter ID_WIDTH = 1,
+	parameter DATA_WIDTH = 1
 )
 (
-	input logic [WIDTH - 1:0] tx_in,
-	input logic control,
-	output logic [WIDTH - 1:0] tx_out
+	input logic [ID_WIDTH - 1:0] dest_id,
+	input logic [DATA_WIDTH - 1:0] data,
+	input logic [ID_WIDTH - 1:0] src_id,
+	input logic enable,
+	output logic [ID_WIDTH + DATA_WIDTH + ID_WIDTH- 1:0] tx_out
 );
 
 	// index variable
 	genvar i;
 	generate
-		for(i = 0; i < WIDTH; i++)
-		begin : tx_tri_states
-			// primitive type for tri state buffer
-			bufif1 (tx_out[i], tx_in[i], control);
+		for(i = 0; i < ID_WIDTH; i++)
+		begin : dest_id_tx
+			and(tx_out[i], dest_id[i], enable);
+		end
+		for(i = ID_WIDTH; i < ID_WIDTH + DATA_WIDTH; i++)
+		begin : data_tx
+			and(tx_out[i], data[i - ID_WIDTH], enable);
+		end
+		for(i = ID_WIDTH + DATA_WIDTH; i < ID_WIDTH + DATA_WIDTH + ID_WIDTH; i++)
+		begin : src_id_tx
+			and(tx_out[i], src_id[i - (ID_WIDTH + DATA_WIDTH)], enable);
 		end
 	endgenerate
 
