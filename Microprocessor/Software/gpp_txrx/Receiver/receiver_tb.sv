@@ -25,13 +25,12 @@ module receiver_tb;
 		rst = 1'b0;
 
 		id = 2'b01;
-
-		rx_in = 6'b001101;
-		#100ps;
-		
 		rx_addr = 2'b00;
+		rx_in = 6'b001101;
+		#100ps;	
 		#100ps;
-
+		rtr_write_enable = 1'b1;
+		#100ps;
 	end
 
 endmodule

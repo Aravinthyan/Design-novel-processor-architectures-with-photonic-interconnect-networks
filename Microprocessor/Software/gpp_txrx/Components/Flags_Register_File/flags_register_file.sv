@@ -8,6 +8,7 @@ module flags_register_file
 	input logic rtr_write_enable,
 	input logic [ADDR_WIDTH_RF - 1:0] address_1,
 	input logic [ADDR_WIDTH_RF - 1:0] address_2,
+	input logic [ADDR_WIDTH_RF - 1:0] address_3,
 	output logic read_data
 );
 
@@ -23,7 +24,7 @@ module flags_register_file
 
 	always_comb
 	begin
-		read_data = registers[address_2];
+		read_data = registers[address_3];
 	end
 
 	always_ff@(posedge clk)

@@ -37,6 +37,7 @@ module receiver
 						      rtr_write_enable, 
 						      rx_data[ID_WIDTH + DATA_WIDTH + ID_WIDTH - 1:DATA_WIDTH + ID_WIDTH],
 					      	      rx_addr,
+						      rx_addr,
 					      	      flag);
 		// instantiate sign extension
 		sign_extension #(1, WIDTH) sign_ex(flag, flag_res);

@@ -10,27 +10,27 @@ cModel Technology
 Z0 d/mnt/d/Documents/University/Year_3/Project/Solution/Microprocessor/Software/Receiver
 vcomparator
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1574881401
+Z2 !s110 1574938535
 !i10b 1
 !s100 <SLcIfRcDQnRQc@B;[V]>3
 I3:7DYH1z4fSm<]1iFVObY0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 !s105 receiver_sv_unit
 S1
-R0
+Z5 d/mnt/d/Documents/University/Year_3/Project/Solution/Microprocessor/Software/gpp_txrx/Receiver
 w1574864190
 8../Components/Comparator/comparator.sv
 F../Components/Comparator/comparator.sv
 L0 1
-Z5 OV;L;10.5b;63
+Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1574881401.000000
-Z7 !s107 ../Components/Sign_Extension/sign_extension.sv|../Components/Flags_Register_File/flags_register_file.sv|../Components/Data_Register_File/data_register_file.sv|../Components/Register/register.sv|../Components/Comparator/comparator.sv|receiver.sv|
-Z8 !s90 -reportprogress|300|receiver.sv|
+Z7 !s108 1574938535.000000
+Z8 !s107 ../Components/Sign_Extension/sign_extension.sv|../Components/Flags_Register_File/flags_register_file.sv|../Components/Data_Register_File/data_register_file.sv|../Components/Register/register.sv|../Components/Comparator/comparator.sv|receiver.sv|
+Z9 !s90 -reportprogress|300|receiver.sv|
 !i113 1
-Z9 tCvgOpt 0
+Z10 tCvgOpt 0
 vdata_register_file
 R1
 R2
@@ -40,89 +40,89 @@ IhG2]RNZKeDGCIm[XFHWIC1
 R3
 R4
 S1
-R0
-Z10 w1574795753
+R5
+w1574795753
 8../Components/Data_Register_File/data_register_file.sv
 F../Components/Data_Register_File/data_register_file.sv
 L0 1
-R5
+R6
 r1
 !s85 0
 31
-R6
 R7
 R8
-!i113 1
 R9
+!i113 1
+R10
 vflags_register_file
 R1
 R2
 !i10b 1
-!s100 cNCzdg`_I<03ZUmfdZU_43
-Ing_V[dU_Ib`:Z:>dCjF2X1
+!s100 jzz2E@?nBZLd5KegRMAS91
+I9nU<EJ9kI<eUlzXI_X7bP2
 R3
 R4
 S1
-R0
-R10
+R5
+w1574938092
 8../Components/Flags_Register_File/flags_register_file.sv
 F../Components/Flags_Register_File/flags_register_file.sv
 L0 1
-R5
+R6
 r1
 !s85 0
 31
-R6
 R7
 R8
-!i113 1
 R9
+!i113 1
+R10
 vreceiver
 R1
 R2
 !i10b 1
-!s100 no8KLL^6FVL?9S^U_<CV;0
-ICS<:AXAA?g89hg`4gg<TB1
+!s100 CUSCbeWVVm<Abl@c1_fF91
+I4ZziCXd=T?Z6HBhY0:T9B1
 R3
 R4
 S1
-R0
-w1574881390
+R5
+w1574938491
 Z11 8receiver.sv
 Z12 Freceiver.sv
 L0 7
-R5
+R6
 r1
 !s85 0
 31
-R6
 R7
 R8
-!i113 1
 R9
+!i113 1
+R10
 vreceiver_tb
 R1
-!s110 1574881257
+!s110 1574940894
 !i10b 1
-!s100 2^N0Selm0Qge=MaklX2PH0
-IMDIKPzYZ4a8mXHkegi_AP3
+!s100 4<1^>8>ZFJaoUnYHJMH5`0
+IFi:5lNdbT71bnkG8foMa72
 R3
 !s105 receiver_tb_sv_unit
 S1
-R0
-w1574881256
+R5
+w1574940888
 8receiver_tb.sv
 Freceiver_tb.sv
 L0 1
-R5
+R6
 r1
 !s85 0
 31
-!s108 1574881257.000000
+!s108 1574940894.000000
 !s107 receiver_tb.sv|
 !s90 -reportprogress|300|receiver_tb.sv|
 !i113 1
-R9
+R10
 vreciever
 R1
 !s110 1574881213
@@ -137,15 +137,15 @@ w1574881209
 R11
 R12
 L0 7
-R5
+R6
 r1
 !s85 0
 31
 !s108 1574881213.000000
-R7
 R8
-!i113 1
 R9
+!i113 1
+R10
 vregister
 R1
 R2
@@ -155,20 +155,20 @@ I_L^ca1dizOVJIji84N?RB3
 R3
 R4
 S1
-R0
+R5
 w1574601299
 8../Components/Register/register.sv
 F../Components/Register/register.sv
 L0 1
-R5
+R6
 r1
 !s85 0
 31
-R6
 R7
 R8
-!i113 1
 R9
+!i113 1
+R10
 vsign_extension
 R1
 R2
@@ -178,17 +178,17 @@ InW@Uh?_G<e6@]8U[mSg@c2
 R3
 R4
 S1
-R0
+R5
 w1574864333
 8../Components/Sign_Extension/sign_extension.sv
 F../Components/Sign_Extension/sign_extension.sv
 L0 1
-R5
+R6
 r1
 !s85 0
 31
-R6
 R7
 R8
-!i113 1
 R9
+!i113 1
+R10
