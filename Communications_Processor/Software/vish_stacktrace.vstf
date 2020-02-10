@@ -1,0 +1,27 @@
+# Current time Fri Jan 24 09:01:21 2020
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "10.5b"
+# Version = "2016.10"
+# Date = "Oct  5 2016"
+# Platform = linuxpe
+# 0    0xf7fd3069: '<unknown (@0xf7fd3069)>'
+# 1    0x08530f73: '<unknown (@0x8530f73)>'
+# 2    0x085325a4: 'Tcl_Flush + 0x44' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 3    0x081dcf20: 'mti_RPC + 0x170' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 4    0x081ff2a0: 'callKernel + 0xe0' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 5    0x081ff3e0: 'tclprim_vsim_kernel + 0x30' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 6    0x084c7901: 'TclInvokeStringCommand + 0x71' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 7    0x084cc41d: '<unknown (@0x84cc41d)>'
+# 8    0x084cded6: '<unknown (@0x84cded6)>'
+# 9    0x084ce4c5: 'Tcl_EvalEx + 0x35' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 10   0x084ce92c: 'TclEvalObjEx + 0x3fc' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 11   0x084d5992: '<unknown (@0x84d5992)>'
+# 12   0x084cc41d: '<unknown (@0x84cc41d)>'
+# 13   0x0851503a: '<unknown (@0x851503a)>'
+# 14   0x0851d9dc: '<unknown (@0x851d9dc)>'
+# 15   0x084ce59c: 'TclEvalObjEx + 0x6c' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 16   0x084cea36: 'Tcl_EvalObjEx + 0x36' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vish'
+# 17   0xf7fc4eac: 'Itcl_EvalMemberCode + 0x3cc' in '/home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/bin/../linux/itcl3.4/libitcl3.4.so'
+# End of Stack Trace
+
