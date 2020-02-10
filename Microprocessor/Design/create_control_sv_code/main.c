@@ -183,12 +183,12 @@ void print_code(char * data)
 	
 	printf("6'b%s:\t// %s\n", seperate[1], seperate[0]);
 	printf("begin\n");
-	printf("\tcontrols[29]\t=\t1'b%s;\n",	seperate[2]);
-	printf("\tcontrols[28:27]\t=\t2'b%s;\n",seperate[3]);
-	printf("\tcontrols[26]\t=\t1'b%s;\n",	seperate[4]);
-	printf("\tcontrols[25]\t=\t1'b%s;\n", 	seperate[5]);
-	printf("\tcontrols[24]\t=\t1'b%s;\n", 	seperate[6]);
-	printf("\tcontrols[23]\t=\t1'b%s;\n", 	seperate[7]);
+	printf("\tcontrols[30]\t=\t1'b%s;\n",	seperate[2]);
+	printf("\tcontrols[29:28]\t=\t2'b%s;\n",seperate[3]);
+	printf("\tcontrols[27]\t=\t1'b%s;\n",	seperate[4]);
+	printf("\tcontrols[26]\t=\t1'b%s;\n", 	seperate[5]);
+	printf("\tcontrols[25]\t=\t1'b%s;\n", 	seperate[6]);
+	printf("\tcontrols[24:23]\t=\t2'b%s;\n",seperate[7]);
 	printf("\tcontrols[22:21]\t=\t2'b%s;\n",seperate[8]);
 	printf("\tcontrols[20:19]\t=\t2'b%s;\n",seperate[9]);
 	printf("\tcontrols[18:17]\t=\t2'b%s;\n",seperate[10]);

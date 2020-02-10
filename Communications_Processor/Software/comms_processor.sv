@@ -10,17 +10,17 @@ module comms_processor
 	// control signals 
 	input shortint max_node,
 	input logic [31:0] control_rx_packet,
-	input logic enable_rtr,	// gpp
-	input logic gpp_rtr_cp, // gpp
+	input logic enable_rtr,	// cu
+	input logic gpp_rtr_cp, // cu
 	output logic [31:0] control_tx_packet,
 	output logic [15:0] data_rx_node_id,
 	output logic data_rx_flag, // gpp
 	output logic gpp_trf_cp, // gpp
 	// data signals
 	input logic [31:0] data_rx_packet,
-	input logic gpp_rtr_dp, // gpp
+	input logic gpp_rtr_dp, // cu
 	output logic [15:0] RAM_rx_data_out, // gpp
-	input logic gpp_trf_dp, // gpp
+	input logic gpp_trf_dp, // cu
 	input logic [15:0] gpp_tx_data, // gpp
 	output logic [31:0] data_tx_packet
 );

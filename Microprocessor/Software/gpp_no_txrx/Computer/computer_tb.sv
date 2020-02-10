@@ -2,8 +2,23 @@ module computer_tb;
 
 	logic clk;
 	logic rst;
+	shortint node_id;
+	shortint max_node;
+	logic [31:0] control_rx_packet;
+	logic [31:0] control_tx_packet;
+	logic [15:0] data_rx_node_id;
+	logic [31:0] data_rx_packet;
+	logic [31:0] data_tx_packet;
 
-	computer computer_test(clk, rst);
+	computer computer_test(clk,
+			       rst,
+			       node_id,
+			       max_node,
+			       control_rx_packet,
+			       control_tx_packet,
+			       data_rx_node_id,
+			       data_rx_packet,
+			       data_tx_packet);
 
 	initial
 	begin
@@ -13,14 +28,15 @@ module computer_tb;
 
 	initial
 	begin
+		node_id = 1;
+		max_node = 4;
 		rst = 1'b1;
                 #100ps;
                 rst = 1'b0;
-                #100ps;
-                #100ps;
-                #100ps;
-                #100ps;
-                #100ps;
+		#2700ps;
+		control_rx_packet = 32'h0001FFFF;
+		#100ps;
+		control_rx_packet = 32'h00000000;
 	end
 
 

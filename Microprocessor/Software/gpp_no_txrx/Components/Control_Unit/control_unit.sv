@@ -6,7 +6,7 @@ module control_unit
 	output logic general_register_write_enable,
 	output logic stack_write_enable,
 	output logic stack_control,
-	output logic write_data_enable,
+	output logic [1:0] write_data_enable,
 	output logic [1:0] ALU_source_1,
 	output logic [1:0] ALU_source_2,
 	output logic [1:0] ALU_control,
@@ -27,16 +27,16 @@ module control_unit
 	output logic gpp_rtr_dp,
 	output logic gpp_trf_dp
 );
-	logic [29:0] controls;
+	logic [30:0] controls;
 	
 	always_comb
 	begin
-		pc_increment_control = controls[29];
-		pc_control = controls[28:27];
-		general_register_write_enable = controls[26];
-		stack_write_enable = controls[25];
-		stack_control = controls[24];
-		write_data_enable = controls[23];
+		pc_increment_control = controls[30];
+		pc_control = controls[29:28];
+		general_register_write_enable = controls[27];
+		stack_write_enable = controls[26];
+		stack_control = controls[25];
+		write_data_enable = controls[24:23];
 		ALU_source_1 = controls[22:21];
 		ALU_source_2 = controls[20:19];
 		ALU_control = controls[18:17];
@@ -63,12 +63,12 @@ module control_unit
 		case(opcode)
 			6'b000000:	// ld
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -92,12 +92,12 @@ module control_unit
 			
 			6'b000001:	// str
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -121,12 +121,12 @@ module control_unit
 			
 			6'b000010:	// add
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -150,12 +150,12 @@ module control_unit
 			
 			6'b000011:	// sub
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b01;
@@ -179,12 +179,12 @@ module control_unit
 			
 			6'b000100:	// and
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b10;
@@ -208,12 +208,12 @@ module control_unit
 			
 			6'b000101:	// or
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b11;
@@ -237,12 +237,12 @@ module control_unit
 			
 			6'b000110:	// mov
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -266,12 +266,12 @@ module control_unit
 			
 			6'b000111:	// cmp
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b01;
@@ -295,12 +295,12 @@ module control_unit
 			
 			6'b001000:	// jz
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -324,12 +324,12 @@ module control_unit
 			
 			6'b001001:	// jmp
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b01;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b01;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -353,12 +353,12 @@ module control_unit
 			
 			6'b001010:	// movi
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -382,12 +382,12 @@ module control_unit
 			
 			6'b001011:	// addi
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b01;
 				controls[18:17]	=	2'b00;
@@ -411,12 +411,12 @@ module control_unit
 			
 			6'b001100:	// subi
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b01;
 				controls[18:17]	=	2'b01;
@@ -440,12 +440,12 @@ module control_unit
 			
 			6'b001101:	// andi
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b01;
 				controls[18:17]	=	2'b10;
@@ -469,12 +469,12 @@ module control_unit
 			
 			6'b001110:	// ori
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b1;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
+				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b01;
 				controls[18:17]	=	2'b11;
@@ -498,12 +498,12 @@ module control_unit
 			
 			6'b001111:	// push
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b0;
-				controls[25]	=	1'b1;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
+				controls[26]	=	1'b1;
+				controls[25]	=	1'b0;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b00;
@@ -527,12 +527,12 @@ module control_unit
 			
 			6'b010000:	// pop
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
 				controls[26]	=	1'b1;
 				controls[25]	=	1'b1;
-				controls[24]	=	1'b1;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b01;
@@ -556,12 +556,12 @@ module control_unit
 			
 			6'b010001:	// call
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b01;
-				controls[26]	=	1'b0;
-				controls[25]	=	1'b1;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b01;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b01;
+				controls[27]	=	1'b0;
+				controls[26]	=	1'b1;
+				controls[25]	=	1'b0;
+				controls[24:23]	=	2'b01;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b00;
@@ -585,12 +585,12 @@ module control_unit
 			
 			6'b010010:	// return
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b10;
-				controls[26]	=	1'b0;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b10;
+				controls[27]	=	1'b0;
+				controls[26]	=	1'b1;
 				controls[25]	=	1'b1;
-				controls[24]	=	1'b1;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b01;
@@ -614,12 +614,12 @@ module control_unit
 			
 			6'b010011:	// jb
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -643,12 +643,12 @@ module control_unit
 			
 			6'b010100:	// jbe
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -672,12 +672,12 @@ module control_unit
 			
 			6'b010101:	// ja
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -701,12 +701,12 @@ module control_unit
 			
 			6'b010110:	// jae
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -730,12 +730,12 @@ module control_unit
 			
 			6'b010111:	// jg
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -759,12 +759,12 @@ module control_unit
 			
 			6'b011000:	// jge
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -788,12 +788,12 @@ module control_unit
 			
 			6'b011001:	// jl
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -817,12 +817,12 @@ module control_unit
 			
 			6'b011010:	// jle
 			begin
-				controls[29]	=	1'b1;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b1;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -846,12 +846,12 @@ module control_unit
 			
 			6'b011011:	// cbt
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b01;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b01;
@@ -875,12 +875,12 @@ module control_unit
 			
 			6'b011100:	// trf
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b1;
 				controls[26]	=	1'b1;
 				controls[25]	=	1'b1;
-				controls[24]	=	1'b1;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b01;
@@ -904,12 +904,12 @@ module control_unit
 			
 			6'b011101:	// pr
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -933,12 +933,12 @@ module control_unit
 			
 			6'b011110:	// cbr
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b10;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b01;
@@ -962,12 +962,12 @@ module control_unit
 			
 			6'b011111:	// rtr
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
-				controls[26]	=	1'b0;
-				controls[25]	=	1'b1;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b10;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
+				controls[26]	=	1'b1;
+				controls[25]	=	1'b0;
+				controls[24:23]	=	2'b10;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b10;
 				controls[18:17]	=	2'b00;
@@ -991,12 +991,12 @@ module control_unit
 			
 			6'b100000:	// rr
 			begin
-				controls[29]	=	1'b0;
-				controls[28:27]	=	2'b00;
+				controls[30]	=	1'b0;
+				controls[29:28]	=	2'b00;
+				controls[27]	=	1'b0;
 				controls[26]	=	1'b0;
 				controls[25]	=	1'b0;
-				controls[24]	=	1'b0;
-				controls[23]	=	1'b00;
+				controls[24:23]	=	2'b00;
 				controls[22:21]	=	2'b00;
 				controls[20:19]	=	2'b00;
 				controls[18:17]	=	2'b00;
@@ -1017,6 +1017,7 @@ module control_unit
 				controls[1]	=	1'b0;
 				controls[0]	=	1'b0;
 			end
+
 		endcase
 	end
 

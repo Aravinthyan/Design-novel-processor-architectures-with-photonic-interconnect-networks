@@ -34,8 +34,9 @@ module datapath
 	input logic general_register_write_enable,
 	input logic stack_write_enable,
 	input logic stack_control,
-	input logic write_data_enable,
-	input logic [1:0] ALU_soure_2,
+	input logic [1:0] write_data_enable,
+	input logic [1:0] ALU_source_1,
+	input logic [1:0] ALU_source_2,
 	input logic [1:0] ALU_control,
 	input logic flags_write_enable,
 	input logic jump_zero_control,
@@ -47,15 +48,23 @@ module datapath
 	input logic jump_greater_equal_control,
 	input logic jump_less_control,
 	input logic jump_less_equal_control,
+	input logic memory_write_enable,
 	input logic [1:0] general_register_result_select,
-	// other output signal
-	output logic [15:0] id
+	input logic enable_rtr,
+	input logic gpp_rtr_cp,
+	input logic gpp_rtr_dp,
+	input logic gpp_trf_dp,
+	// Communications Processor Signals
+	input logic [15:0] RAM_rx_data_out, // gpp
+	input logic data_rx_flag, // gpp
+	input logic gpp_trf_cp, // gpp
+	output logic [15:0] gpp_tx_data // gpp
 );
 
 	// constants
-	logic [15:0] zero = 16'h0000;
-	logic [15:0] one = 16'h0001;
-	logic [15:0] two = 16'h0002;
+	localparam [15:0] zero = 16'h0000;
+	localparam [15:0] one = 16'h0001;
+	localparam [15:0] two = 16'h0002;
 
 	// signals
 	logic [15:0] branch_mux_data[1:0];
@@ -68,7 +77,7 @@ module datapath
 	logic [15:0] pc_increment_mux_out;
 	logic [15:0] pc_increment_data_mux [1:0];
 	logic [15:0] ALU_out;
-	logic [15:0] WD_control_data_mux[1:0];
+	logic [15:0] WD_control_data_mux[3:0];
 	logic [15:0] ALU_source_2_data_mux[3:0];
 	logic [15:0] ALU_source_2_mux_out;
 	logic zero_flag;
@@ -81,6 +90,9 @@ module datapath
 	logic [15:0] stack_control_mux_out;
 	logic flags_in [3:0];
 	logic flags_out [3:0];
+
+	logic [15:0] ALU_source_1_data_mux[3:0];
+	logic [15:0] ALU_source_1_mux_out;
 
 	always_comb
 	begin
@@ -111,6 +123,15 @@ module datapath
 		flags_in[2] = carry_flag;
 		flags_in[1] = sign_flag;
 		flags_in[0] = overflow_flag;
+	
+		WD_control_data_mux[2] = RAM_rx_data_out;
+
+		ALU_source_1_data_mux[0] = reg_read_data_1;
+		ALU_source_1_data_mux[1] = gpp_trf_cp;
+		ALU_source_1_data_mux[2] = data_rx_flag;
+		// ALU_source_1_data_mux_out[3] = 
+
+		gpp_tx_data = general_register_result_select_out;
 	end
 
 	// instantiating branch multiplexer
@@ -135,7 +156,7 @@ module datapath
 	ALU #(16) pc_increment_adder(address_1, pc_increment_mux_out, 2'b00, branch_mux_data[0]);
 
 	// instantiate register file
-	general_purpose_register_file #(5, 16) register_file_0(clk, general_register_write_enable, stack_write_enable, read_address_1[9:5], read_address_1[4:0], read_address_1[4:0], general_register_result_select_out, ALU_out, reg_read_data_1, WD_control_data_mux[0], id);
+	general_purpose_register_file #(5, 16) register_file_0(clk, general_register_write_enable, stack_write_enable, read_address_1[9:5], read_address_1[4:0], read_address_1[4:0], general_register_result_select_out, ALU_out, reg_read_data_1, WD_control_data_mux[0]);
 
 	// instantiate stack control multiplexer
 	multiplexer #(1, 16) stack_control_multiplexer(stack_control, stack_control_data_mux, stack_control_mux_out);
@@ -144,16 +165,19 @@ module datapath
 	ALU #(16) stack_access_subber(reg_read_data_1, stack_control_mux_out, 2'b01, address_rw);
 
 	// instantiate WD control multiplexer
-	multiplexer #(1, 16) WD_control_multiplexer(write_data_enable, WD_control_data_mux, data_in);
+	multiplexer #(2, 16) WD_control_multiplexer(write_data_enable, WD_control_data_mux, data_in);
 
 	// instantiate adder for return address
 	ALU #(16) return_address_adder(address_2, one, 2'b00, WD_control_data_mux[1]);
 
+	// instantiate ALU source 1 multiplexer
+	multiplexer #(2, 16) ALU_source_1_multiplexer(ALU_source_1, ALU_source_1_data_mux, ALU_source_1_mux_out);
+	
 	// instantiate ALU source 2 multiplexer
-	multiplexer #(2, 16) ALU_source_2_multiplexer(ALU_soure_2, ALU_source_2_data_mux, ALU_source_2_mux_out);
+	multiplexer #(2, 16) ALU_source_2_multiplexer(ALU_source_2, ALU_source_2_data_mux, ALU_source_2_mux_out);
 
 	// instantiate ALU
-	ALU_advanced #(16) ALU_0(reg_read_data_1, ALU_source_2_mux_out, ALU_control, ALU_out, zero_flag, carry_flag, sign_flag, overflow_flag);
+	ALU_advanced #(16) ALU_0(ALU_source_1_mux_out, ALU_source_2_mux_out, ALU_control, ALU_out, zero_flag, carry_flag, sign_flag, overflow_flag);
 	
 	// instantiate zero register
 	flags_register flag_reg(clk, rst, flags_write_enable, flags_in, flags_out);
