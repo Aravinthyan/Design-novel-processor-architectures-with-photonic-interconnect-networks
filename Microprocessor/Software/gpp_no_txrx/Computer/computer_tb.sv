@@ -33,10 +33,23 @@ module computer_tb;
 		rst = 1'b1;
                 #100ps;
                 rst = 1'b0;
-		#2700ps;
-		control_rx_packet = 32'h0001FFFF;
+		#300ps;
+		control_rx_packet = 32'h00010005;
 		#100ps;
 		control_rx_packet = 32'h00000000;
+		#100ps;
+		data_rx_packet = 32'h00010005;
+		#100ps;
+		data_rx_packet = 32'h0001000A;
+		#100ps;
+		data_rx_packet = 32'h0001000B;
+		#100ps;
+		data_rx_packet = 32'h0001000C;
+		#100ps;
+		data_rx_packet = 32'h0001000D;
+		#100ps;
+		data_rx_packet = 32'h00000000;
+		#100ps;
 	end
 
 

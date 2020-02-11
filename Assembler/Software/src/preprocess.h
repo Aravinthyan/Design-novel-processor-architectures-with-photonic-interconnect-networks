@@ -11,7 +11,7 @@
 
 #define NUM_OF_LABELS 		100
 #define NUM_OF_ADDRESSES 	100
-#define LENGTH_OF_LABEL 	25
+#define LENGTH_OF_LABEL 	100
 #define LENGTH_OF_INSTR 	30
 #define SPACE 			32
 #define TAB 			9
@@ -24,14 +24,16 @@
 #define ZERO 			48
 #define NINE 			57
 
-// 
 typedef struct
 {
-	char labels[NUM_OF_LABELS][LENGTH_OF_LABEL];	// multi-array which holds all the labels in the assembly file
+	// multi-array which holds all the labels in the assembly file
+	char labels[NUM_OF_LABELS][LENGTH_OF_LABEL];	
+	
+	// array which holds the address of each label
+	unsigned int label_address[NUM_OF_ADDRESSES];	
 
-	char label_address[NUM_OF_ADDRESSES];	// array which holds the address of each label
-
-	int index;	// this indicates the number of labels/addresses that were filled	
+	// this indicates the number of labels/addresses that were filled
+	int index;		
 }labels_and_addresses_file;
 
 // functions

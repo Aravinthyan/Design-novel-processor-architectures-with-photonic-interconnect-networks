@@ -814,7 +814,7 @@ end
 begin
 	controls[30]	=	1'b0;
 	controls[29:28]	=	2'b00;
-	controls[27]	=	1'b1;
+	controls[27]	=	1'b0;
 	controls[26]	=	1'b1;
 	controls[25]	=	1'b1;
 	controls[24:23]	=	2'b00;
