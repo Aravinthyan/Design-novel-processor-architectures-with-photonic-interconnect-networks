@@ -9,8 +9,8 @@
 #ifndef _ASSEMBLY_H_
 #define _ASSEMBLY_H_
 
-#define NUM_OF_INSTR		27
-#define MNEMONIC_LENGTH		7
+#define NUM_OF_INSTR		33
+#define MNEMONIC_LENGTH		10
 #define OPCODE_LENGTH		6
 #define NUM_OF_REG		32
 #define REG_LENGTH		6
@@ -38,6 +38,7 @@ void label_operands(char * code, FILE * machine_code, instructions * list_of_ins
 char * immediate_operands(char * code, FILE * machine_code, registers * list_of_regs, instructions * list_of_instr);
 char * stack_operands(char * code, FILE * machine_code, registers * list_of_regs, instructions * list_of_instr);
 void return_instr();
+void comms_instr(FILE * machine_code, char * instr, instructions * list_of_instr);
 void clean_up(FILE * no_labels_code, FILE * machine_code, instructions * list_of_instr, registers * list_of_regs);
 
 #endif

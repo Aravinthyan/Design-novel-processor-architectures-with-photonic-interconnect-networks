@@ -183,22 +183,31 @@ void print_code(char * data)
 	
 	printf("6'b%s:\t// %s\n", seperate[1], seperate[0]);
 	printf("begin\n");
-	printf("\tcontrols[23] = 1'b%s;\n", seperate[2]);
-	printf("\tcontrols[22:21] = 2'b%s;\n", seperate[3]);
-	int j = 4;
-	for(int i = 20; i >= 17; i--, j++)
-	{
-		printf("\tcontrols[%d] = 1'b%s;\n", i, seperate[j]);
-	}
-	printf("\tcontrols[16:15] = 2'b%s;\n", seperate[8]);
-	printf("\tcontrols[14:13] = 2'b%s;\n", seperate[9]);
-	j = 10;
-	for(int i = 12; i >= 2; i--, j++)
-	{
-		printf("\tcontrols[%d] = 1'b%s;\n", i, seperate[j]);
-	}
-	printf("\tcontrols[1:0] = 2'b%s;\n", seperate[21]);
-
+	printf("\tcontrols[30]\t=\t1'b%s;\n",	seperate[2]);
+	printf("\tcontrols[29:28]\t=\t2'b%s;\n",seperate[3]);
+	printf("\tcontrols[27]\t=\t1'b%s;\n",	seperate[4]);
+	printf("\tcontrols[26]\t=\t1'b%s;\n", 	seperate[5]);
+	printf("\tcontrols[25]\t=\t1'b%s;\n", 	seperate[6]);
+	printf("\tcontrols[24:23]\t=\t2'b%s;\n",seperate[7]);
+	printf("\tcontrols[22:21]\t=\t2'b%s;\n",seperate[8]);
+	printf("\tcontrols[20:19]\t=\t2'b%s;\n",seperate[9]);
+	printf("\tcontrols[18:17]\t=\t2'b%s;\n",seperate[10]);
+	printf("\tcontrols[16]\t=\t1'b%s;\n", 	seperate[11]);
+	printf("\tcontrols[15]\t=\t1'b%s;\n", 	seperate[12]);
+	printf("\tcontrols[14]\t=\t1'b%s;\n", 	seperate[13]);
+	printf("\tcontrols[13]\t=\t1'b%s;\n", 	seperate[14]);
+	printf("\tcontrols[12]\t=\t1'b%s;\n", 	seperate[15]);
+	printf("\tcontrols[11]\t=\t1'b%s;\n", 	seperate[16]);
+	printf("\tcontrols[10]\t=\t1'b%s;\n", 	seperate[17]);
+	printf("\tcontrols[9]\t=\t1'b%s;\n", 	seperate[18]);
+	printf("\tcontrols[8]\t=\t1'b%s;\n", 	seperate[19]);
+	printf("\tcontrols[7]\t=\t1'b%s;\n", 	seperate[20]);
+	printf("\tcontrols[6]\t=\t1'b%s;\n", 	seperate[21]);
+	printf("\tcontrols[5:4]\t=\t2'b%s;\n", 	seperate[22]);
+	printf("\tcontrols[3]\t=\t1'b%s;\n", 	seperate[23]);
+	printf("\tcontrols[2]\t=\t1'b%s;\n", 	seperate[24]);
+	printf("\tcontrols[1]\t=\t1'b%s;\n", 	seperate[25]);
+	printf("\tcontrols[0]\t=\t1'b%s;\n", 	seperate[26]);
 	printf("end\n");
 
 	for(int i = 0; i < num_of_frees; i++)

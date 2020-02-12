@@ -92,64 +92,43 @@ void convert_to_machine_code(char * output_file)
 		list_of_regs->operand[index] = convert_to_binary(index, 0, 5);
 	}
 
-//	// print out the mnemonics and the opcodes
-//	for(int index = 0; index < NUM_OF_INSTR; index++)
-//	{
-//		printf("%s\t%s\n", list_of_instr->mnemonic[index], list_of_instr->opcode[index]);
-//	}
-//	
-//	// print out the mnemonics and the opcodes
-//	for(int index = 0; index < NUM_OF_REG; index++)
-//	{
-//		printf("%s\t%s\n", list_of_regs.reg[index], list_of_regs.operand[index]);
-//	}
-	
-	// get the current line from the file
-	char line[30];
-	// ge the mnemonic from the current instruction that was read
-	char mnemonic[6];
-	// this will be the index that will go through the string
-	int index = 0;
-	// used to index the array of instructions
+	char line[100];
+	int num_of_words = 0;
+	int num_of_frees = 0;
+	char ** words_in_line;
 	int instr = 0;
-	
-	while(fgets(line, 30, no_labels_code) != NULL)
-	{
-		index = 0;
-		// copy label
-		while(line[index] >= 97 && line[index] <= 122)
-		{
-			mnemonic[index] = line[index];
-			index++;
-		}
-		mnemonic[index] = '\0';
 
-		// find the mnemonic
+	// get the current line
+	// get the words from it
+	// get the instruction and find out which one it is
+	// use that index for a switch case
+	// call the function that will convert to machine code	
+	
+	while(fgets(line, 100, no_labels_code) != NULL)
+	{
+		words_in_line = get_words_from_string(line, &num_of_words, &num_of_frees);
+		
 		for(instr = 0; instr < NUM_OF_INSTR; instr++)
 		{
-			// if the mnemonic is found then break out
-			if(strcmp(mnemonic, list_of_instr->mnemonic[instr]) == 0)
+			if(strcmp(list_of_instr->mnemonic[instr], words_in_line[0]) == 0)
 			{
 				break;
 			}
 		}
-		
+
 		// if the mnemonic is not found then print an error message and exit
 		if(instr == NUM_OF_INSTR)
 		{
-			// store the length of the new line
-			int length = strlen(line) - 1;
-			// create memeory on heap to store the line without newline
-			char * error_line = (char *)xmalloc(sizeof(char) * length);
-			// copy a string one length than the original size
-			for(int i = 0; i < length; i++)
-			{
-				error_line[i] = line[i];
-			}
+			char * target = "\n";
+			char * occur = NULL;
+
+			occur = strstr(line, target);
+			*occur = '\0';
+			
 			// print the error message
-			fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid mnemonic %s\n", error_line, mnemonic);
-			// free the memory
-			free(error_line);
+			fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid mnemonic %s\n", line, words_in_line[0]);
+			// free the words that were taken from the line
+			free_split(words_in_line, num_of_frees);
 			clean_up(no_labels_code, machine_code, list_of_instr, list_of_regs);
 			// exit the program
 			exit(-1);
@@ -169,20 +148,17 @@ void convert_to_machine_code(char * output_file)
 				char * error_operand = two_operands(line, machine_code, list_of_regs, list_of_instr);
 				if(error_operand != NULL)
 				{		
-					// store the length of the new line
-					int length = strlen(line) - 1;
-					// create memeory on heap to store the line without newline
-					char * error_line = (char *)xmalloc(sizeof(char) * length);
-					// copy a string one length than the original size
-					for(int i = 0; i < length; i++)
-					{
-						error_line[i] = line[i];
-					}
+					char * target = "\n";
+					char * occur = NULL;
+
+					occur = strstr(line, target);
+					*occur = '\0';
+					
 					// print the error message
-					fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid operand %s\n", error_line, error_operand);
+					fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid operand %s\n", line, error_operand);
 					// free the memory
-					free(error_line);
 					free(error_operand);
+					free_split(words_in_line, num_of_frees);
 					clean_up(no_labels_code, machine_code, list_of_instr, list_of_regs);
 					// exit the program
 					exit(-1);
@@ -207,24 +183,21 @@ void convert_to_machine_code(char * output_file)
 			case 12:	// subi
 			case 13:	// andi
 			case 14:	// ori
-			{	
+			{
 				char * error_operand = immediate_operands(line, machine_code, list_of_regs, list_of_instr);
 				if(error_operand != NULL)
 				{		
-					// store the length of the new line
-					int length = strlen(line) - 1;
-					// create memeory on heap to store the line without newline
-					char * error_line = (char *)xmalloc(sizeof(char) * length);
-					// copy a string one length than the original size
-					for(int i = 0; i < length; i++)
-					{
-						error_line[i] = line[i];
-					}
+					char * target = "\n";
+					char * occur = NULL;
+
+					occur = strstr(line, target);
+					*occur = '\0';
+					
 					// print the error message
-					fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid operand %s\n", error_line, error_operand);
+					fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid operand %s\n", line, error_operand);
 					// free the memory
-					free(error_line);
 					free(error_operand);
+					free_split(words_in_line, num_of_frees);
 					clean_up(no_labels_code, machine_code, list_of_instr, list_of_regs);
 					// exit the program
 					exit(-1);
@@ -237,20 +210,17 @@ void convert_to_machine_code(char * output_file)
 				char * error_operand = stack_operands(line, machine_code, list_of_regs, list_of_instr);
 				if(error_operand != NULL)
 				{		
-					// store the length of the new line
-					int length = strlen(line) - 1;
-					// create memeory on heap to store the line without newline
-					char * error_line = (char *)xmalloc(sizeof(char) * length);
-					// copy a string one length than the original size
-					for(int i = 0; i < length; i++)
-					{
-						error_line[i] = line[i];
-					}
+					char * target = "\n";
+					char * occur = NULL;
+
+					occur = strstr(line, target);
+					*occur = '\0';
+					
 					// print the error message
-					fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid operand %s\n", error_line, error_operand);
+					fprintf(stderr, "Instruction \"%s\" is not valid as it has an invalid operand %s\n", line, error_operand);
 					// free the memory
-					free(error_line);
 					free(error_operand);
+					free_split(words_in_line, num_of_frees);
 					clean_up(no_labels_code, machine_code, list_of_instr, list_of_regs);
 					// exit the program
 					exit(-1);
@@ -260,11 +230,21 @@ void convert_to_machine_code(char * output_file)
 			case 18:	// return
 				return_instr(machine_code);
 				break;
+			case 27:	// cbt
+			case 28:	// trf
+			case 29:	// pr
+			case 30:	// cbr
+			case 31:	// rtr
+			case 32:	// rr
+				comms_instr(machine_code, words_in_line[0], list_of_instr);
+				break;
 			default:
 				break;
 		}
+		// free memory used for this line of code
+		free_split(words_in_line, num_of_frees);
 	}
-	
+
 	clean_up(no_labels_code, machine_code, list_of_instr, list_of_regs);
 }
 
@@ -291,19 +271,6 @@ char * reg_operand_get(char * reg, registers * list_of_regs)
 	}
 	// return the address of the binary format of the register
 	return operand;
-}
-
-void free_split(char ** words, int num_of_frees)
-{
-	// free the individual strings
-	for(int i = 0; i < num_of_frees; i++)
-	{
-		free(words[i]);
-		words[i] = NULL;
-	}
-	// free the double pointer
-	free(words);
-	words = NULL;
 }
 
 char * two_operands(char * code, FILE * machine_code, registers * list_of_regs, instructions * list_of_instr)
@@ -537,6 +504,21 @@ char * stack_operands(char * code, FILE * machine_code, registers * list_of_regs
 void return_instr(FILE * machine_code)
 {
 	fprintf(machine_code, "0100100000000000\n");
+}
+
+void comms_instr(FILE * machine_code, char * instr, instructions * list_of_instr)
+{	
+	// print opcode
+	for(int i = 0; i < NUM_OF_INSTR; i++)
+	{
+		if(strcmp(instr, list_of_instr->mnemonic[i]) == 0)
+		{
+			fprintf(machine_code, "%s", list_of_instr->opcode[i]);
+			break;
+		}
+	}
+
+	fprintf(machine_code, "0000000000\n");
 }
 
 void clean_up(FILE * no_labels_code, FILE * machine_code, instructions * list_of_instr, registers * list_of_regs)

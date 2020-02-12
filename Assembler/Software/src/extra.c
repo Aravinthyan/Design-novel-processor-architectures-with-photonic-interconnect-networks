@@ -290,3 +290,28 @@ char **get_words_from_string(const char *input_string, int *num_of_words, int *n
     // return words
     return words;
 }
+
+void free_split(char ** words, int num_of_frees)
+{
+	// free the individual strings
+	for(int i = 0; i < num_of_frees; i++)
+	{
+		free(words[i]);
+		words[i] = NULL;
+	}
+	// free the double pointer
+	free(words);
+	words = NULL;
+}
+
+char * shift_left_one(char * data)
+{
+	int i;
+
+	for(i = 1; i < strlen(data); i++)
+	{
+		data[i - 1] = data[i];
+	}
+	data[i - 1] = '\0';
+	return data;
+}

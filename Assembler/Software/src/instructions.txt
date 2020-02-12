@@ -25,3 +25,9 @@ jg
 jge
 jl
 jle
+cbt
+trf
+pr
+cbr
+rtr
+rr
