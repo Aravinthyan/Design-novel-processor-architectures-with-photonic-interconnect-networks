@@ -1,0 +1,2 @@
+Warning (10273): Verilog HDL warning at ALU_advanced.sv(50): extended using "x" or "z" File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/ALU_advanced/ALU_advanced.sv Line: 50
+Warning (10273): Verilog HDL warning at ALU_advanced.sv(57): extended using "x" or "z" File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/ALU_advanced/ALU_advanced.sv Line: 57

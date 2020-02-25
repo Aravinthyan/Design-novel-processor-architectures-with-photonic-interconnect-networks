@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "multiplexer_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "data[0][0]",
+					"strict" : false
+				},
+				{
+					"name" : "control_signals[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

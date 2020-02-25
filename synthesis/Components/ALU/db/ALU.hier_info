@@ -1,0 +1,14 @@
+|ALU
+src_a[0] => Add0.IN1
+src_a[0] => Add1.IN2
+src_a[0] => ALU_out.IN0
+src_a[0] => ALU_out.IN0
+src_b[0] => Add0.IN2
+src_b[0] => ALU_out.IN1
+src_b[0] => ALU_out.IN1
+src_b[0] => Add1.IN1
+ALU_Control[0] => Mux0.IN5
+ALU_Control[1] => Mux0.IN4
+ALU_out[0] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,45 @@
+|Control_Unit
+opcode[0] => Decoder0.IN5
+opcode[0] => Decoder1.IN4
+opcode[1] => Decoder0.IN4
+opcode[1] => Decoder1.IN3
+opcode[2] => Decoder0.IN3
+opcode[2] => Decoder1.IN2
+opcode[3] => Decoder0.IN2
+opcode[3] => Decoder1.IN1
+opcode[4] => Decoder0.IN1
+opcode[5] => Decoder0.IN0
+opcode[5] => Decoder1.IN0
+pc_increment_control << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+pc_control[0] << controls.DB_MAX_OUTPUT_PORT_TYPE
+pc_control[1] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+general_register_write_enable << WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+stack_write_enable << WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+stack_control << WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+write_data_enable[0] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+write_data_enable[1] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ALU_source_1[0] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ALU_source_1[1] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ALU_source_2[0] << WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ALU_source_2[1] << WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ALU_control[0] << WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+ALU_control[1] << WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+flags_write_enable << WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+jump_zero_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_below_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_below_equal_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_above_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_above_equal_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_greater_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_greater_equal_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_less_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+jump_less_equal_control << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+memory_write_enable << controls.DB_MAX_OUTPUT_PORT_TYPE
+general_register_result_select[0] << WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+general_register_result_select[1] << controls.DB_MAX_OUTPUT_PORT_TYPE
+enable_rtr << controls.DB_MAX_OUTPUT_PORT_TYPE
+gpp_rtr_cp << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+gpp_rtr_dp << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+gpp_trf_dp << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

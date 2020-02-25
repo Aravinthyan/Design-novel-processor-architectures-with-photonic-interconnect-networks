@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "read_data_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "read_data_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "general_register_write_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "general_register_write_enable",
+					"strict" : false
+				},
+				{
+					"name" : "address_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "stack_write_enable",
+					"strict" : false
+				},
+				{
+					"name" : "stack_register_write_data[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

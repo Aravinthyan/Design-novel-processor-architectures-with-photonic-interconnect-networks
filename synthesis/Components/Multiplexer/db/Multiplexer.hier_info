@@ -1,0 +1,7 @@
+|Multiplexer
+control_signals[0] => Decoder0.IN0
+data[0][0] => multiplexer_out.DATAA
+data[1][0] => multiplexer_out.DATAB
+multiplexer_out[0] << multiplexer_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

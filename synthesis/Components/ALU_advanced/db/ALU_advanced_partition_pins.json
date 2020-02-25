@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ALU_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "zero_flag",
+					"strict" : false
+				},
+				{
+					"name" : "carry_flag",
+					"strict" : false
+				},
+				{
+					"name" : "sign_flag",
+					"strict" : false
+				},
+				{
+					"name" : "overflow_flag",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Control[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_Control[0]",
+					"strict" : false
+				},
+				{
+					"name" : "src_b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "src_a[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

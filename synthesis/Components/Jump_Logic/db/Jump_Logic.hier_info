@@ -1,0 +1,30 @@
+|Jump_Logic
+jump_zero_control => jz.IN0
+jump_below_control => jb.IN0
+jump_below_equal_control => jbe.IN1
+jump_above_control => ja.IN1
+jump_above_equal_control => jae.IN0
+jump_greater_control => jg.IN1
+jump_greater_equal_control => jge.IN1
+jump_less_control => jl.IN1
+jump_less_equal_control => jle.IN1
+zero_flag => jz.IN1
+zero_flag => jbe_1.IN0
+zero_flag => ja_1.IN0
+zero_flag => jge_1.IN0
+zero_flag => jl_1.IN0
+zero_flag => jle_2.IN1
+zero_flag => jg_3.IN1
+carry_flag => jb.IN1
+carry_flag => jbe_1.IN1
+carry_flag => ja_1.IN1
+carry_flag => jle_1.IN0
+carry_flag => jae.IN1
+sign_flag => jg_2.IN0
+sign_flag => jge_1.IN1
+sign_flag => jl_1.IN1
+sign_flag => jle_1.IN1
+overflow_flag => jg_2.IN1
+jump_logic_out <= selctor.DB_MAX_OUTPUT_PORT_TYPE
+
+

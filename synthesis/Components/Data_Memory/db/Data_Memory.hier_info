@@ -1,0 +1,15 @@
+|Data_Memory
+clk => RAM.we_a.CLK
+clk => RAM.waddr_a[0].CLK
+clk => RAM.data_a[0].CLK
+clk => RAM.CLK0
+memory_write_enable => RAM.we_a.DATAIN
+memory_write_enable => RAM.WE
+address_rw[0] => RAM.waddr_a[0].DATAIN
+address_rw[0] => RAM.WADDR
+address_rw[0] => RAM.RADDR
+data_in[0] => RAM.data_a[0].DATAIN
+data_in[0] => RAM.DATAIN
+data_out[0] << RAM.DATAOUT
+
+

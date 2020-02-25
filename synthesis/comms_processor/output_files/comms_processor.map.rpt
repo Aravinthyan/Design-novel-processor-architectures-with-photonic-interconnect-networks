@@ -1,0 +1,822 @@
+Analysis & Synthesis report for comms_processor
+Sat Feb 22 11:21:18 2020
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated
+ 13. Source assignments for data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated
+ 14. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|Multiplexer:sp_tx_mux
+ 15. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|Register:sp_tx_reg
+ 16. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|ALU:sp_increment
+ 17. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|ALU:sp_decrement
+ 18. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|Multiplexer:RAM_tx_address_mux
+ 19. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Multiplexer:sp_rx_mux
+ 21. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Register:sp_rx_reg
+ 22. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|ALU:sp_increment
+ 23. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|ALU:sp_decrement
+ 24. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Multiplexer:RAM_rx_address_mux
+ 25. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component
+ 26. Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Register:data_rx_reg
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "data_plane:dp|data_plane_rx:dp_rx|ALU:sp_decrement"
+ 29. Port Connectivity Checks: "data_plane:dp|data_plane_rx:dp_rx|ALU:sp_increment"
+ 30. Port Connectivity Checks: "data_plane:dp|data_plane_rx:dp_rx|Multiplexer:sp_rx_mux"
+ 31. Port Connectivity Checks: "data_plane:dp|data_plane_tx:dp_tx|ALU:sp_decrement"
+ 32. Port Connectivity Checks: "data_plane:dp|data_plane_tx:dp_tx|ALU:sp_increment"
+ 33. Port Connectivity Checks: "data_plane:dp|data_plane_tx:dp_tx|Multiplexer:sp_tx_mux"
+ 34. Post-Synthesis Netlist Statistics for Top Partition
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Feb 22 11:21:17 2020       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; comms_processor                             ;
+; Top-level Entity Name              ; comms_processor                             ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 549                                         ;
+;     Total combinational functions  ; 533                                         ;
+;     Dedicated logic registers      ; 165                                         ;
+; Total registers                    ; 165                                         ;
+; Total pins                         ; 216                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 2,097,152                                   ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; comms_processor    ; comms_processor    ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; ../src/data_plane.sv             ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane.sv                      ;         ;
+; ../src/Register.sv               ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/Register.sv                        ;         ;
+; ../src/RAM.v                     ; yes             ; User Wizard-Generated File   ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/RAM.v                              ;         ;
+; ../src/Multiplexer.sv            ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/Multiplexer.sv                     ;         ;
+; ../src/data_plane_tx.sv          ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv                   ;         ;
+; ../src/data_plane_rx.sv          ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_rx.sv                   ;         ;
+; ../src/Control_Plane.sv          ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/Control_Plane.sv                   ;         ;
+; ../src/ALU.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/ALU.sv                             ;         ;
+; comms_processor.sv               ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/comms_processor.sv     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                            ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                            ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                            ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                             ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                                ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                                ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                              ;         ;
+; db/altsyncram_hbg1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/altsyncram_hbg1.tdf ;         ;
+; db/decode_rsa.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/decode_rsa.tdf      ;         ;
+; db/decode_k8a.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/decode_k8a.tdf      ;         ;
+; db/mux_qob.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/mux_qob.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 549       ;
+;                                             ;           ;
+; Total combinational functions               ; 533       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 251       ;
+;     -- 3 input functions                    ; 152       ;
+;     -- <=2 input functions                  ; 130       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 368       ;
+;     -- arithmetic mode                      ; 165       ;
+;                                             ;           ;
+; Total registers                             ; 165       ;
+;     -- Dedicated logic registers            ; 165       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 216       ;
+; Total memory bits                           ; 2097152   ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 421       ;
+; Total fan-out                               ; 6978      ;
+; Average fan-out                             ; 5.03      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                               ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                 ; Entity Name     ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |comms_processor                                ; 533 (1)             ; 165 (0)                   ; 2097152     ; 0            ; 0       ; 0         ; 216  ; 0            ; |comms_processor                                                                                                                                    ; comms_processor ; work         ;
+;    |Control_Plane:cp|                           ; 232 (232)           ; 69 (69)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|Control_Plane:cp                                                                                                                   ; Control_Plane   ; work         ;
+;    |data_plane:dp|                              ; 300 (0)             ; 96 (0)                    ; 2097152     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp                                                                                                                      ; data_plane      ; work         ;
+;       |data_plane_rx:dp_rx|                     ; 147 (18)            ; 40 (5)                    ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx                                                                                                  ; data_plane_rx   ; work         ;
+;          |ALU:sp_increment|                     ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|ALU:sp_increment                                                                                 ; ALU             ; work         ;
+;          |RAM:RAM_rx|                           ; 96 (0)              ; 3 (0)                     ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx                                                                                       ; RAM             ; work         ;
+;             |altsyncram:altsyncram_component|   ; 96 (0)              ; 3 (0)                     ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;                |altsyncram_hbg1:auto_generated| ; 96 (0)              ; 3 (3)                     ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated                        ; altsyncram_hbg1 ; work         ;
+;                   |decode_k8a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|decode_k8a:rden_decode ; decode_k8a      ; work         ;
+;                   |decode_rsa:decode3|          ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|decode_rsa:decode3     ; decode_rsa      ; work         ;
+;                   |mux_qob:mux2|                ; 80 (80)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|mux_qob:mux2           ; mux_qob         ; work         ;
+;          |Register:data_rx_reg|                 ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|Register:data_rx_reg                                                                             ; Register        ; work         ;
+;          |Register:sp_rx_reg|                   ; 17 (17)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|Register:sp_rx_reg                                                                               ; Register        ; work         ;
+;       |data_plane_tx:dp_tx|                     ; 153 (40)            ; 56 (37)                   ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx                                                                                                  ; data_plane_tx   ; work         ;
+;          |ALU:sp_increment|                     ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|ALU:sp_increment                                                                                 ; ALU             ; work         ;
+;          |RAM:RAM_tx|                           ; 80 (0)              ; 3 (0)                     ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx                                                                                       ; RAM             ; work         ;
+;             |altsyncram:altsyncram_component|   ; 80 (0)              ; 3 (0)                     ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;                |altsyncram_hbg1:auto_generated| ; 80 (0)              ; 3 (3)                     ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated                        ; altsyncram_hbg1 ; work         ;
+;                   |decode_k8a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|decode_k8a:rden_decode ; decode_k8a      ; work         ;
+;                   |decode_rsa:decode3|          ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|decode_rsa:decode3     ; decode_rsa      ; work         ;
+;                   |mux_qob:mux2|                ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|mux_qob:mux2           ; mux_qob         ; work         ;
+;          |Register:sp_tx_reg|                   ; 17 (17)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|Register:sp_tx_reg                                                                               ; Register        ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                         ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+------+
+; Name                                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF  ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+------+
+; data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 65536        ; 16           ; --           ; --           ; 1048576 ; None ;
+; data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 65536        ; 16           ; --           ; --           ; 1048576 ; None ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+------+
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++--------------------------------------------+----------------------------------------+
+; Register name                              ; Reason for Removal                     ;
++--------------------------------------------+----------------------------------------+
+; data_plane:dp|data_plane_tx:dp_tx|count[2] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1      ;                                        ;
++--------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 165   ;
+; Number of registers using Synchronous Clear  ; 56    ;
+; Number of registers using Synchronous Load   ; 65    ;
+; Number of registers using Asynchronous Clear ; 48    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 38    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |comms_processor|Control_Plane:cp|data_rx_node_id[5]                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |comms_processor|Control_Plane:cp|count[1]                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|Register:sp_rx_reg|q[14] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|data_tx_packet[22]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|Register:sp_tx_reg|q[7]  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |comms_processor|Control_Plane:cp|slot[12]                                  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |comms_processor|data_plane:dp|data_plane_rx:dp_rx|count[0]                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|count[1]                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |comms_processor|Control_Plane:cp|control_tx_packet[5]                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |comms_processor|data_plane:dp|data_plane_tx:dp_tx|data_tx_packet[0]        ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |comms_processor|Control_Plane:cp|control_tx_packet[30]                     ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |comms_processor|Control_Plane:cp|num_of_slots[15]                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                   ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                   ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|Multiplexer:sp_tx_mux ;
++------------------------+-------+---------------------------------------------------------------------+
+; Parameter Name         ; Value ; Type                                                                ;
++------------------------+-------+---------------------------------------------------------------------+
+; NUM_OF_CONTROL_SIGNALS ; 2     ; Signed Integer                                                      ;
+; WIDTH                  ; 16    ; Signed Integer                                                      ;
++------------------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|Register:sp_tx_reg ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|ALU:sp_increment ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|ALU:sp_decrement ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|Multiplexer:RAM_tx_address_mux ;
++------------------------+-------+------------------------------------------------------------------------------+
+; Parameter Name         ; Value ; Type                                                                         ;
++------------------------+-------+------------------------------------------------------------------------------+
+; NUM_OF_CONTROL_SIGNALS ; 1     ; Signed Integer                                                               ;
+; WIDTH                  ; 16    ; Signed Integer                                                               ;
++------------------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                          ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                       ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                       ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                ;
+; WIDTHAD_A                          ; 16                   ; Signed Integer                                                ;
+; NUMWORDS_A                         ; 65536                ; Signed Integer                                                ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_B                            ; 1                    ; Untyped                                                       ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                       ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                       ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                       ;
+; CBXI_PARAMETER                     ; altsyncram_hbg1      ; Untyped                                                       ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Multiplexer:sp_rx_mux ;
++------------------------+-------+---------------------------------------------------------------------+
+; Parameter Name         ; Value ; Type                                                                ;
++------------------------+-------+---------------------------------------------------------------------+
+; NUM_OF_CONTROL_SIGNALS ; 2     ; Signed Integer                                                      ;
+; WIDTH                  ; 16    ; Signed Integer                                                      ;
++------------------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Register:sp_rx_reg ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|ALU:sp_increment ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|ALU:sp_decrement ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Multiplexer:RAM_rx_address_mux ;
++------------------------+-------+------------------------------------------------------------------------------+
+; Parameter Name         ; Value ; Type                                                                         ;
++------------------------+-------+------------------------------------------------------------------------------+
+; NUM_OF_CONTROL_SIGNALS ; 1     ; Signed Integer                                                               ;
+; WIDTH                  ; 16    ; Signed Integer                                                               ;
++------------------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                          ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                       ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                       ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                ;
+; WIDTHAD_A                          ; 16                   ; Signed Integer                                                ;
+; NUMWORDS_A                         ; 65536                ; Signed Integer                                                ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_B                            ; 1                    ; Untyped                                                       ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                       ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                       ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                       ;
+; CBXI_PARAMETER                     ; altsyncram_hbg1      ; Untyped                                                       ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_plane:dp|data_plane_rx:dp_rx|Register:data_rx_reg ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; WIDTH          ; 16    ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                         ;
++-------------------------------------------+------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                        ;
++-------------------------------------------+------------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                            ;
+; Entity Instance                           ; data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                  ;
+;     -- WIDTH_A                            ; 16                                                                           ;
+;     -- NUMWORDS_A                         ; 65536                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                 ;
+;     -- WIDTH_B                            ; 1                                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                    ;
+; Entity Instance                           ; data_plane:dp|data_plane_rx:dp_rx|RAM:RAM_rx|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                  ;
+;     -- WIDTH_A                            ; 16                                                                           ;
+;     -- NUMWORDS_A                         ; 65536                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                 ;
+;     -- WIDTH_B                            ; 1                                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                    ;
++-------------------------------------------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_plane:dp|data_plane_rx:dp_rx|ALU:sp_decrement" ;
++----------------+-------+----------+--------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                    ;
++----------------+-------+----------+--------------------------------------------+
+; src_b[15..1]   ; Input ; Info     ; Stuck at GND                               ;
+; src_b[0]       ; Input ; Info     ; Stuck at VCC                               ;
+; ALU_Control[1] ; Input ; Info     ; Stuck at GND                               ;
+; ALU_Control[0] ; Input ; Info     ; Stuck at VCC                               ;
++----------------+-------+----------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_plane:dp|data_plane_rx:dp_rx|ALU:sp_increment" ;
++--------------+-------+----------+----------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                      ;
++--------------+-------+----------+----------------------------------------------+
+; src_b[15..1] ; Input ; Info     ; Stuck at GND                                 ;
+; src_b[0]     ; Input ; Info     ; Stuck at VCC                                 ;
+; ALU_Control  ; Input ; Info     ; Stuck at GND                                 ;
++--------------+-------+----------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_plane:dp|data_plane_rx:dp_rx|Multiplexer:sp_rx_mux" ;
++---------+-------+----------+--------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                ;
++---------+-------+----------+--------------------------------------------------------+
+; data[3] ; Input ; Info     ; Stuck at GND                                           ;
++---------+-------+----------+--------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_plane:dp|data_plane_tx:dp_tx|ALU:sp_decrement" ;
++----------------+-------+----------+--------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                    ;
++----------------+-------+----------+--------------------------------------------+
+; src_b[15..1]   ; Input ; Info     ; Stuck at GND                               ;
+; src_b[0]       ; Input ; Info     ; Stuck at VCC                               ;
+; ALU_Control[1] ; Input ; Info     ; Stuck at GND                               ;
+; ALU_Control[0] ; Input ; Info     ; Stuck at VCC                               ;
++----------------+-------+----------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_plane:dp|data_plane_tx:dp_tx|ALU:sp_increment" ;
++--------------+-------+----------+----------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                      ;
++--------------+-------+----------+----------------------------------------------+
+; src_b[15..1] ; Input ; Info     ; Stuck at GND                                 ;
+; src_b[0]     ; Input ; Info     ; Stuck at VCC                                 ;
+; ALU_Control  ; Input ; Info     ; Stuck at GND                                 ;
++--------------+-------+----------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_plane:dp|data_plane_tx:dp_tx|Multiplexer:sp_tx_mux" ;
++---------+-------+----------+--------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                ;
++---------+-------+----------+--------------------------------------------------------+
+; data[3] ; Input ; Info     ; Stuck at GND                                           ;
++---------+-------+----------+--------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 216                         ;
+; cycloneiii_ff         ; 165                         ;
+;     CLR               ; 16                          ;
+;     CLR SCLR SLD      ; 32                          ;
+;     ENA               ; 19                          ;
+;     ENA SCLR          ; 3                           ;
+;     ENA SLD           ; 16                          ;
+;     SCLR              ; 4                           ;
+;     SCLR SLD          ; 17                          ;
+;     plain             ; 58                          ;
+; cycloneiii_lcell_comb ; 534                         ;
+;     arith             ; 165                         ;
+;         2 data inputs ; 88                          ;
+;         3 data inputs ; 77                          ;
+;     normal            ; 369                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 251                         ;
+; cycloneiii_ram_block  ; 256                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.10                        ;
+; Average LUT depth     ; 3.65                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Sat Feb 22 11:21:06 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off comms_processor -c comms_processor
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/data_plane.sv
+    Info (12023): Found entity 1: data_plane File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/register.sv
+    Info (12023): Found entity 1: Register File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Register.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/ram.v
+    Info (12023): Found entity 1: RAM File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/RAM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/multiplexer.sv
+    Info (12023): Found entity 1: Multiplexer File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Multiplexer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/data_plane_tx.sv
+    Info (12023): Found entity 1: data_plane_tx File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/data_plane_rx.sv
+    Info (12023): Found entity 1: data_plane_rx File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_rx.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/control_plane.sv
+    Info (12023): Found entity 1: Control_Plane File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Control_Plane.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /documents/university/year_3/project/solution/synthesis/src/alu.sv
+    Info (12023): Found entity 1: ALU File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comms_processor.sv
+    Info (12023): Found entity 1: comms_processor File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/comms_processor.sv Line: 1
+Info (12127): Elaborating entity "comms_processor" for the top level hierarchy
+Info (12128): Elaborating entity "Control_Plane" for hierarchy "Control_Plane:cp" File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/comms_processor.sv Line: 48
+Warning (10036): Verilog HDL or VHDL warning at Control_Plane.sv(157): object "gpp_rtr" assigned a value but never read File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Control_Plane.sv Line: 157
+Warning (10230): Verilog HDL assignment warning at Control_Plane.sv(201): truncated value with size 32 to match size of target (16) File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Control_Plane.sv Line: 201
+Warning (10230): Verilog HDL assignment warning at Control_Plane.sv(209): truncated value with size 32 to match size of target (2) File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Control_Plane.sv Line: 209
+Warning (10230): Verilog HDL assignment warning at Control_Plane.sv(353): truncated value with size 32 to match size of target (16) File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Control_Plane.sv Line: 353
+Warning (10230): Verilog HDL assignment warning at Control_Plane.sv(357): truncated value with size 32 to match size of target (16) File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Control_Plane.sv Line: 357
+Info (12128): Elaborating entity "data_plane" for hierarchy "data_plane:dp" File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/comms_processor.sv Line: 64
+Info (12128): Elaborating entity "data_plane_tx" for hierarchy "data_plane:dp|data_plane_tx:dp_tx" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at data_plane_tx.sv(190): truncated value with size 32 to match size of target (3) File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 190
+Warning (10030): Net "sp_tx_mux_data[3]" at data_plane_tx.sv(50) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 50
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|Multiplexer:sp_tx_mux" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 90
+Info (12128): Elaborating entity "Register" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|Register:sp_tx_reg" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 93
+Info (12128): Elaborating entity "ALU" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|ALU:sp_increment" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 97
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|Multiplexer:RAM_tx_address_mux" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 104
+Info (12128): Elaborating entity "RAM" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_tx.sv Line: 107
+Info (12128): Elaborating entity "altsyncram" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/RAM.v Line: 86
+Info (12130): Elaborated megafunction instantiation "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/RAM.v Line: 86
+Info (12133): Instantiated megafunction "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component" with the following parameter: File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/RAM.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hbg1.tdf
+    Info (12023): Found entity 1: altsyncram_hbg1 File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/altsyncram_hbg1.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_hbg1" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rsa.tdf
+    Info (12023): Found entity 1: decode_rsa File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/decode_rsa.tdf Line: 23
+Info (12128): Elaborating entity "decode_rsa" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|decode_rsa:decode3" File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/altsyncram_hbg1.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_k8a.tdf
+    Info (12023): Found entity 1: decode_k8a File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/decode_k8a.tdf Line: 23
+Info (12128): Elaborating entity "decode_k8a" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|decode_k8a:rden_decode" File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/altsyncram_hbg1.tdf Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_qob.tdf
+    Info (12023): Found entity 1: mux_qob File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/mux_qob.tdf Line: 23
+Info (12128): Elaborating entity "mux_qob" for hierarchy "data_plane:dp|data_plane_tx:dp_tx|RAM:RAM_tx|altsyncram:altsyncram_component|altsyncram_hbg1:auto_generated|mux_qob:mux2" File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/db/altsyncram_hbg1.tdf Line: 46
+Info (12128): Elaborating entity "data_plane_rx" for hierarchy "data_plane:dp|data_plane_rx:dp_rx" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane.sv Line: 67
+Warning (10230): Verilog HDL assignment warning at data_plane_rx.sv(136): truncated value with size 32 to match size of target (3) File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_rx.sv Line: 136
+Warning (10030): Net "sp_rx_mux_data[3]" at data_plane_rx.sv(50) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/data_plane_rx.sv Line: 50
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "enable_rtr" File: D:/Documents/University/Year_3/Project/Solution/synthesis/comms_processor/comms_processor.sv Line: 10
+Info (21057): Implemented 1044 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 118 input pins
+    Info (21059): Implemented 98 output pins
+    Info (21061): Implemented 572 logic cells
+    Info (21064): Implemented 256 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4759 megabytes
+    Info: Processing ended: Sat Feb 22 11:21:18 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
+
+
