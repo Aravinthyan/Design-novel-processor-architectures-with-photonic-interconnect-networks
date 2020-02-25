@@ -1,0 +1,21 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "adder_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "src_a[0]",
+					"strict" : false
+				},
+				{
+					"name" : "src_b[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

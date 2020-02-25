@@ -1,0 +1,16 @@
+Fitter Status : Failed - Mon Feb 24 11:56:19 2020
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : data_plane_rx
+Top-level Entity Name : data_plane_rx
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 163 / 22,320 ( < 1 % )
+    Total combinational functions : 147 / 22,320 ( < 1 % )
+    Dedicated logic registers : 40 / 22,320 ( < 1 % )
+Total registers : 40
+Total pins : 68 / 154 ( 44 % )
+Total virtual pins : 0
+Total memory bits : 1,048,576 / 608,256 ( 172 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

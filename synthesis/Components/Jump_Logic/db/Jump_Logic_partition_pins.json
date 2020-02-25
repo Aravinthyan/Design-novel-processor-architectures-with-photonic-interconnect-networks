@@ -1,0 +1,65 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "jump_logic_out",
+					"strict" : false
+				},
+				{
+					"name" : "jump_greater_control",
+					"strict" : false
+				},
+				{
+					"name" : "sign_flag",
+					"strict" : false
+				},
+				{
+					"name" : "overflow_flag",
+					"strict" : false
+				},
+				{
+					"name" : "zero_flag",
+					"strict" : false
+				},
+				{
+					"name" : "jump_greater_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_less_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_less_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "carry_flag",
+					"strict" : false
+				},
+				{
+					"name" : "jump_below_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_below_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_above_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_above_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_zero_control",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

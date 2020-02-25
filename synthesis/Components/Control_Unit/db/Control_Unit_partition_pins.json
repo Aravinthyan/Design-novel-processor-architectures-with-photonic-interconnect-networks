@@ -1,0 +1,157 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pc_increment_control",
+					"strict" : false
+				},
+				{
+					"name" : "pc_control[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_control[1]",
+					"strict" : false
+				},
+				{
+					"name" : "general_register_write_enable",
+					"strict" : false
+				},
+				{
+					"name" : "stack_write_enable",
+					"strict" : false
+				},
+				{
+					"name" : "stack_control",
+					"strict" : false
+				},
+				{
+					"name" : "write_data_enable[0]",
+					"strict" : false
+				},
+				{
+					"name" : "write_data_enable[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_source_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_source_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_source_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_source_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_control[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_control[1]",
+					"strict" : false
+				},
+				{
+					"name" : "flags_write_enable",
+					"strict" : false
+				},
+				{
+					"name" : "jump_zero_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_below_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_below_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_above_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_above_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_greater_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_greater_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_less_control",
+					"strict" : false
+				},
+				{
+					"name" : "jump_less_equal_control",
+					"strict" : false
+				},
+				{
+					"name" : "memory_write_enable",
+					"strict" : false
+				},
+				{
+					"name" : "general_register_result_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "general_register_result_select[1]",
+					"strict" : false
+				},
+				{
+					"name" : "enable_rtr",
+					"strict" : false
+				},
+				{
+					"name" : "gpp_rtr_cp",
+					"strict" : false
+				},
+				{
+					"name" : "gpp_rtr_dp",
+					"strict" : false
+				},
+				{
+					"name" : "gpp_trf_dp",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[3]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[5]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[4]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

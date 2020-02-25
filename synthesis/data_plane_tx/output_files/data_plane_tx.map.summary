@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Feb 22 08:55:09 2020
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : data_plane_tx
+Top-level Entity Name : data_plane_tx
+Family : Cyclone IV E
+Total logic elements : 153
+    Total combinational functions : 153
+    Dedicated logic registers : 56
+Total registers : 56
+Total pins : 101
+Total virtual pins : 0
+Total memory bits : 1,048,576
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

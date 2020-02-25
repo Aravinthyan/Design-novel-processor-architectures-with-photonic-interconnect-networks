@@ -1,0 +1,90 @@
+vlib wokr
+vlib work
+vlog data_plane.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:13:51 on Feb 12,2020
+# vlog -reportprogress 300 data_plane.sv 
+# -- Compiling module ALU
+# -- Compiling module multiplexer
+# -- Compiling module register
+# -- Compiling module RAM
+# -- Compiling module data_plane_tx
+# ** Warning: ** while parsing file included at data_plane.sv(2)
+# ** while parsing file included at ../data_plane_rx/data_plane_rx.sv(1)
+# ** at ../ALU.sv(1): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# ** Warning: ** while parsing file included at data_plane.sv(2)
+# ** while parsing file included at ../data_plane_rx/data_plane_rx.sv(2)
+# ** at ../multiplexer.sv(1): (vlog-2275) 'multiplexer' already exists and will be overwritten.
+# -- Compiling module multiplexer
+# ** Warning: ** while parsing file included at data_plane.sv(2)
+# ** while parsing file included at ../data_plane_rx/data_plane_rx.sv(3)
+# ** at ../register.sv(1): (vlog-2275) 'register' already exists and will be overwritten.
+# -- Compiling module register
+# ** Warning: ** while parsing file included at data_plane.sv(2)
+# ** while parsing file included at ../data_plane_rx/data_plane_rx.sv(4)
+# ** at ../RAM.sv(1): (vlog-2275) 'RAM' already exists and will be overwritten.
+# -- Compiling module RAM
+# -- Compiling module data_plane_rx
+# -- Compiling module data_plane
+# 
+# Top level modules:
+# 	data_plane
+# End time: 16:13:52 on Feb 12,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 4
+vlog data_plane_tb
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:09 on Feb 12,2020
+# vlog -reportprogress 300 data_plane_tb 
+# ** Error: (vlog-7) Failed to open design unit file "data_plane_tb" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 16:14:09 on Feb 12,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vlog failed.
+vlog data_plane_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:12 on Feb 12,2020
+# vlog -reportprogress 300 data_plane_tb.sv 
+# -- Compiling module data_plane_tb
+# ** Error (suppressible): data_plane_tb.sv(12): (vlog-2388) 'node_id' already declared in this scope (data_plane_tb).
+# End time: 16:14:12 on Feb 12,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vlog failed.
+vlog data_plane_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:14 on Feb 12,2020
+# vlog -reportprogress 300 data_plane_tb.sv 
+# -- Compiling module data_plane_tb
+# ** Error (suppressible): data_plane_tb.sv(12): (vlog-2388) 'node_id' already declared in this scope (data_plane_tb).
+# End time: 16:14:15 on Feb 12,2020, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# /home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vlog failed.
+vlog data_plane_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:15:02 on Feb 12,2020
+# vlog -reportprogress 300 data_plane_tb.sv 
+# -- Compiling module data_plane_tb
+# 
+# Top level modules:
+# 	data_plane_tb
+# End time: 16:15:03 on Feb 12,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim data_plane_tb
+# vsim data_plane_tb 
+# Start time: 16:15:08 on Feb 12,2020
+# Loading sv_std.std
+# Loading work.data_plane_tb
+# Loading work.data_plane
+# Loading work.data_plane_tx
+# Loading work.multiplexer
+# Loading work.register
+# Loading work.ALU
+# Loading work.RAM
+# Loading work.data_plane_rx
+# ** Fatal: (vsim-3365) data_plane_tb.sv(18): Too many port connections. Expected 14, found 15.
+#    Time: 0 ps  Iteration: 0  Instance: /data_plane_tb/dut File: data_plane.sv
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 16:15:08 on Feb 12,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+exit

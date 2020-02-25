@@ -1,0 +1,102 @@
+vlog computer.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:39:09 on Feb 13,2020
+# vlog -reportprogress 300 computer.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_advanced
+# -- Compiling module multiplexer
+# -- Compiling module register
+# -- Compiling module general_purpose_register_file
+# -- Compiling module flags_register
+# -- Compiling module jump_logic
+# -- Compiling module datapath
+# -- Compiling module control_unit
+# -- Compiling module gpp
+# ** Error: computer.sv(2): Cannot open `include file "../../../../Communications_Processor/Software/comms_processor.sv".
+# -- Compiling module instruction_memory
+# -- Compiling module data_memory
+# -- Compiling module computer
+# End time: 08:39:09 on Feb 13,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/sreethyan/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vlog failed.
+vlog computer.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:40:31 on Feb 13,2020
+# vlog -reportprogress 300 computer.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_advanced
+# -- Compiling module multiplexer
+# -- Compiling module register
+# -- Compiling module general_purpose_register_file
+# -- Compiling module flags_register
+# -- Compiling module jump_logic
+# -- Compiling module datapath
+# -- Compiling module control_unit
+# -- Compiling module gpp
+# -- Compiling module control_plane
+# ** Warning: ** while parsing file included at computer.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/comms_processor.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/data_plane.sv(1)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_tx/data_plane_tx.sv(1)
+# ** at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_tx/../ALU.sv(1): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# ** Warning: ** while parsing file included at computer.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/comms_processor.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/data_plane.sv(1)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_tx/data_plane_tx.sv(2)
+# ** at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_tx/../multiplexer.sv(1): (vlog-2275) 'multiplexer' already exists and will be overwritten.
+# -- Compiling module multiplexer
+# ** Warning: ** while parsing file included at computer.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/comms_processor.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/data_plane.sv(1)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_tx/data_plane_tx.sv(3)
+# ** at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_tx/../register.sv(1): (vlog-2275) 'register' already exists and will be overwritten.
+# -- Compiling module register
+# -- Compiling module RAM
+# -- Compiling module data_plane_tx
+# ** Warning: ** while parsing file included at computer.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/comms_processor.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/data_plane.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/data_plane_rx.sv(1)
+# ** at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/../ALU.sv(1): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# ** Warning: ** while parsing file included at computer.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/comms_processor.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/data_plane.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/data_plane_rx.sv(2)
+# ** at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/../multiplexer.sv(1): (vlog-2275) 'multiplexer' already exists and will be overwritten.
+# -- Compiling module multiplexer
+# ** Warning: ** while parsing file included at computer.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/comms_processor.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/data_plane.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/data_plane_rx.sv(3)
+# ** at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/../register.sv(1): (vlog-2275) 'register' already exists and will be overwritten.
+# -- Compiling module register
+# ** Warning: ** while parsing file included at computer.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/comms_processor.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/data_plane.sv(2)
+# ** while parsing file included at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/data_plane_rx.sv(4)
+# ** at ../../../Communications_Processor/Software/comms_processor/../data_plane/../data_plane_rx/../RAM.sv(1): (vlog-2275) 'RAM' already exists and will be overwritten.
+# -- Compiling module RAM
+# -- Compiling module data_plane_rx
+# -- Compiling module data_plane
+# -- Compiling module comms_processor
+# -- Compiling module instruction_memory
+# -- Compiling module data_memory
+# -- Compiling module computer
+# 
+# Top level modules:
+# 	computer
+# End time: 08:40:32 on Feb 13,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 7
+vlog computer_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:40:54 on Feb 13,2020
+# vlog -reportprogress 300 computer_tb.sv 
+# -- Compiling module computer_tb
+# 
+# Top level modules:
+# 	computer_tb
+# End time: 08:40:54 on Feb 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+exit

@@ -1,0 +1,16 @@
+|General_Purpose_Register_File
+clk => registers[0][0].CLK
+clk => registers[1][0].CLK
+general_register_write_enable => registers.OUTPUTSELECT
+general_register_write_enable => registers[1][0].ENA
+stack_write_enable => registers.OUTPUTSELECT
+address_1[0] => Decoder0.IN0
+address_2[0] => Decoder1.IN0
+address_3[0] => Decoder2.IN0
+general_register_write_data[0] => registers.DATAB
+general_register_write_data[0] => registers.DATAB
+stack_register_write_data[0] => registers.DATAB
+read_data_1[0] <= read_data_1.DB_MAX_OUTPUT_PORT_TYPE
+read_data_2[0] <= read_data_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
