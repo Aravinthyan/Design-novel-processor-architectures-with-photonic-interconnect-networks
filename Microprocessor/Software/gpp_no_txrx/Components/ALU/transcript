@@ -1,0 +1,60 @@
+vlog work.ALU_tb_2
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 06:59:42 on Nov 01,2019
+# vlog -reportprogress 300 work.ALU_tb_2 
+# ** Error: (vlog-7) Failed to open design unit file "work.ALU_tb_2" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 06:59:42 on Nov 01,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# /home/sreethyan/intelFPGA_lite/18.1/modelsim_ase/linuxaloem/vlog failed.
+vlog ALU_tb_2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 06:59:50 on Nov 01,2019
+# vlog -reportprogress 300 ALU_tb_2.sv 
+# -- Compiling module ALU_tb_2
+# 
+# Top level modules:
+# 	ALU_tb_2
+# End time: 06:59:50 on Nov 01,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.ALU_tb_2
+# vsim work.ALU_tb_2 
+# Start time: 06:59:55 on Nov 01,2019
+# Loading sv_std.std
+# Loading work.ALU_tb_2
+# Loading work.ALU
+add wave -position insertpoint  \
+sim:/ALU_tb_2/clk \
+sim:/ALU_tb_2/src_a \
+sim:/ALU_tb_2/src_b \
+sim:/ALU_tb_2/ALU_Control \
+sim:/ALU_tb_2/ALU_out \
+sim:/ALU_tb_2/zero
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+exit
+# End time: 07:01:59 on Nov 01,2019, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 1

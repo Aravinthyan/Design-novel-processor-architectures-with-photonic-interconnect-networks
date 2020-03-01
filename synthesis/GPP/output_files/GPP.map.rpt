@@ -1,5 +1,5 @@
 Analysis & Synthesis report for GPP
-Fri Feb 21 14:40:07 2020
+Tue Feb 25 12:29:46 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,11 +13,11 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Multiplexer:branch_multiplexer
- 11. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Multiplexer:pc_control_multiplexer
- 12. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Register:pc_register
+  8. Logic Cells Representing Combinational Loops
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Multiplexer:branch_multiplexer
+ 12. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Multiplexer:pc_control_multiplexer
  13. Parameter Settings for User Entity Instance: Datapath:datapath_processor|ALU:pc_adder
  14. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Multiplexer:pc_increment_multiplexer
  15. Parameter Settings for User Entity Instance: Datapath:datapath_processor|ALU:pc_increment_adder
@@ -30,19 +30,20 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  22. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer
  23. Parameter Settings for User Entity Instance: Datapath:datapath_processor|ALU_advanced:ALU_0
  24. Parameter Settings for User Entity Instance: Datapath:datapath_processor|Multiplexer:general_register_result_select_multiplexer
- 25. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer"
- 26. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:ALU_source_1_multiplexer"
- 27. Port Connectivity Checks: "Datapath:datapath_processor|ALU:return_address_adder"
- 28. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:WD_control_multiplexer"
- 29. Port Connectivity Checks: "Datapath:datapath_processor|ALU:stack_access_subber"
- 30. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:stack_control_multiplexer"
- 31. Port Connectivity Checks: "Datapath:datapath_processor|ALU:pc_increment_adder"
- 32. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:pc_increment_multiplexer"
- 33. Port Connectivity Checks: "Datapath:datapath_processor|ALU:pc_adder"
- 34. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:pc_control_multiplexer"
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
+ 25. Port Connectivity Checks: "Control_Unit:cu_processor"
+ 26. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer"
+ 27. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:ALU_source_1_multiplexer"
+ 28. Port Connectivity Checks: "Datapath:datapath_processor|ALU:return_address_adder"
+ 29. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:WD_control_multiplexer"
+ 30. Port Connectivity Checks: "Datapath:datapath_processor|ALU:stack_access_subber"
+ 31. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:stack_control_multiplexer"
+ 32. Port Connectivity Checks: "Datapath:datapath_processor|ALU:pc_increment_adder"
+ 33. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:pc_increment_multiplexer"
+ 34. Port Connectivity Checks: "Datapath:datapath_processor|ALU:pc_adder"
+ 35. Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:pc_control_multiplexer"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
 
 
 
@@ -69,16 +70,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 21 14:40:07 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 25 12:29:46 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; GPP                                         ;
 ; Top-level Entity Name              ; GPP                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,521                                       ;
-;     Total combinational functions  ; 1,041                                       ;
-;     Dedicated logic registers      ; 532                                         ;
-; Total registers                    ; 532                                         ;
-; Total pins                         ; 153                                         ;
+; Total logic elements               ; 1,528                                       ;
+;     Total combinational functions  ; 1,048                                       ;
+;     Dedicated logic registers      ; 516                                         ;
+; Total registers                    ; 516                                         ;
+; Total pins                         ; 104                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -185,7 +186,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -194,7 +195,6 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                   ; Library ;
 +-----------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
-; ../src/Register.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/Register.sv                      ;         ;
 ; ../src/Multiplexer.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/Multiplexer.sv                   ;         ;
 ; ../src/Jump_Logic.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/Jump_Logic.sv                    ;         ;
 ; ../src/General_Purpose_Register_File.sv ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/src/General_Purpose_Register_File.sv ;         ;
@@ -212,30 +212,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,521     ;
+; Estimated Total logic elements              ; 1,528     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1041      ;
+; Total combinational functions               ; 1048      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 849       ;
-;     -- 3 input functions                    ; 129       ;
-;     -- <=2 input functions                  ; 63        ;
+;     -- 4 input functions                    ; 840       ;
+;     -- 3 input functions                    ; 158       ;
+;     -- <=2 input functions                  ; 50        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 950       ;
-;     -- arithmetic mode                      ; 91        ;
+;     -- normal mode                          ; 969       ;
+;     -- arithmetic mode                      ; 79        ;
 ;                                             ;           ;
-; Total registers                             ; 532       ;
-;     -- Dedicated logic registers            ; 532       ;
+; Total registers                             ; 516       ;
+;     -- Dedicated logic registers            ; 516       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 153       ;
+; I/O pins                                    ; 104       ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 532       ;
-; Total fan-out                               ; 5739      ;
-; Average fan-out                             ; 3.05      ;
+; Maximum fan-out                             ; 516       ;
+; Total fan-out                               ; 5635      ;
+; Average fan-out                             ; 3.18      ;
 +---------------------------------------------+-----------+
 
 
@@ -244,24 +244,66 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node                                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name                   ; Library Name ;
 +----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-------------------------------+--------------+
-; |GPP                                                           ; 1041 (0)            ; 532 (0)                   ; 0           ; 0            ; 0       ; 0         ; 153  ; 0            ; |GPP                                                                                    ; GPP                           ; work         ;
-;    |Control_Unit:cu_processor|                                 ; 37 (37)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Control_Unit:cu_processor                                                          ; Control_Unit                  ; work         ;
-;    |Datapath:datapath_processor|                               ; 1004 (3)            ; 532 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor                                                        ; Datapath                      ; work         ;
+; |GPP                                                           ; 1048 (0)            ; 516 (0)                   ; 0           ; 0            ; 0       ; 0         ; 104  ; 0            ; |GPP                                                                                    ; GPP                           ; work         ;
+;    |Control_Unit:cu_processor|                                 ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Control_Unit:cu_processor                                                          ; Control_Unit                  ; work         ;
+;    |Datapath:datapath_processor|                               ; 1018 (3)            ; 516 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor                                                        ; Datapath                      ; work         ;
 ;       |ALU:pc_adder|                                           ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU:pc_adder                                           ; ALU                           ; work         ;
-;       |ALU:pc_increment_adder|                                 ; 50 (50)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU:pc_increment_adder                                 ; ALU                           ; work         ;
+;       |ALU:pc_increment_adder|                                 ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU:pc_increment_adder                                 ; ALU                           ; work         ;
 ;       |ALU:return_address_adder|                               ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU:return_address_adder                               ; ALU                           ; work         ;
-;       |ALU:stack_access_subber|                                ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU:stack_access_subber                                ; ALU                           ; work         ;
-;       |ALU_advanced:ALU_0|                                     ; 74 (74)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU_advanced:ALU_0                                     ; ALU_advanced                  ; work         ;
+;       |ALU:stack_access_subber|                                ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU:stack_access_subber                                ; ALU                           ; work         ;
+;       |ALU_advanced:ALU_0|                                     ; 77 (77)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|ALU_advanced:ALU_0                                     ; ALU_advanced                  ; work         ;
 ;       |Flags_Register:flag_reg|                                ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Flags_Register:flag_reg                                ; Flags_Register                ; work         ;
 ;       |General_Purpose_Register_File:register_file_0|          ; 393 (393)           ; 512 (512)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0          ; General_Purpose_Register_File ; work         ;
 ;       |Jump_Logic:jump_logic_0|                                ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Jump_Logic:jump_logic_0                                ; Jump_Logic                    ; work         ;
-;       |Multiplexer:ALU_source_1_multiplexer|                   ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:ALU_source_1_multiplexer                   ; Multiplexer                   ; work         ;
-;       |Multiplexer:ALU_source_2_multiplexer|                   ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer                   ; Multiplexer                   ; work         ;
-;       |Multiplexer:WD_control_multiplexer|                     ; 354 (354)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:WD_control_multiplexer                     ; Multiplexer                   ; work         ;
+;       |Multiplexer:ALU_source_1_multiplexer|                   ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:ALU_source_1_multiplexer                   ; Multiplexer                   ; work         ;
+;       |Multiplexer:ALU_source_2_multiplexer|                   ; 31 (31)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer                   ; Multiplexer                   ; work         ;
+;       |Multiplexer:WD_control_multiplexer|                     ; 367 (367)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:WD_control_multiplexer                     ; Multiplexer                   ; work         ;
 ;       |Multiplexer:general_register_result_select_multiplexer| ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:general_register_result_select_multiplexer ; Multiplexer                   ; work         ;
-;       |Register:pc_register|                                   ; 2 (2)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Register:pc_register                                   ; Register                      ; work         ;
+;       |Multiplexer:pc_control_multiplexer|                     ; 35 (35)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |GPP|Datapath:datapath_processor|Multiplexer:pc_control_multiplexer                     ; Multiplexer                   ; work         ;
 +----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                                 ;
++-------------------------------------------------------------------------+----+
+; Logic Cell Name                                                         ;    ;
++-------------------------------------------------------------------------+----+
+; Datapath:datapath_processor|Multiplexer:pc_control_multiplexer|Mux15~0  ;    ;
+; rtl~43                                                                  ;    ;
+; rtl~14                                                                  ;    ;
+; rtl~15                                                                  ;    ;
+; rtl~41                                                                  ;    ;
+; rtl~13                                                                  ;    ;
+; rtl~39                                                                  ;    ;
+; rtl~12                                                                  ;    ;
+; rtl~37                                                                  ;    ;
+; rtl~11                                                                  ;    ;
+; rtl~35                                                                  ;    ;
+; rtl~10                                                                  ;    ;
+; rtl~33                                                                  ;    ;
+; rtl~9                                                                   ;    ;
+; rtl~31                                                                  ;    ;
+; rtl~8                                                                   ;    ;
+; rtl~29                                                                  ;    ;
+; rtl~7                                                                   ;    ;
+; rtl~27                                                                  ;    ;
+; rtl~6                                                                   ;    ;
+; rtl~25                                                                  ;    ;
+; rtl~5                                                                   ;    ;
+; rtl~23                                                                  ;    ;
+; rtl~4                                                                   ;    ;
+; rtl~21                                                                  ;    ;
+; rtl~3                                                                   ;    ;
+; rtl~19                                                                  ;    ;
+; rtl~2                                                                   ;    ;
+; rtl~17                                                                  ;    ;
+; rtl~1                                                                   ;    ;
+; Datapath:datapath_processor|Multiplexer:pc_control_multiplexer|Mux0~0   ;    ;
+; Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer|Mux0~0 ;    ;
+; Number of logic cells representing combinational loops                  ; 32 ;
++-------------------------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -269,29 +311,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 532   ;
+; Total registers                              ; 516   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 516   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |GPP|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][0] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |GPP|Datapath:datapath_processor|Register:pc_register|q[0]                                     ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|Multiplexer:general_register_result_select_multiplexer|Mux0   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|ALU_advanced:ALU_0|Mux1                                       ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer|Mux1                     ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|Mux7            ;
-; 35:1               ; 16 bits   ; 368 LEs       ; 352 LEs              ; 16 LEs                 ; No         ; |GPP|Datapath:datapath_processor|Multiplexer:WD_control_multiplexer|Mux10                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |GPP|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][14] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|Multiplexer:general_register_result_select_multiplexer|Mux4    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|ALU_advanced:ALU_0|Mux14                                       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer|Mux2                      ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |GPP|Datapath:datapath_processor|Multiplexer:pc_control_multiplexer|Mux14                       ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |GPP|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|Mux14            ;
+; 35:1               ; 16 bits   ; 368 LEs       ; 352 LEs              ; 16 LEs                 ; No         ; |GPP|Datapath:datapath_processor|Multiplexer:WD_control_multiplexer|Mux1                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -313,16 +355,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; NUM_OF_CONTROL_SIGNALS ; 2     ; Signed Integer                                                             ;
 ; WIDTH                  ; 16    ; Signed Integer                                                             ;
 +------------------------+-------+----------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Datapath:datapath_processor|Register:pc_register ;
-+----------------+-------+----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                 ;
-+----------------+-------+----------------------------------------------------------------------+
-; WIDTH          ; 16    ; Signed Integer                                                       ;
-+----------------+-------+----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -374,7 +406,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name         ; Value ; Type                                                                          ;
 +------------------------+-------+-------------------------------------------------------------------------------+
 ; NUM_OF_CONTROL_SIGNALS ; 1     ; Signed Integer                                                                ;
-; WIDTH                  ; 16    ; Signed Integer                                                                ;
+; WIDTH                  ; 4     ; Signed Integer                                                                ;
 +------------------------+-------+-------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -384,7 +416,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                                    ;
 +----------------+-------+-------------------------------------------------------------------------+
-; WIDTH          ; 16    ; Signed Integer                                                          ;
+; WIDTH          ; 4     ; Signed Integer                                                          ;
 +----------------+-------+-------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -453,6 +485,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control_Unit:cu_processor"                                                                ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; enable_rtr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; gpp_rtr_cp ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; gpp_rtr_dp ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; gpp_trf_dp ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:ALU_source_2_multiplexer" ;
 +----------------+-------+----------+----------------------------------------------------------+
@@ -466,13 +510,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:ALU_source_1_multiplexer" ;
-+----------------+-------+----------+----------------------------------------------------------+
-; Port           ; Type  ; Severity ; Details                                                  ;
-+----------------+-------+----------+----------------------------------------------------------+
-; data[3]        ; Input ; Info     ; Stuck at GND                                             ;
-; data[2][15..1] ; Input ; Info     ; Stuck at GND                                             ;
-; data[1][15..1] ; Input ; Info     ; Stuck at GND                                             ;
-+----------------+-------+----------+----------------------------------------------------------+
++------------+-------+----------+--------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                      ;
++------------+-------+----------+--------------------------------------------------------------+
+; data[3..1] ; Input ; Info     ; Stuck at GND                                                 ;
++------------+-------+----------+--------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -488,32 +530,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +--------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:WD_control_multiplexer" ;
-+---------+-------+----------+---------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                       ;
-+---------+-------+----------+---------------------------------------------------------------+
-; data[3] ; Input ; Info     ; Stuck at GND                                                  ;
-+---------+-------+----------+---------------------------------------------------------------+
++------------+-------+----------+------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                    ;
++------------+-------+----------+------------------------------------------------------------+
+; data[3..2] ; Input ; Info     ; Stuck at GND                                               ;
++------------+-------+----------+------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Datapath:datapath_processor|ALU:stack_access_subber" ;
-+----------------+-------+----------+---------------------------------------------+
-; Port           ; Type  ; Severity ; Details                                     ;
-+----------------+-------+----------+---------------------------------------------+
-; ALU_Control[1] ; Input ; Info     ; Stuck at GND                                ;
-; ALU_Control[0] ; Input ; Info     ; Stuck at VCC                                ;
-+----------------+-------+----------+---------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:datapath_processor|ALU:stack_access_subber"                                                                                                                                       ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; src_a          ; Input  ; Warning  ; Input port expression (5 bits) is wider than the input port (4 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALU_Control[1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; ALU_Control[0] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
+; ALU_out        ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Datapath:datapath_processor|Multiplexer:stack_control_multiplexer" ;
-+----------------+-------+----------+-----------------------------------------------------------+
-; Port           ; Type  ; Severity ; Details                                                   ;
-+----------------+-------+----------+-----------------------------------------------------------+
-; data[1][15..1] ; Input ; Info     ; Stuck at GND                                              ;
-; data[1][0]     ; Input ; Info     ; Stuck at VCC                                              ;
-; data[0]        ; Input ; Info     ; Stuck at GND                                              ;
-+----------------+-------+----------+-----------------------------------------------------------+
++---------------+-------+----------+------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                    ;
++---------------+-------+----------+------------------------------------------------------------+
+; data[1][3..1] ; Input ; Info     ; Stuck at GND                                               ;
+; data[1][0]    ; Input ; Info     ; Stuck at VCC                                               ;
+; data[0]       ; Input ; Info     ; Stuck at GND                                               ;
++---------------+-------+----------+------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -563,24 +607,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 153                         ;
-; cycloneiii_ff         ; 532                         ;
-;     CLR               ; 16                          ;
+; boundary_port         ; 104                         ;
+; cycloneiii_ff         ; 516                         ;
 ;     ENA               ; 512                         ;
 ;     ENA CLR           ; 4                           ;
-; cycloneiii_lcell_comb ; 1041                        ;
-;     arith             ; 91                          ;
-;         2 data inputs ; 55                          ;
+; cycloneiii_lcell_comb ; 1049                        ;
+;     arith             ; 79                          ;
+;         2 data inputs ; 43                          ;
 ;         3 data inputs ; 36                          ;
-;     normal            ; 950                         ;
-;         0 data inputs ; 2                           ;
+;     normal            ; 970                         ;
+;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 93                          ;
-;         4 data inputs ; 849                         ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 122                         ;
+;         4 data inputs ; 840                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.30                       ;
-; Average LUT depth     ; 10.99                       ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 8.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -589,7 +632,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -599,7 +642,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Feb 21 14:39:55 2020
+    Info: Processing started: Tue Feb 25 12:29:28 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off GPP -c GPP
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -624,31 +667,35 @@ Info (12021): Found 1 design units, including 1 entities, in source file /docume
 Info (12021): Found 1 design units, including 1 entities, in source file gpp.sv
     Info (12023): Found entity 1: GPP File: D:/Documents/University/Year_3/Project/Solution/synthesis/GPP/GPP.sv Line: 1
 Info (12127): Elaborating entity "GPP" for the top level hierarchy
-Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:datapath_processor" File: D:/Documents/University/Year_3/Project/Solution/synthesis/GPP/GPP.sv Line: 86
-Warning (10030): Net "pc_control_data_mux[3]" at Datapath.sv(65) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 65
-Warning (10030): Net "WD_control_data_mux[3]" at Datapath.sv(72) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 72
-Warning (10030): Net "ALU_source_2_data_mux[3]" at Datapath.sv(73) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 73
-Warning (10030): Net "ALU_source_1_data_mux[3]" at Datapath.sv(86) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 86
-Info (12128): Elaborating entity "Multiplexer" for hierarchy "Datapath:datapath_processor|Multiplexer:branch_multiplexer" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 130
-Info (12128): Elaborating entity "Multiplexer" for hierarchy "Datapath:datapath_processor|Multiplexer:pc_control_multiplexer" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 133
-Info (12128): Elaborating entity "Register" for hierarchy "Datapath:datapath_processor|Register:pc_register" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 136
-Info (12128): Elaborating entity "ALU" for hierarchy "Datapath:datapath_processor|ALU:pc_adder" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 139
-Info (12128): Elaborating entity "General_Purpose_Register_File" for hierarchy "Datapath:datapath_processor|General_Purpose_Register_File:register_file_0" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 151
-Info (12128): Elaborating entity "ALU_advanced" for hierarchy "Datapath:datapath_processor|ALU_advanced:ALU_0" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 172
-Info (12128): Elaborating entity "Flags_Register" for hierarchy "Datapath:datapath_processor|Flags_Register:flag_reg" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 175
-Info (12128): Elaborating entity "Jump_Logic" for hierarchy "Datapath:datapath_processor|Jump_Logic:jump_logic_0" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 178
-Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:cu_processor" File: D:/Documents/University/Year_3/Project/Solution/synthesis/GPP/GPP.sv Line: 114
+Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:datapath_processor" File: D:/Documents/University/Year_3/Project/Solution/synthesis/GPP/GPP.sv Line: 73
+Warning (10030): Net "pc_control_data_mux[3]" at Datapath.sv(56) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 56
+Warning (10030): Net "WD_control_data_mux[3]" at Datapath.sv(63) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 63
+Warning (10030): Net "ALU_source_2_data_mux[3]" at Datapath.sv(64) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 64
+Warning (10030): Net "ALU_source_1_data_mux[3]" at Datapath.sv(77) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 77
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "Datapath:datapath_processor|Multiplexer:branch_multiplexer" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 119
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "Datapath:datapath_processor|Multiplexer:pc_control_multiplexer" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 122
+Info (12128): Elaborating entity "ALU" for hierarchy "Datapath:datapath_processor|ALU:pc_adder" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 128
+Info (12128): Elaborating entity "General_Purpose_Register_File" for hierarchy "Datapath:datapath_processor|General_Purpose_Register_File:register_file_0" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 140
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "Datapath:datapath_processor|Multiplexer:stack_control_multiplexer" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 143
+Info (12128): Elaborating entity "ALU" for hierarchy "Datapath:datapath_processor|ALU:stack_access_subber" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 146
+Info (12128): Elaborating entity "ALU_advanced" for hierarchy "Datapath:datapath_processor|ALU_advanced:ALU_0" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 161
+Info (12128): Elaborating entity "Flags_Register" for hierarchy "Datapath:datapath_processor|Flags_Register:flag_reg" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 164
+Info (12128): Elaborating entity "Jump_Logic" for hierarchy "Datapath:datapath_processor|Jump_Logic:jump_logic_0" File: D:/Documents/University/Year_3/Project/Solution/synthesis/src/Datapath.sv Line: 167
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:cu_processor" File: D:/Documents/University/Year_3/Project/Solution/synthesis/GPP/GPP.sv Line: 101
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "address_rw[4]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/GPP/GPP.sv Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1691 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 68 input pins
-    Info (21059): Implemented 85 output pins
-    Info (21061): Implemented 1538 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4750 megabytes
-    Info: Processing ended: Fri Feb 21 14:40:07 2020
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:24
+Info (21057): Implemented 1649 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 50 input pins
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 1545 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4762 megabytes
+    Info: Processing ended: Tue Feb 25 12:29:46 2020
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:32
 
 

@@ -1,0 +1,45 @@
+|Instruction_Memory
+address_1[0] => ROM.RADDR
+address_1[1] => ROM.RADDR1
+address_1[2] => ROM.RADDR2
+address_1[3] => ROM.RADDR3
+address_1[4] => ROM.RADDR4
+address_2[0] => ROM.PORTBRADDR
+address_2[1] => ROM.PORTBRADDR1
+address_2[2] => ROM.PORTBRADDR2
+address_2[3] => ROM.PORTBRADDR3
+address_2[4] => ROM.PORTBRADDR4
+read_data_1[0] <= ROM.DATAOUT
+read_data_1[1] <= ROM.DATAOUT1
+read_data_1[2] <= ROM.DATAOUT2
+read_data_1[3] <= ROM.DATAOUT3
+read_data_1[4] <= ROM.DATAOUT4
+read_data_1[5] <= ROM.DATAOUT5
+read_data_1[6] <= ROM.DATAOUT6
+read_data_1[7] <= ROM.DATAOUT7
+read_data_1[8] <= ROM.DATAOUT8
+read_data_1[9] <= ROM.DATAOUT9
+read_data_1[10] <= ROM.DATAOUT10
+read_data_1[11] <= ROM.DATAOUT11
+read_data_1[12] <= ROM.DATAOUT12
+read_data_1[13] <= ROM.DATAOUT13
+read_data_1[14] <= ROM.DATAOUT14
+read_data_1[15] <= ROM.DATAOUT15
+read_data_2[0] <= ROM.PORTBDATAOUT
+read_data_2[1] <= ROM.PORTBDATAOUT1
+read_data_2[2] <= ROM.PORTBDATAOUT2
+read_data_2[3] <= ROM.PORTBDATAOUT3
+read_data_2[4] <= ROM.PORTBDATAOUT4
+read_data_2[5] <= ROM.PORTBDATAOUT5
+read_data_2[6] <= ROM.PORTBDATAOUT6
+read_data_2[7] <= ROM.PORTBDATAOUT7
+read_data_2[8] <= ROM.PORTBDATAOUT8
+read_data_2[9] <= ROM.PORTBDATAOUT9
+read_data_2[10] <= ROM.PORTBDATAOUT10
+read_data_2[11] <= ROM.PORTBDATAOUT11
+read_data_2[12] <= ROM.PORTBDATAOUT12
+read_data_2[13] <= ROM.PORTBDATAOUT13
+read_data_2[14] <= ROM.PORTBDATAOUT14
+read_data_2[15] <= ROM.PORTBDATAOUT15
+
+
