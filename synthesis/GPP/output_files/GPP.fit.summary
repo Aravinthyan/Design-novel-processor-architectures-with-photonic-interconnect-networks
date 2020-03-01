@@ -1,15 +1,15 @@
-Fitter Status : Failed - Fri Feb 21 14:40:11 2020
+Fitter Status : Successful - Tue Feb 25 12:30:15 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : GPP
 Top-level Entity Name : GPP
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 1,522 / 22,320 ( 7 % )
-    Total combinational functions : 1,042 / 22,320 ( 5 % )
-    Dedicated logic registers : 532 / 22,320 ( 2 % )
-Total registers : 532
-Total pins : 153 / 154 ( 99 % )
+Total logic elements : 1,109 / 22,320 ( 5 % )
+    Total combinational functions : 1,048 / 22,320 ( 5 % )
+    Dedicated logic registers : 516 / 22,320 ( 2 % )
+Total registers : 516
+Total pins : 104 / 154 ( 68 % )
 Total virtual pins : 0
 Total memory bits : 0 / 608,256 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )

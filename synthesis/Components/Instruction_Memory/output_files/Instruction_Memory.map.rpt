@@ -1,0 +1,847 @@
+Analysis & Synthesis report for Instruction_Memory
+Thu Feb 27 15:42:58 2020
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |Instruction_Memory
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Feb 27 15:42:58 2020       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; Instruction_Memory                          ;
+; Top-level Entity Name              ; Instruction_Memory                          ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 8                                           ;
+;     Total combinational functions  ; 8                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 42                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; Instruction_Memory ; Instruction_Memory ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; Instruction_Memory.sv            ; yes             ; User SystemVerilog HDL File  ; D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 8       ;
+;                                             ;         ;
+; Total combinational functions               ; 8       ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 4       ;
+;     -- 3 input functions                    ; 0       ;
+;     -- <=2 input functions                  ; 4       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 8       ;
+;     -- arithmetic mode                      ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 0       ;
+;     -- Dedicated logic registers            ; 0       ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 42      ;
+;                                             ;         ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; ROM~514 ;
+; Maximum fan-out                             ; 4       ;
+; Total fan-out                               ; 76      ;
+; Average fan-out                             ; 0.83    ;
++---------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name        ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
+; |Instruction_Memory        ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |Instruction_Memory ; Instruction_Memory ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++-----------------------------------------+--------------------------------------+
+; Register name                           ; Reason for Removal                   ;
++-----------------------------------------+--------------------------------------+
+; ROM~0                                   ; Stuck at GND due to stuck port clock ;
+; ROM~1                                   ; Stuck at GND due to stuck port clock ;
+; ROM~2                                   ; Stuck at GND due to stuck port clock ;
+; ROM~3                                   ; Stuck at GND due to stuck port clock ;
+; ROM~4                                   ; Stuck at GND due to stuck port clock ;
+; ROM~5                                   ; Stuck at GND due to stuck port clock ;
+; ROM~6                                   ; Stuck at GND due to stuck port clock ;
+; ROM~7                                   ; Stuck at GND due to stuck port clock ;
+; ROM~8                                   ; Stuck at GND due to stuck port clock ;
+; ROM~9                                   ; Stuck at GND due to stuck port clock ;
+; ROM~10                                  ; Stuck at GND due to stuck port clock ;
+; ROM~11                                  ; Stuck at GND due to stuck port clock ;
+; ROM~12                                  ; Stuck at GND due to stuck port clock ;
+; ROM~13                                  ; Stuck at GND due to stuck port clock ;
+; ROM~14                                  ; Stuck at GND due to stuck port clock ;
+; ROM~15                                  ; Stuck at GND due to stuck port clock ;
+; ROM~16                                  ; Stuck at GND due to stuck port clock ;
+; ROM~17                                  ; Stuck at GND due to stuck port clock ;
+; ROM~18                                  ; Stuck at GND due to stuck port clock ;
+; ROM~19                                  ; Stuck at GND due to stuck port clock ;
+; ROM~20                                  ; Stuck at GND due to stuck port clock ;
+; ROM~21                                  ; Stuck at GND due to stuck port clock ;
+; ROM~22                                  ; Stuck at GND due to stuck port clock ;
+; ROM~23                                  ; Stuck at GND due to stuck port clock ;
+; ROM~24                                  ; Stuck at GND due to stuck port clock ;
+; ROM~25                                  ; Stuck at GND due to stuck port clock ;
+; ROM~26                                  ; Stuck at GND due to stuck port clock ;
+; ROM~27                                  ; Stuck at GND due to stuck port clock ;
+; ROM~28                                  ; Stuck at GND due to stuck port clock ;
+; ROM~29                                  ; Stuck at GND due to stuck port clock ;
+; ROM~30                                  ; Stuck at GND due to stuck port clock ;
+; ROM~31                                  ; Stuck at GND due to stuck port clock ;
+; ROM~32                                  ; Stuck at GND due to stuck port clock ;
+; ROM~33                                  ; Stuck at GND due to stuck port clock ;
+; ROM~34                                  ; Stuck at GND due to stuck port clock ;
+; ROM~35                                  ; Stuck at GND due to stuck port clock ;
+; ROM~36                                  ; Stuck at GND due to stuck port clock ;
+; ROM~37                                  ; Stuck at GND due to stuck port clock ;
+; ROM~38                                  ; Stuck at GND due to stuck port clock ;
+; ROM~39                                  ; Stuck at GND due to stuck port clock ;
+; ROM~40                                  ; Stuck at GND due to stuck port clock ;
+; ROM~41                                  ; Stuck at GND due to stuck port clock ;
+; ROM~42                                  ; Stuck at GND due to stuck port clock ;
+; ROM~43                                  ; Stuck at GND due to stuck port clock ;
+; ROM~44                                  ; Stuck at GND due to stuck port clock ;
+; ROM~45                                  ; Stuck at GND due to stuck port clock ;
+; ROM~46                                  ; Stuck at GND due to stuck port clock ;
+; ROM~47                                  ; Stuck at GND due to stuck port clock ;
+; ROM~48                                  ; Stuck at GND due to stuck port clock ;
+; ROM~49                                  ; Stuck at GND due to stuck port clock ;
+; ROM~50                                  ; Stuck at GND due to stuck port clock ;
+; ROM~51                                  ; Stuck at GND due to stuck port clock ;
+; ROM~52                                  ; Stuck at GND due to stuck port clock ;
+; ROM~53                                  ; Stuck at GND due to stuck port clock ;
+; ROM~54                                  ; Stuck at GND due to stuck port clock ;
+; ROM~55                                  ; Stuck at GND due to stuck port clock ;
+; ROM~56                                  ; Stuck at GND due to stuck port clock ;
+; ROM~57                                  ; Stuck at GND due to stuck port clock ;
+; ROM~58                                  ; Stuck at GND due to stuck port clock ;
+; ROM~59                                  ; Stuck at GND due to stuck port clock ;
+; ROM~60                                  ; Stuck at GND due to stuck port clock ;
+; ROM~61                                  ; Stuck at GND due to stuck port clock ;
+; ROM~62                                  ; Stuck at GND due to stuck port clock ;
+; ROM~63                                  ; Stuck at GND due to stuck port clock ;
+; ROM~64                                  ; Stuck at GND due to stuck port clock ;
+; ROM~65                                  ; Stuck at GND due to stuck port clock ;
+; ROM~66                                  ; Stuck at GND due to stuck port clock ;
+; ROM~67                                  ; Stuck at GND due to stuck port clock ;
+; ROM~68                                  ; Stuck at GND due to stuck port clock ;
+; ROM~69                                  ; Stuck at GND due to stuck port clock ;
+; ROM~70                                  ; Stuck at GND due to stuck port clock ;
+; ROM~71                                  ; Stuck at GND due to stuck port clock ;
+; ROM~72                                  ; Stuck at GND due to stuck port clock ;
+; ROM~73                                  ; Stuck at GND due to stuck port clock ;
+; ROM~74                                  ; Stuck at GND due to stuck port clock ;
+; ROM~75                                  ; Stuck at GND due to stuck port clock ;
+; ROM~76                                  ; Stuck at GND due to stuck port clock ;
+; ROM~77                                  ; Stuck at GND due to stuck port clock ;
+; ROM~78                                  ; Stuck at GND due to stuck port clock ;
+; ROM~79                                  ; Stuck at GND due to stuck port clock ;
+; ROM~80                                  ; Stuck at GND due to stuck port clock ;
+; ROM~81                                  ; Stuck at GND due to stuck port clock ;
+; ROM~82                                  ; Stuck at GND due to stuck port clock ;
+; ROM~83                                  ; Stuck at GND due to stuck port clock ;
+; ROM~84                                  ; Stuck at GND due to stuck port clock ;
+; ROM~85                                  ; Stuck at GND due to stuck port clock ;
+; ROM~86                                  ; Stuck at GND due to stuck port clock ;
+; ROM~87                                  ; Stuck at GND due to stuck port clock ;
+; ROM~88                                  ; Stuck at GND due to stuck port clock ;
+; ROM~89                                  ; Stuck at GND due to stuck port clock ;
+; ROM~90                                  ; Stuck at GND due to stuck port clock ;
+; ROM~91                                  ; Stuck at GND due to stuck port clock ;
+; ROM~92                                  ; Stuck at GND due to stuck port clock ;
+; ROM~93                                  ; Stuck at GND due to stuck port clock ;
+; ROM~94                                  ; Stuck at GND due to stuck port clock ;
+; ROM~95                                  ; Stuck at GND due to stuck port clock ;
+; ROM~96                                  ; Stuck at GND due to stuck port clock ;
+; ROM~97                                  ; Stuck at GND due to stuck port clock ;
+; ROM~98                                  ; Stuck at GND due to stuck port clock ;
+; ROM~99                                  ; Stuck at GND due to stuck port clock ;
+; ROM~100                                 ; Stuck at GND due to stuck port clock ;
+; ROM~101                                 ; Stuck at GND due to stuck port clock ;
+; ROM~102                                 ; Stuck at GND due to stuck port clock ;
+; ROM~103                                 ; Stuck at GND due to stuck port clock ;
+; ROM~104                                 ; Stuck at GND due to stuck port clock ;
+; ROM~105                                 ; Stuck at GND due to stuck port clock ;
+; ROM~106                                 ; Stuck at GND due to stuck port clock ;
+; ROM~107                                 ; Stuck at GND due to stuck port clock ;
+; ROM~108                                 ; Stuck at GND due to stuck port clock ;
+; ROM~109                                 ; Stuck at GND due to stuck port clock ;
+; ROM~110                                 ; Stuck at GND due to stuck port clock ;
+; ROM~111                                 ; Stuck at GND due to stuck port clock ;
+; ROM~112                                 ; Stuck at GND due to stuck port clock ;
+; ROM~113                                 ; Stuck at GND due to stuck port clock ;
+; ROM~114                                 ; Stuck at GND due to stuck port clock ;
+; ROM~115                                 ; Stuck at GND due to stuck port clock ;
+; ROM~116                                 ; Stuck at GND due to stuck port clock ;
+; ROM~117                                 ; Stuck at GND due to stuck port clock ;
+; ROM~118                                 ; Stuck at GND due to stuck port clock ;
+; ROM~119                                 ; Stuck at GND due to stuck port clock ;
+; ROM~120                                 ; Stuck at GND due to stuck port clock ;
+; ROM~121                                 ; Stuck at GND due to stuck port clock ;
+; ROM~122                                 ; Stuck at GND due to stuck port clock ;
+; ROM~123                                 ; Stuck at GND due to stuck port clock ;
+; ROM~124                                 ; Stuck at GND due to stuck port clock ;
+; ROM~125                                 ; Stuck at GND due to stuck port clock ;
+; ROM~126                                 ; Stuck at GND due to stuck port clock ;
+; ROM~127                                 ; Stuck at GND due to stuck port clock ;
+; ROM~128                                 ; Stuck at GND due to stuck port clock ;
+; ROM~129                                 ; Stuck at GND due to stuck port clock ;
+; ROM~130                                 ; Stuck at GND due to stuck port clock ;
+; ROM~131                                 ; Stuck at GND due to stuck port clock ;
+; ROM~132                                 ; Stuck at GND due to stuck port clock ;
+; ROM~133                                 ; Stuck at GND due to stuck port clock ;
+; ROM~134                                 ; Stuck at GND due to stuck port clock ;
+; ROM~135                                 ; Stuck at GND due to stuck port clock ;
+; ROM~136                                 ; Stuck at GND due to stuck port clock ;
+; ROM~137                                 ; Stuck at GND due to stuck port clock ;
+; ROM~138                                 ; Stuck at GND due to stuck port clock ;
+; ROM~139                                 ; Stuck at GND due to stuck port clock ;
+; ROM~140                                 ; Stuck at GND due to stuck port clock ;
+; ROM~141                                 ; Stuck at GND due to stuck port clock ;
+; ROM~142                                 ; Stuck at GND due to stuck port clock ;
+; ROM~143                                 ; Stuck at GND due to stuck port clock ;
+; ROM~144                                 ; Stuck at GND due to stuck port clock ;
+; ROM~145                                 ; Stuck at GND due to stuck port clock ;
+; ROM~146                                 ; Stuck at GND due to stuck port clock ;
+; ROM~147                                 ; Stuck at GND due to stuck port clock ;
+; ROM~148                                 ; Stuck at GND due to stuck port clock ;
+; ROM~149                                 ; Stuck at GND due to stuck port clock ;
+; ROM~150                                 ; Stuck at GND due to stuck port clock ;
+; ROM~151                                 ; Stuck at GND due to stuck port clock ;
+; ROM~152                                 ; Stuck at GND due to stuck port clock ;
+; ROM~153                                 ; Stuck at GND due to stuck port clock ;
+; ROM~154                                 ; Stuck at GND due to stuck port clock ;
+; ROM~155                                 ; Stuck at GND due to stuck port clock ;
+; ROM~156                                 ; Stuck at GND due to stuck port clock ;
+; ROM~157                                 ; Stuck at GND due to stuck port clock ;
+; ROM~158                                 ; Stuck at GND due to stuck port clock ;
+; ROM~159                                 ; Stuck at GND due to stuck port clock ;
+; ROM~160                                 ; Stuck at GND due to stuck port clock ;
+; ROM~161                                 ; Stuck at GND due to stuck port clock ;
+; ROM~162                                 ; Stuck at GND due to stuck port clock ;
+; ROM~163                                 ; Stuck at GND due to stuck port clock ;
+; ROM~164                                 ; Stuck at GND due to stuck port clock ;
+; ROM~165                                 ; Stuck at GND due to stuck port clock ;
+; ROM~166                                 ; Stuck at GND due to stuck port clock ;
+; ROM~167                                 ; Stuck at GND due to stuck port clock ;
+; ROM~168                                 ; Stuck at GND due to stuck port clock ;
+; ROM~169                                 ; Stuck at GND due to stuck port clock ;
+; ROM~170                                 ; Stuck at GND due to stuck port clock ;
+; ROM~171                                 ; Stuck at GND due to stuck port clock ;
+; ROM~172                                 ; Stuck at GND due to stuck port clock ;
+; ROM~173                                 ; Stuck at GND due to stuck port clock ;
+; ROM~174                                 ; Stuck at GND due to stuck port clock ;
+; ROM~175                                 ; Stuck at GND due to stuck port clock ;
+; ROM~176                                 ; Stuck at GND due to stuck port clock ;
+; ROM~177                                 ; Stuck at GND due to stuck port clock ;
+; ROM~178                                 ; Stuck at GND due to stuck port clock ;
+; ROM~179                                 ; Stuck at GND due to stuck port clock ;
+; ROM~180                                 ; Stuck at GND due to stuck port clock ;
+; ROM~181                                 ; Stuck at GND due to stuck port clock ;
+; ROM~182                                 ; Stuck at GND due to stuck port clock ;
+; ROM~183                                 ; Stuck at GND due to stuck port clock ;
+; ROM~184                                 ; Stuck at GND due to stuck port clock ;
+; ROM~185                                 ; Stuck at GND due to stuck port clock ;
+; ROM~186                                 ; Stuck at GND due to stuck port clock ;
+; ROM~187                                 ; Stuck at GND due to stuck port clock ;
+; ROM~188                                 ; Stuck at GND due to stuck port clock ;
+; ROM~189                                 ; Stuck at GND due to stuck port clock ;
+; ROM~190                                 ; Stuck at GND due to stuck port clock ;
+; ROM~191                                 ; Stuck at GND due to stuck port clock ;
+; ROM~192                                 ; Stuck at GND due to stuck port clock ;
+; ROM~193                                 ; Stuck at GND due to stuck port clock ;
+; ROM~194                                 ; Stuck at GND due to stuck port clock ;
+; ROM~195                                 ; Stuck at GND due to stuck port clock ;
+; ROM~196                                 ; Stuck at GND due to stuck port clock ;
+; ROM~197                                 ; Stuck at GND due to stuck port clock ;
+; ROM~198                                 ; Stuck at GND due to stuck port clock ;
+; ROM~199                                 ; Stuck at GND due to stuck port clock ;
+; ROM~200                                 ; Stuck at GND due to stuck port clock ;
+; ROM~201                                 ; Stuck at GND due to stuck port clock ;
+; ROM~202                                 ; Stuck at GND due to stuck port clock ;
+; ROM~203                                 ; Stuck at GND due to stuck port clock ;
+; ROM~204                                 ; Stuck at GND due to stuck port clock ;
+; ROM~205                                 ; Stuck at GND due to stuck port clock ;
+; ROM~206                                 ; Stuck at GND due to stuck port clock ;
+; ROM~207                                 ; Stuck at GND due to stuck port clock ;
+; ROM~208                                 ; Stuck at GND due to stuck port clock ;
+; ROM~209                                 ; Stuck at GND due to stuck port clock ;
+; ROM~210                                 ; Stuck at GND due to stuck port clock ;
+; ROM~211                                 ; Stuck at GND due to stuck port clock ;
+; ROM~212                                 ; Stuck at GND due to stuck port clock ;
+; ROM~213                                 ; Stuck at GND due to stuck port clock ;
+; ROM~214                                 ; Stuck at GND due to stuck port clock ;
+; ROM~215                                 ; Stuck at GND due to stuck port clock ;
+; ROM~216                                 ; Stuck at GND due to stuck port clock ;
+; ROM~217                                 ; Stuck at GND due to stuck port clock ;
+; ROM~218                                 ; Stuck at GND due to stuck port clock ;
+; ROM~219                                 ; Stuck at GND due to stuck port clock ;
+; ROM~220                                 ; Stuck at GND due to stuck port clock ;
+; ROM~221                                 ; Stuck at GND due to stuck port clock ;
+; ROM~222                                 ; Stuck at GND due to stuck port clock ;
+; ROM~223                                 ; Stuck at GND due to stuck port clock ;
+; ROM~224                                 ; Stuck at GND due to stuck port clock ;
+; ROM~225                                 ; Stuck at GND due to stuck port clock ;
+; ROM~226                                 ; Stuck at GND due to stuck port clock ;
+; ROM~227                                 ; Stuck at GND due to stuck port clock ;
+; ROM~228                                 ; Stuck at GND due to stuck port clock ;
+; ROM~229                                 ; Stuck at GND due to stuck port clock ;
+; ROM~230                                 ; Stuck at GND due to stuck port clock ;
+; ROM~231                                 ; Stuck at GND due to stuck port clock ;
+; ROM~232                                 ; Stuck at GND due to stuck port clock ;
+; ROM~233                                 ; Stuck at GND due to stuck port clock ;
+; ROM~234                                 ; Stuck at GND due to stuck port clock ;
+; ROM~235                                 ; Stuck at GND due to stuck port clock ;
+; ROM~236                                 ; Stuck at GND due to stuck port clock ;
+; ROM~237                                 ; Stuck at GND due to stuck port clock ;
+; ROM~238                                 ; Stuck at GND due to stuck port clock ;
+; ROM~239                                 ; Stuck at GND due to stuck port clock ;
+; ROM~240                                 ; Stuck at GND due to stuck port clock ;
+; ROM~241                                 ; Stuck at GND due to stuck port clock ;
+; ROM~242                                 ; Stuck at GND due to stuck port clock ;
+; ROM~243                                 ; Stuck at GND due to stuck port clock ;
+; ROM~244                                 ; Stuck at GND due to stuck port clock ;
+; ROM~245                                 ; Stuck at GND due to stuck port clock ;
+; ROM~246                                 ; Stuck at GND due to stuck port clock ;
+; ROM~247                                 ; Stuck at GND due to stuck port clock ;
+; ROM~248                                 ; Stuck at GND due to stuck port clock ;
+; ROM~249                                 ; Stuck at GND due to stuck port clock ;
+; ROM~250                                 ; Stuck at GND due to stuck port clock ;
+; ROM~251                                 ; Stuck at GND due to stuck port clock ;
+; ROM~252                                 ; Stuck at GND due to stuck port clock ;
+; ROM~253                                 ; Stuck at GND due to stuck port clock ;
+; ROM~254                                 ; Stuck at GND due to stuck port clock ;
+; ROM~255                                 ; Stuck at GND due to stuck port clock ;
+; ROM~256                                 ; Stuck at GND due to stuck port clock ;
+; ROM~257                                 ; Stuck at GND due to stuck port clock ;
+; ROM~258                                 ; Stuck at GND due to stuck port clock ;
+; ROM~259                                 ; Stuck at GND due to stuck port clock ;
+; ROM~260                                 ; Stuck at GND due to stuck port clock ;
+; ROM~261                                 ; Stuck at GND due to stuck port clock ;
+; ROM~262                                 ; Stuck at GND due to stuck port clock ;
+; ROM~263                                 ; Stuck at GND due to stuck port clock ;
+; ROM~264                                 ; Stuck at GND due to stuck port clock ;
+; ROM~265                                 ; Stuck at GND due to stuck port clock ;
+; ROM~266                                 ; Stuck at GND due to stuck port clock ;
+; ROM~267                                 ; Stuck at GND due to stuck port clock ;
+; ROM~268                                 ; Stuck at GND due to stuck port clock ;
+; ROM~269                                 ; Stuck at GND due to stuck port clock ;
+; ROM~270                                 ; Stuck at GND due to stuck port clock ;
+; ROM~271                                 ; Stuck at GND due to stuck port clock ;
+; ROM~272                                 ; Stuck at GND due to stuck port clock ;
+; ROM~273                                 ; Stuck at GND due to stuck port clock ;
+; ROM~274                                 ; Stuck at GND due to stuck port clock ;
+; ROM~275                                 ; Stuck at GND due to stuck port clock ;
+; ROM~276                                 ; Stuck at GND due to stuck port clock ;
+; ROM~277                                 ; Stuck at GND due to stuck port clock ;
+; ROM~278                                 ; Stuck at GND due to stuck port clock ;
+; ROM~279                                 ; Stuck at GND due to stuck port clock ;
+; ROM~280                                 ; Stuck at GND due to stuck port clock ;
+; ROM~281                                 ; Stuck at GND due to stuck port clock ;
+; ROM~282                                 ; Stuck at GND due to stuck port clock ;
+; ROM~283                                 ; Stuck at GND due to stuck port clock ;
+; ROM~284                                 ; Stuck at GND due to stuck port clock ;
+; ROM~285                                 ; Stuck at GND due to stuck port clock ;
+; ROM~286                                 ; Stuck at GND due to stuck port clock ;
+; ROM~287                                 ; Stuck at GND due to stuck port clock ;
+; ROM~288                                 ; Stuck at GND due to stuck port clock ;
+; ROM~289                                 ; Stuck at GND due to stuck port clock ;
+; ROM~290                                 ; Stuck at GND due to stuck port clock ;
+; ROM~291                                 ; Stuck at GND due to stuck port clock ;
+; ROM~292                                 ; Stuck at GND due to stuck port clock ;
+; ROM~293                                 ; Stuck at GND due to stuck port clock ;
+; ROM~294                                 ; Stuck at GND due to stuck port clock ;
+; ROM~295                                 ; Stuck at GND due to stuck port clock ;
+; ROM~296                                 ; Stuck at GND due to stuck port clock ;
+; ROM~297                                 ; Stuck at GND due to stuck port clock ;
+; ROM~298                                 ; Stuck at GND due to stuck port clock ;
+; ROM~299                                 ; Stuck at GND due to stuck port clock ;
+; ROM~300                                 ; Stuck at GND due to stuck port clock ;
+; ROM~301                                 ; Stuck at GND due to stuck port clock ;
+; ROM~302                                 ; Stuck at GND due to stuck port clock ;
+; ROM~303                                 ; Stuck at GND due to stuck port clock ;
+; ROM~304                                 ; Stuck at GND due to stuck port clock ;
+; ROM~305                                 ; Stuck at GND due to stuck port clock ;
+; ROM~306                                 ; Stuck at GND due to stuck port clock ;
+; ROM~307                                 ; Stuck at GND due to stuck port clock ;
+; ROM~308                                 ; Stuck at GND due to stuck port clock ;
+; ROM~309                                 ; Stuck at GND due to stuck port clock ;
+; ROM~310                                 ; Stuck at GND due to stuck port clock ;
+; ROM~311                                 ; Stuck at GND due to stuck port clock ;
+; ROM~312                                 ; Stuck at GND due to stuck port clock ;
+; ROM~313                                 ; Stuck at GND due to stuck port clock ;
+; ROM~314                                 ; Stuck at GND due to stuck port clock ;
+; ROM~315                                 ; Stuck at GND due to stuck port clock ;
+; ROM~316                                 ; Stuck at GND due to stuck port clock ;
+; ROM~317                                 ; Stuck at GND due to stuck port clock ;
+; ROM~318                                 ; Stuck at GND due to stuck port clock ;
+; ROM~319                                 ; Stuck at GND due to stuck port clock ;
+; ROM~320                                 ; Stuck at GND due to stuck port clock ;
+; ROM~321                                 ; Stuck at GND due to stuck port clock ;
+; ROM~322                                 ; Stuck at GND due to stuck port clock ;
+; ROM~323                                 ; Stuck at GND due to stuck port clock ;
+; ROM~324                                 ; Stuck at GND due to stuck port clock ;
+; ROM~325                                 ; Stuck at GND due to stuck port clock ;
+; ROM~326                                 ; Stuck at GND due to stuck port clock ;
+; ROM~327                                 ; Stuck at GND due to stuck port clock ;
+; ROM~328                                 ; Stuck at GND due to stuck port clock ;
+; ROM~329                                 ; Stuck at GND due to stuck port clock ;
+; ROM~330                                 ; Stuck at GND due to stuck port clock ;
+; ROM~331                                 ; Stuck at GND due to stuck port clock ;
+; ROM~332                                 ; Stuck at GND due to stuck port clock ;
+; ROM~333                                 ; Stuck at GND due to stuck port clock ;
+; ROM~334                                 ; Stuck at GND due to stuck port clock ;
+; ROM~335                                 ; Stuck at GND due to stuck port clock ;
+; ROM~336                                 ; Stuck at GND due to stuck port clock ;
+; ROM~337                                 ; Stuck at GND due to stuck port clock ;
+; ROM~338                                 ; Stuck at GND due to stuck port clock ;
+; ROM~339                                 ; Stuck at GND due to stuck port clock ;
+; ROM~340                                 ; Stuck at GND due to stuck port clock ;
+; ROM~341                                 ; Stuck at GND due to stuck port clock ;
+; ROM~342                                 ; Stuck at GND due to stuck port clock ;
+; ROM~343                                 ; Stuck at GND due to stuck port clock ;
+; ROM~344                                 ; Stuck at GND due to stuck port clock ;
+; ROM~345                                 ; Stuck at GND due to stuck port clock ;
+; ROM~346                                 ; Stuck at GND due to stuck port clock ;
+; ROM~347                                 ; Stuck at GND due to stuck port clock ;
+; ROM~348                                 ; Stuck at GND due to stuck port clock ;
+; ROM~349                                 ; Stuck at GND due to stuck port clock ;
+; ROM~350                                 ; Stuck at GND due to stuck port clock ;
+; ROM~351                                 ; Stuck at GND due to stuck port clock ;
+; ROM~352                                 ; Stuck at GND due to stuck port clock ;
+; ROM~353                                 ; Stuck at GND due to stuck port clock ;
+; ROM~354                                 ; Stuck at GND due to stuck port clock ;
+; ROM~355                                 ; Stuck at GND due to stuck port clock ;
+; ROM~356                                 ; Stuck at GND due to stuck port clock ;
+; ROM~357                                 ; Stuck at GND due to stuck port clock ;
+; ROM~358                                 ; Stuck at GND due to stuck port clock ;
+; ROM~359                                 ; Stuck at GND due to stuck port clock ;
+; ROM~360                                 ; Stuck at GND due to stuck port clock ;
+; ROM~361                                 ; Stuck at GND due to stuck port clock ;
+; ROM~362                                 ; Stuck at GND due to stuck port clock ;
+; ROM~363                                 ; Stuck at GND due to stuck port clock ;
+; ROM~364                                 ; Stuck at GND due to stuck port clock ;
+; ROM~365                                 ; Stuck at GND due to stuck port clock ;
+; ROM~366                                 ; Stuck at GND due to stuck port clock ;
+; ROM~367                                 ; Stuck at GND due to stuck port clock ;
+; ROM~368                                 ; Stuck at GND due to stuck port clock ;
+; ROM~369                                 ; Stuck at GND due to stuck port clock ;
+; ROM~370                                 ; Stuck at GND due to stuck port clock ;
+; ROM~371                                 ; Stuck at GND due to stuck port clock ;
+; ROM~372                                 ; Stuck at GND due to stuck port clock ;
+; ROM~373                                 ; Stuck at GND due to stuck port clock ;
+; ROM~374                                 ; Stuck at GND due to stuck port clock ;
+; ROM~375                                 ; Stuck at GND due to stuck port clock ;
+; ROM~376                                 ; Stuck at GND due to stuck port clock ;
+; ROM~377                                 ; Stuck at GND due to stuck port clock ;
+; ROM~378                                 ; Stuck at GND due to stuck port clock ;
+; ROM~379                                 ; Stuck at GND due to stuck port clock ;
+; ROM~380                                 ; Stuck at GND due to stuck port clock ;
+; ROM~381                                 ; Stuck at GND due to stuck port clock ;
+; ROM~382                                 ; Stuck at GND due to stuck port clock ;
+; ROM~383                                 ; Stuck at GND due to stuck port clock ;
+; ROM~384                                 ; Stuck at GND due to stuck port clock ;
+; ROM~385                                 ; Stuck at GND due to stuck port clock ;
+; ROM~386                                 ; Stuck at GND due to stuck port clock ;
+; ROM~387                                 ; Stuck at GND due to stuck port clock ;
+; ROM~388                                 ; Stuck at GND due to stuck port clock ;
+; ROM~389                                 ; Stuck at GND due to stuck port clock ;
+; ROM~390                                 ; Stuck at GND due to stuck port clock ;
+; ROM~391                                 ; Stuck at GND due to stuck port clock ;
+; ROM~392                                 ; Stuck at GND due to stuck port clock ;
+; ROM~393                                 ; Stuck at GND due to stuck port clock ;
+; ROM~394                                 ; Stuck at GND due to stuck port clock ;
+; ROM~395                                 ; Stuck at GND due to stuck port clock ;
+; ROM~396                                 ; Stuck at GND due to stuck port clock ;
+; ROM~397                                 ; Stuck at GND due to stuck port clock ;
+; ROM~398                                 ; Stuck at GND due to stuck port clock ;
+; ROM~399                                 ; Stuck at GND due to stuck port clock ;
+; ROM~400                                 ; Stuck at GND due to stuck port clock ;
+; ROM~401                                 ; Stuck at GND due to stuck port clock ;
+; ROM~402                                 ; Stuck at GND due to stuck port clock ;
+; ROM~403                                 ; Stuck at GND due to stuck port clock ;
+; ROM~404                                 ; Stuck at GND due to stuck port clock ;
+; ROM~405                                 ; Stuck at GND due to stuck port clock ;
+; ROM~406                                 ; Stuck at GND due to stuck port clock ;
+; ROM~407                                 ; Stuck at GND due to stuck port clock ;
+; ROM~408                                 ; Stuck at GND due to stuck port clock ;
+; ROM~409                                 ; Stuck at GND due to stuck port clock ;
+; ROM~410                                 ; Stuck at GND due to stuck port clock ;
+; ROM~411                                 ; Stuck at GND due to stuck port clock ;
+; ROM~412                                 ; Stuck at GND due to stuck port clock ;
+; ROM~413                                 ; Stuck at GND due to stuck port clock ;
+; ROM~414                                 ; Stuck at GND due to stuck port clock ;
+; ROM~415                                 ; Stuck at GND due to stuck port clock ;
+; ROM~416                                 ; Stuck at GND due to stuck port clock ;
+; ROM~417                                 ; Stuck at GND due to stuck port clock ;
+; ROM~418                                 ; Stuck at GND due to stuck port clock ;
+; ROM~419                                 ; Stuck at GND due to stuck port clock ;
+; ROM~420                                 ; Stuck at GND due to stuck port clock ;
+; ROM~421                                 ; Stuck at GND due to stuck port clock ;
+; ROM~422                                 ; Stuck at GND due to stuck port clock ;
+; ROM~423                                 ; Stuck at GND due to stuck port clock ;
+; ROM~424                                 ; Stuck at GND due to stuck port clock ;
+; ROM~425                                 ; Stuck at GND due to stuck port clock ;
+; ROM~426                                 ; Stuck at GND due to stuck port clock ;
+; ROM~427                                 ; Stuck at GND due to stuck port clock ;
+; ROM~428                                 ; Stuck at GND due to stuck port clock ;
+; ROM~429                                 ; Stuck at GND due to stuck port clock ;
+; ROM~430                                 ; Stuck at GND due to stuck port clock ;
+; ROM~431                                 ; Stuck at GND due to stuck port clock ;
+; ROM~432                                 ; Stuck at GND due to stuck port clock ;
+; ROM~433                                 ; Stuck at GND due to stuck port clock ;
+; ROM~434                                 ; Stuck at GND due to stuck port clock ;
+; ROM~435                                 ; Stuck at GND due to stuck port clock ;
+; ROM~436                                 ; Stuck at GND due to stuck port clock ;
+; ROM~437                                 ; Stuck at GND due to stuck port clock ;
+; ROM~438                                 ; Stuck at GND due to stuck port clock ;
+; ROM~439                                 ; Stuck at GND due to stuck port clock ;
+; ROM~440                                 ; Stuck at GND due to stuck port clock ;
+; ROM~441                                 ; Stuck at GND due to stuck port clock ;
+; ROM~442                                 ; Stuck at GND due to stuck port clock ;
+; ROM~443                                 ; Stuck at GND due to stuck port clock ;
+; ROM~444                                 ; Stuck at GND due to stuck port clock ;
+; ROM~445                                 ; Stuck at GND due to stuck port clock ;
+; ROM~446                                 ; Stuck at GND due to stuck port clock ;
+; ROM~447                                 ; Stuck at GND due to stuck port clock ;
+; ROM~448                                 ; Stuck at GND due to stuck port clock ;
+; ROM~449                                 ; Stuck at GND due to stuck port clock ;
+; ROM~450                                 ; Stuck at GND due to stuck port clock ;
+; ROM~451                                 ; Stuck at GND due to stuck port clock ;
+; ROM~452                                 ; Stuck at GND due to stuck port clock ;
+; ROM~453                                 ; Stuck at GND due to stuck port clock ;
+; ROM~454                                 ; Stuck at GND due to stuck port clock ;
+; ROM~455                                 ; Stuck at GND due to stuck port clock ;
+; ROM~456                                 ; Stuck at GND due to stuck port clock ;
+; ROM~457                                 ; Stuck at GND due to stuck port clock ;
+; ROM~458                                 ; Stuck at GND due to stuck port clock ;
+; ROM~459                                 ; Stuck at GND due to stuck port clock ;
+; ROM~460                                 ; Stuck at GND due to stuck port clock ;
+; ROM~461                                 ; Stuck at GND due to stuck port clock ;
+; ROM~462                                 ; Stuck at GND due to stuck port clock ;
+; ROM~463                                 ; Stuck at GND due to stuck port clock ;
+; ROM~464                                 ; Stuck at GND due to stuck port clock ;
+; ROM~465                                 ; Stuck at GND due to stuck port clock ;
+; ROM~466                                 ; Stuck at GND due to stuck port clock ;
+; ROM~467                                 ; Stuck at GND due to stuck port clock ;
+; ROM~468                                 ; Stuck at GND due to stuck port clock ;
+; ROM~469                                 ; Stuck at GND due to stuck port clock ;
+; ROM~470                                 ; Stuck at GND due to stuck port clock ;
+; ROM~471                                 ; Stuck at GND due to stuck port clock ;
+; ROM~472                                 ; Stuck at GND due to stuck port clock ;
+; ROM~473                                 ; Stuck at GND due to stuck port clock ;
+; ROM~474                                 ; Stuck at GND due to stuck port clock ;
+; ROM~475                                 ; Stuck at GND due to stuck port clock ;
+; ROM~476                                 ; Stuck at GND due to stuck port clock ;
+; ROM~477                                 ; Stuck at GND due to stuck port clock ;
+; ROM~478                                 ; Stuck at GND due to stuck port clock ;
+; ROM~479                                 ; Stuck at GND due to stuck port clock ;
+; ROM~480                                 ; Stuck at GND due to stuck port clock ;
+; ROM~481                                 ; Stuck at GND due to stuck port clock ;
+; ROM~482                                 ; Stuck at GND due to stuck port clock ;
+; ROM~483                                 ; Stuck at GND due to stuck port clock ;
+; ROM~484                                 ; Stuck at GND due to stuck port clock ;
+; ROM~485                                 ; Stuck at GND due to stuck port clock ;
+; ROM~486                                 ; Stuck at GND due to stuck port clock ;
+; ROM~487                                 ; Stuck at GND due to stuck port clock ;
+; ROM~488                                 ; Stuck at GND due to stuck port clock ;
+; ROM~489                                 ; Stuck at GND due to stuck port clock ;
+; ROM~490                                 ; Stuck at GND due to stuck port clock ;
+; ROM~491                                 ; Stuck at GND due to stuck port clock ;
+; ROM~492                                 ; Stuck at GND due to stuck port clock ;
+; ROM~493                                 ; Stuck at GND due to stuck port clock ;
+; ROM~494                                 ; Stuck at GND due to stuck port clock ;
+; ROM~495                                 ; Stuck at GND due to stuck port clock ;
+; ROM~496                                 ; Stuck at GND due to stuck port clock ;
+; ROM~497                                 ; Stuck at GND due to stuck port clock ;
+; ROM~498                                 ; Stuck at GND due to stuck port clock ;
+; ROM~499                                 ; Stuck at GND due to stuck port clock ;
+; ROM~500                                 ; Stuck at GND due to stuck port clock ;
+; ROM~501                                 ; Stuck at GND due to stuck port clock ;
+; ROM~502                                 ; Stuck at GND due to stuck port clock ;
+; ROM~503                                 ; Stuck at GND due to stuck port clock ;
+; ROM~504                                 ; Stuck at GND due to stuck port clock ;
+; ROM~505                                 ; Stuck at GND due to stuck port clock ;
+; ROM~506                                 ; Stuck at GND due to stuck port clock ;
+; ROM~507                                 ; Stuck at GND due to stuck port clock ;
+; ROM~508                                 ; Stuck at GND due to stuck port clock ;
+; ROM~509                                 ; Stuck at GND due to stuck port clock ;
+; ROM~510                                 ; Stuck at GND due to stuck port clock ;
+; ROM~511                                 ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 512 ;                                      ;
++-----------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Instruction_Memory ;
++----------------+---------+---------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                    ;
++----------------+---------+---------------------------------------------------------+
+; ADDR_WIDTH_IM  ; 5       ; Signed Integer                                          ;
+; INSTR_WIDTH    ; 16      ; Signed Integer                                          ;
+; FILE_NAME      ; out.mem ; String                                                  ;
++----------------+---------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 42                          ;
+; cycloneiii_lcell_comb ; 11                          ;
+;     normal            ; 11                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 4                           ;
+;         4 data inputs ; 4                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.57                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Thu Feb 27 15:42:43 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Instruction_Memory -c Instruction_Memory
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.sv
+    Info (12023): Found entity 1: Instruction_Memory File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 1
+Info (12127): Elaborating entity "Instruction_Memory" for the top level hierarchy
+Warning (10030): Net "ROM.data_a" at Instruction_Memory.sv(14) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 14
+Warning (10030): Net "ROM.waddr_a" at Instruction_Memory.sv(14) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 14
+Warning (10030): Net "ROM.we_a" at Instruction_Memory.sv(14) has no driver or initial value, using a default initial value '0' File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 14
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "ROM" is uninferred due to inappropriate RAM size File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 14
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "read_data_1[1]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[2]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[3]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[4]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[6]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[7]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[8]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[9]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[12]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[14]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_1[15]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 10
+    Warning (13410): Pin "read_data_2[1]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[2]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[3]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[4]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[6]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[7]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[8]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[9]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[12]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[14]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+    Warning (13410): Pin "read_data_2[15]" is stuck at GND File: D:/Documents/University/Year_3/Project/Solution/synthesis/Components/Instruction_Memory/Instruction_Memory.sv Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 8 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4742 megabytes
+    Info: Processing ended: Thu Feb 27 15:42:58 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:31
+
+

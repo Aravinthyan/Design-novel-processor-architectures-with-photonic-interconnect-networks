@@ -1,30 +1,21 @@
 module GPP
 (
 	input logic clk,
-        input logic rst,
-        // Instruction memory
-        output logic [15:0]address_1,
-        output logic [15:0]address_2,
-        input logic [15:0]read_address_1,
-        input logic [15:0]read_address_2,
-        // Data memory
-        output logic [15:0]address_rw,
-        output logic [15:0]data_in,
-        input logic [15:0]data_out,
+   input logic rst,
+   // Instruction memory
+   output logic [15:0]address_1,
+   output logic [15:0]address_2,
+   input logic [15:0]read_address_1,
+   input logic [15:0]read_address_2,
+   // Data memory
+   output logic [4:0]address_rw,
+   output logic [15:0]data_in,
+   input logic [15:0]data_out,
 	// Control Signals
-	output logic memory_write_enable,
-	output logic enable_rtr,
-	output logic gpp_rtr_cp,
-	output logic gpp_rtr_dp,
-	output logic gpp_trf_dp,
-	// Communications Processor Signals
-	input logic [15:0] RAM_rx_data_out, // gpp
-	input logic data_rx_flag, // gpp
-	input logic gpp_trf_cp, // gpp
-	output logic [15:0] gpp_tx_data // gpp
+	output logic memory_write_enable
 );
 
-        // Control signals
+   // Control signals
 	logic pc_increment_control;
 	logic [1:0] pc_control;
 	logic general_register_write_enable;
@@ -45,6 +36,10 @@ module GPP
 	logic jump_less_control;
 	logic jump_less_equal_control;
 	logic [1:0] general_register_result_select;
+	logic enable_rtr;
+	logic gpp_rtr_cp;
+	logic gpp_rtr_dp;
+	logic gpp_trf_dp;
 
         Datapath datapath_processor(clk,
 				    rst,
@@ -52,9 +47,9 @@ module GPP
 				    address_2,
 				    read_address_1,
 				    read_address_2,
-        			    address_rw,
-        			    data_in,
-        			    data_out,
+        			 address_rw,
+        			 data_in,
+        			 data_out,
 				    pc_increment_control,
 				    pc_control,
 				    general_register_write_enable,
@@ -75,15 +70,7 @@ module GPP
 				    jump_less_control,
 				    jump_less_equal_control,
 				    memory_write_enable,
-				    general_register_result_select,
-				    enable_rtr,
-				    gpp_rtr_cp,
-				    gpp_rtr_dp,
-				    gpp_trf_dp,
-				    RAM_rx_data_out, // gpp
-				    data_rx_flag, // gpp
-				    gpp_trf_cp, // gpp
-				    gpp_tx_data); // gpp
+				    general_register_result_select); 
 
 
 	Control_Unit cu_processor (read_address_1[15:10],

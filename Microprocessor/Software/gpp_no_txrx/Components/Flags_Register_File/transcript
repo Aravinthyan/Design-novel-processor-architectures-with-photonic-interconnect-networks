@@ -1,0 +1,20 @@
+vsim work.flags_register_file_tb_1
+# vsim work.flags_register_file_tb_1 
+# Start time: 19:15:15 on Nov 27,2019
+# Loading sv_std.std
+# Loading work.flags_register_file_tb_1
+# Loading work.flags_register_file
+add wave -position insertpoint  \
+sim:/flags_register_file_tb_1/clk \
+sim:/flags_register_file_tb_1/rx_write_enable \
+sim:/flags_register_file_tb_1/rtr_write_enable \
+sim:/flags_register_file_tb_1/address_1 \
+sim:/flags_register_file_tb_1/address_2 \
+sim:/flags_register_file_tb_1/read_data
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run 100
+run 100
+run 100
+# End time: 19:18:42 on Nov 27,2019, Elapsed time: 0:03:27
+# Errors: 0, Warnings: 1

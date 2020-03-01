@@ -4,6 +4,70 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "ALU_out_[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_out_[15]",
+					"strict" : false
+				},
+				{
 					"name" : "address_1[0]",
 					"strict" : false
 				},
@@ -148,54 +212,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "address_rw[4]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[5]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[6]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[7]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[8]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[9]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[10]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[11]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[12]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[13]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[14]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[15]",
-					"strict" : false
-				},
-				{
 					"name" : "data_in[0]",
 					"strict" : false
 				},
@@ -260,70 +276,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "gpp_tx_data[0]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[2]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[8]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[9]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[10]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[11]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[12]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[13]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[14]",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_tx_data[15]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_1[7]",
 					"strict" : false
 				},
@@ -344,15 +296,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "stack_control",
+					"name" : "ALU_source_1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "read_address_1[1]",
+					"name" : "ALU_source_1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "read_address_1[0]",
+					"name" : "ALU_source_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "read_address_1[2]",
 					"strict" : false
 				},
 				{
@@ -360,7 +316,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "read_address_1[2]",
+					"name" : "read_address_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "read_address_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "read_address_1[4]",
 					"strict" : false
 				},
 				{
@@ -372,103 +336,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "RAM_rx_data_out[0]",
-					"strict" : false
-				},
-				{
-					"name" : "read_address_1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[4]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[5]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[6]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[7]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[8]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[9]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[10]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[11]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[12]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[13]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[14]",
-					"strict" : false
-				},
-				{
-					"name" : "RAM_rx_data_out[15]",
-					"strict" : false
-				},
-				{
-					"name" : "general_register_result_select[1]",
-					"strict" : false
-				},
-				{
-					"name" : "data_rx_flag",
-					"strict" : false
-				},
-				{
-					"name" : "gpp_trf_cp",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_source_1[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_source_1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "read_address_2[0]",
-					"strict" : false
-				},
-				{
 					"name" : "ALU_source_2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ALU_source_2[0]",
+					"name" : "read_address_2[0]",
 					"strict" : false
 				},
 				{
@@ -480,19 +352,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "general_register_result_select[0]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[0]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[1]",
 					"strict" : false
 				},
 				{
@@ -500,15 +360,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data_out[2]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[3]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[3]",
 					"strict" : false
 				},
 				{
@@ -516,15 +368,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data_out[4]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[5]",
 					"strict" : false
 				},
 				{
@@ -532,15 +376,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data_out[6]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[7]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[7]",
 					"strict" : false
 				},
 				{
@@ -548,15 +384,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data_out[8]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[9]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[9]",
 					"strict" : false
 				},
 				{
@@ -564,15 +392,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data_out[10]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[11]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[11]",
 					"strict" : false
 				},
 				{
@@ -580,15 +400,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data_out[12]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[13]",
-					"strict" : false
-				},
-				{
-					"name" : "data_out[13]",
 					"strict" : false
 				},
 				{
@@ -596,15 +408,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "data_out[14]",
-					"strict" : false
-				},
-				{
 					"name" : "read_address_2[15]",
 					"strict" : false
 				},
 				{
-					"name" : "data_out[15]",
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "pc_control[0]",
 					"strict" : false
 				},
 				{
@@ -644,11 +456,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "pc_increment_control",
+					"name" : "general_register_result_select[1]",
 					"strict" : false
 				},
 				{
-					"name" : "pc_control[0]",
+					"name" : "general_register_result_select[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[14]",
 					"strict" : false
 				},
 				{
@@ -656,11 +472,67 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "data_out[13]",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "data_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "stack_control",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -669,6 +541,14 @@
 				},
 				{
 					"name" : "stack_write_enable",
+					"strict" : false
+				},
+				{
+					"name" : "data_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_increment_control",
 					"strict" : false
 				},
 				{
