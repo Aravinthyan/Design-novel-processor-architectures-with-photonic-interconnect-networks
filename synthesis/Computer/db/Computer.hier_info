@@ -1,22 +1,22 @@
 |Computer
 clk => clk.IN2
 rst => rst.IN1
-ALU_out_[0] << GPP:cpu.port2
-ALU_out_[1] << GPP:cpu.port2
-ALU_out_[2] << GPP:cpu.port2
-ALU_out_[3] << GPP:cpu.port2
-ALU_out_[4] << GPP:cpu.port2
-ALU_out_[5] << GPP:cpu.port2
-ALU_out_[6] << GPP:cpu.port2
-ALU_out_[7] << GPP:cpu.port2
-ALU_out_[8] << GPP:cpu.port2
-ALU_out_[9] << GPP:cpu.port2
-ALU_out_[10] << GPP:cpu.port2
-ALU_out_[11] << GPP:cpu.port2
-ALU_out_[12] << GPP:cpu.port2
-ALU_out_[13] << GPP:cpu.port2
-ALU_out_[14] << GPP:cpu.port2
-ALU_out_[15] << GPP:cpu.port2
+ALU_out_[0] <= GPP:cpu.port2
+ALU_out_[1] <= GPP:cpu.port2
+ALU_out_[2] <= GPP:cpu.port2
+ALU_out_[3] <= GPP:cpu.port2
+ALU_out_[4] <= GPP:cpu.port2
+ALU_out_[5] <= GPP:cpu.port2
+ALU_out_[6] <= GPP:cpu.port2
+ALU_out_[7] <= GPP:cpu.port2
+ALU_out_[8] <= GPP:cpu.port2
+ALU_out_[9] <= GPP:cpu.port2
+ALU_out_[10] <= GPP:cpu.port2
+ALU_out_[11] <= GPP:cpu.port2
+ALU_out_[12] <= GPP:cpu.port2
+ALU_out_[13] <= GPP:cpu.port2
+ALU_out_[14] <= GPP:cpu.port2
+ALU_out_[15] <= GPP:cpu.port2
 
 
 |Computer|GPP:cpu

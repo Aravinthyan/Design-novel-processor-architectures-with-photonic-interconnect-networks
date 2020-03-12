@@ -1,5 +1,5 @@
 Timing Analyzer report for Computer
-Fri Feb 28 13:04:39 2020
+Wed Mar  4 06:34:00 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -96,15 +96,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.22        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.51        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  22.3%      ;
+;     Processor 2            ;  17.1%      ;
+;     Processor 3            ;  17.0%      ;
+;     Processor 4            ;  16.9%      ;
 +----------------------------+-------------+
 
 
@@ -471,14 +473,14 @@ No paths to report.
 ; -5.406 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][2]  ; clk          ; clk         ; 1.000        ; 0.161      ; 6.582      ;
 ; -5.405 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][14] ; clk          ; clk         ; 1.000        ; 0.191      ; 6.611      ;
 ; -5.404 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][11] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.611      ;
-; -5.403 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][2]  ; clk          ; clk         ; 1.000        ; 0.164      ; 6.582      ;
 ; -5.403 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][14] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.610      ;
+; -5.403 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][2]  ; clk          ; clk         ; 1.000        ; 0.164      ; 6.582      ;
 ; -5.395 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[4] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][13] ; clk          ; clk         ; 1.000        ; 0.157      ; 6.567      ;
 ; -5.395 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][11] ; clk          ; clk         ; 1.000        ; 0.250      ; 6.660      ;
 ; -5.393 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][12] ; clk          ; clk         ; 1.000        ; 0.191      ; 6.599      ;
 ; -5.392 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][2]  ; clk          ; clk         ; 1.000        ; 0.161      ; 6.568      ;
-; -5.389 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][12] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.596      ;
 ; -5.389 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][2]  ; clk          ; clk         ; 1.000        ; 0.164      ; 6.568      ;
+; -5.389 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][12] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.596      ;
 ; -5.381 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][12] ; clk          ; clk         ; 1.000        ; 0.191      ; 6.587      ;
 ; -5.380 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][9]  ; clk          ; clk         ; 1.000        ; 0.190      ; 6.585      ;
 ; -5.377 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][12] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.584      ;
@@ -492,20 +494,20 @@ No paths to report.
 ; -5.351 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][11] ; clk          ; clk         ; 1.000        ; 0.164      ; 6.530      ;
 ; -5.349 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][12] ; clk          ; clk         ; 1.000        ; 0.157      ; 6.521      ;
 ; -5.348 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][15] ; clk          ; clk         ; 1.000        ; 0.172      ; 6.535      ;
-; -5.346 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][12] ; clk          ; clk         ; 1.000        ; 0.250      ; 6.611      ;
 ; -5.346 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][13] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.553      ;
+; -5.346 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][12] ; clk          ; clk         ; 1.000        ; 0.250      ; 6.611      ;
 ; -5.345 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][13] ; clk          ; clk         ; 1.000        ; 0.191      ; 6.551      ;
 ; -5.341 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][9]  ; clk          ; clk         ; 1.000        ; 0.192      ; 6.548      ;
-; -5.336 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[2][15] ; clk          ; clk         ; 1.000        ; 0.245      ; 6.596      ;
 ; -5.336 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][15] ; clk          ; clk         ; 1.000        ; 0.161      ; 6.512      ;
 ; -5.336 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][9]  ; clk          ; clk         ; 1.000        ; 0.157      ; 6.508      ;
+; -5.336 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[2][15] ; clk          ; clk         ; 1.000        ; 0.245      ; 6.596      ;
 ; -5.334 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][12] ; clk          ; clk         ; 1.000        ; 0.250      ; 6.599      ;
-; -5.333 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][12] ; clk          ; clk         ; 1.000        ; 0.190      ; 6.538      ;
 ; -5.333 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][14] ; clk          ; clk         ; 1.000        ; 0.191      ; 6.539      ;
+; -5.333 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][12] ; clk          ; clk         ; 1.000        ; 0.190      ; 6.538      ;
 ; -5.331 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][14] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.538      ;
 ; -5.331 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][13] ; clk          ; clk         ; 1.000        ; 0.250      ; 6.596      ;
-; -5.329 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][6]  ; clk          ; clk         ; 1.000        ; 0.157      ; 6.501      ;
 ; -5.329 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][2]  ; clk          ; clk         ; 1.000        ; 0.161      ; 6.505      ;
+; -5.329 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][6]  ; clk          ; clk         ; 1.000        ; 0.157      ; 6.501      ;
 ; -5.326 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][2]  ; clk          ; clk         ; 1.000        ; 0.164      ; 6.505      ;
 ; -5.326 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[0] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][13] ; clk          ; clk         ; 1.000        ; 0.192      ; 6.533      ;
 ; -5.318 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][9]  ; clk          ; clk         ; 1.000        ; 0.191      ; 6.524      ;
@@ -532,8 +534,8 @@ No paths to report.
 ; -5.272 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[0] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][11] ; clk          ; clk         ; 1.000        ; 0.250      ; 6.537      ;
 ; -5.271 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][15] ; clk          ; clk         ; 1.000        ; 0.172      ; 6.458      ;
 ; -5.268 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][13] ; clk          ; clk         ; 1.000        ; 0.191      ; 6.474      ;
-; -5.264 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][9]  ; clk          ; clk         ; 1.000        ; 0.192      ; 6.471      ;
 ; -5.264 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][10] ; clk          ; clk         ; 1.000        ; 0.157      ; 6.436      ;
+; -5.264 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][9]  ; clk          ; clk         ; 1.000        ; 0.192      ; 6.471      ;
 ; -5.262 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][12] ; clk          ; clk         ; 1.000        ; 0.250      ; 6.527      ;
 ; -5.259 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[2][15] ; clk          ; clk         ; 1.000        ; 0.245      ; 6.519      ;
 ; -5.258 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[2][11] ; clk          ; clk         ; 1.000        ; 0.283      ; 6.556      ;
@@ -542,8 +544,8 @@ No paths to report.
 ; -5.248 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][11] ; clk          ; clk         ; 1.000        ; 0.164      ; 6.427      ;
 ; -5.245 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][6]  ; clk          ; clk         ; 1.000        ; 0.157      ; 6.417      ;
 ; -5.242 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][9]  ; clk          ; clk         ; 1.000        ; 0.250      ; 6.507      ;
-; -5.241 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][10] ; clk          ; clk         ; 1.000        ; 0.190      ; 6.446      ;
 ; -5.241 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[2] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[0][9]  ; clk          ; clk         ; 1.000        ; 0.191      ; 6.447      ;
+; -5.241 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][10] ; clk          ; clk         ; 1.000        ; 0.190      ; 6.446      ;
 ; -5.238 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[0] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[2][11] ; clk          ; clk         ; 1.000        ; 0.283      ; 6.536      ;
 ; -5.235 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[0] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][11] ; clk          ; clk         ; 1.000        ; 0.161      ; 6.411      ;
 ; -5.233 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[1] ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[5][15] ; clk          ; clk         ; 1.000        ; 0.161      ; 6.409      ;
@@ -641,8 +643,8 @@ No paths to report.
 ; 1.788 ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[2][10] ; RAM:dm_computer|altsyncram:altsyncram_component|altsyncram_r4g1:auto_generated|ram_block1a0~porta_datain_reg0  ; clk          ; clk         ; 0.000        ; 0.043      ; 2.000      ;
 ; 1.793 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[4]                                      ; GPP:cpu|Datapath:datapath_processor|Flags_Register:flag_reg|q[3]                                               ; clk          ; clk         ; 0.000        ; 0.390      ; 2.327      ;
 ; 1.793 ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[3][15] ; GPP:cpu|Datapath:datapath_processor|Flags_Register:flag_reg|q[3]                                               ; clk          ; clk         ; 0.000        ; 0.101      ; 2.038      ;
-; 1.796 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[4]                                      ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[0]                                                  ; clk          ; clk         ; 0.000        ; 0.039      ; 1.979      ;
 ; 1.796 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[3]                                      ; GPP:cpu|Datapath:datapath_processor|Flags_Register:flag_reg|q[3]                                               ; clk          ; clk         ; 0.000        ; 0.390      ; 2.330      ;
+; 1.796 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[4]                                      ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[0]                                                  ; clk          ; clk         ; 0.000        ; 0.039      ; 1.979      ;
 ; 1.799 ; GPP:cpu|Datapath:datapath_processor|Register:pc_register|q[4]                                      ; RAM:dm_computer|altsyncram:altsyncram_component|altsyncram_r4g1:auto_generated|ram_block1a0~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.390      ; 2.358      ;
 ; 1.799 ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[1][1]  ; RAM:dm_computer|altsyncram:altsyncram_component|altsyncram_r4g1:auto_generated|ram_block1a0~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.200      ; 2.168      ;
 ; 1.800 ; GPP:cpu|Datapath:datapath_processor|General_Purpose_Register_File:register_file_0|registers[4][4]  ; RAM:dm_computer|altsyncram:altsyncram_component|altsyncram_r4g1:auto_generated|ram_block1a0~porta_datain_reg0  ; clk          ; clk         ; 0.000        ; 0.174      ; 2.143      ;
@@ -1182,11 +1184,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Feb 28 13:04:36 2020
+    Info: Processing started: Wed Mar  4 06:33:58 2020
 Info: Command: quartus_sta Computer -c Computer
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Computer.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1254,9 +1256,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4775 megabytes
-    Info: Processing ended: Fri Feb 28 13:04:39 2020
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 853 megabytes
+    Info: Processing ended: Wed Mar  4 06:34:00 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
