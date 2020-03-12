@@ -1,3 +1,15 @@
+/***********************************************************************************
+*	File name
+				ALU.sv
+*	Description
+				This code will create an ALU which can take two inputs and add/sub/
+				and/or them.
+*	Parameters
+				WIDTH - This is the width of the input and output data.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module ALU
 #(
 	parameter WIDTH = 1
