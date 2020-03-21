@@ -1,8 +1,11 @@
-/*
- * File name: assembly.c
- * Description: This file converts the preprocessed file from assembly to machine code
- * Author: Sreethyan Aravinthan
-*/
+/***********************************************************************************
+*	File name
+				assembly.c
+*	Description
+				This file converts the preprocessed file to machine code
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
 
 // standard header files
 #include <stdio.h>

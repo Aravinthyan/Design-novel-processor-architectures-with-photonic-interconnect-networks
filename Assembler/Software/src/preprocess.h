@@ -1,3 +1,12 @@
+/***********************************************************************************
+*	File name
+				preprocess.h
+*	Description
+				Header file preprocess.h
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 /*
  * Design Unit:
  * File name:

@@ -1,8 +1,12 @@
-/*
- * File name: main.c
- * Description: This is the main program file
- * Author: Sreethyan Aravinthan
-*/
+/***********************************************************************************
+*	File name
+				main.c
+*	Description
+				This is the main program file for the assembler.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 
 // standard header files
 #include <stdio.h>

@@ -1,8 +1,11 @@
-/*
- * File name: preprocess.c
- * Description: This file has functions which remove comments and labels were replaced with addresses
- * Author: Sreethyan Aravinthan
-*/
+/***********************************************************************************
+*	File name
+				preprocess.c
+*	Description
+				This file has functions which remove comments and labels were.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
 
 // standard header files
 #include <stdio.h>

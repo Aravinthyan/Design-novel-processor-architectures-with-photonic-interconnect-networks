@@ -1,10 +1,11 @@
-/*
- * Design Unit:
- * File name:
- * Description:
- * Author:
- * Version:
-*/
+/***********************************************************************************
+*	File name
+				assembly.h
+*	Description
+				Header file assembly.h
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
 
 #ifndef _ASSEMBLY_H_
 #define _ASSEMBLY_H_
@@ -12,8 +13,8 @@
 #define NUM_OF_INSTR		33
 #define MNEMONIC_LENGTH		10
 #define OPCODE_LENGTH		6
-#define NUM_OF_REG		32
-#define REG_LENGTH		6
+#define NUM_OF_REG			32
+#define REG_LENGTH			6
 
 typedef struct
 {

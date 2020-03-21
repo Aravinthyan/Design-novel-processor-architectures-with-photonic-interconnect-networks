@@ -1,10 +1,11 @@
-/*
- * Design Unit:
- * File name:
- * Description:
- * Author:
- * Version:
-*/
+/***********************************************************************************
+*	File name
+				extra.h
+*	Description
+				Header file extra.h
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
 
 #ifndef _EXTRA_H_
 #define _EXTRA_H_

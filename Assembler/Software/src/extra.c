@@ -1,8 +1,11 @@
-/*
- * File name: extra.c
- * Description: This file has extra tools that are used for converting to machine code
- * Author: Sreethyan Aravinthan
-*/
+/***********************************************************************************
+*       File name
+			extra.c
+*	Description
+			This file has extra tools that are used for converting to machine code
+*	Author
+			Sreethyan Aravinthan (UCL)
+**********************************************************************************/
 
 // standard header files
 #include <stdio.h>
