@@ -1,3 +1,22 @@
+/***********************************************************************************
+*	File name
+				Register.sv
+*	Description
+				This module describes how a register.
+*	Parameters
+				WIDTH - Number of bits for the input data.
+*	Inputs
+				clk - The clock for the system.
+
+				rst - Signal to reset the system to the default values.
+
+				d - This is the input to the register.
+*	Outputs	
+				q - This is the output of the register.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module Register
 #(
 	parameter WIDTH = 1

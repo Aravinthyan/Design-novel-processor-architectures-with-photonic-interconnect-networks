@@ -1,3 +1,18 @@
+/***********************************************************************************
+*	File name
+				Control_Unit.sv
+*	Description
+				This module takes the opcode and sets the values of the control signals.
+*	Parameters
+				NONE
+*	Inputs
+				opcode - This the 6 MSB of the instruction.
+*	Outputs	
+				ALL THE CONTROL SIGNALS
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module Control_Unit
 (
 	input logic [5:0] opcode,

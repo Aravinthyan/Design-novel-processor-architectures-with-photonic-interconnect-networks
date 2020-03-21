@@ -1,3 +1,26 @@
+/***********************************************************************************
+*	File name
+				Instruction_Memory.sv
+*	Description
+				This module describes a 2-port ROM.
+*	Parameters
+				ADDR_WIDTH_IM - This is the width of the address field.
+
+				INSTR_WIDTH - This is the width of the instruction.
+
+				FILE_NAME - This is the name of the file that will be loaded and set as default values.
+*	Inputs
+				address_1 - This is the address that is wished to be accessed.
+
+				address_2 - This is the address that is wished to be accessed.
+*	Outputs	
+				read_data_1 - This is the value at address_1.
+
+				read_data_2 - This is the value at address_2.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module Instruction_Memory
 #(
 	parameter ADDR_WIDTH_IM = 1,

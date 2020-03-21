@@ -1,3 +1,24 @@
+/***********************************************************************************
+*	File name
+				Data_Memory.sv
+*	Description
+				This module describes RAM.
+*	Parameters
+				WIDTH - This is the WIDTH of the input/output data and the address used to read/write.
+*	Inputs
+				clk - The clock for the system.
+
+				memory_write_enable - This is a control signal that indicates if the data at the input should be written or not.
+
+				address_rw - This is the address that is used to read/write.
+
+				data_in - This is the data that will be written to the memory at the address given at the input.
+*	Outputs	
+				data_out - This is the data that is read from the address at the input.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module Data_Memory
 #(
 	parameter WIDTH = 1

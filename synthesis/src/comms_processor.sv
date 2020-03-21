@@ -1,3 +1,48 @@
+/***********************************************************************************
+*	File name
+				comms_processor.sv
+*	Description
+				This module instantiates the control plane and data plane. This will be connected to the GPP.
+*	Parameters
+				NONE
+*	Inputs
+				clk - The clock for the system.
+
+				rst - Signal to reset the system to the default values.
+
+				node_id - This will be the id that will be given to the node in the system. NOTE: EACH NODE MUST HAVE A DIFFERENT ID OTHERWISE THERE WILL BE ISSUES IN TX/RX.
+
+				max_node - This shows the maximum number of nodes in the ring topology.
+
+				control_rx_packet - This is the packet that will be recieved on the control plane.
+
+				enable_rtr - This is a control signal that will allow the GPP to retrive data from the CP if it is possible.
+
+				gpp_rtr_cp - This is a control signal that pauses rx from gpp so that gpp can retrive data from rx RAM.
+
+				data_rx_packet - This is the packet that is received on the data plane.
+
+				gpp_rtr_dp - This is a control signal which indicates the data plane to modify the stack ponter. Since the values are stored in a stack data structure, the value at the top of the stack is sent to the GPP from the DP reciever.
+
+				gpp_trf_dp - This is a control signal which tells the data plane transmitter that data is going to be transferred from the GPP to the DP transmitter.
+
+				gpp_tx_data - This is the data that will be transferred from the GPP to the DP transmitter RAM.
+*	Outputs	
+				control_tx_packet - This is the packet that is transmitted on the control plane.
+
+				data_rx_node_id - This is the value that is sent to a control unit which sets the wavelength/spatial channel of the reciever.
+
+				data_rx_flag - this is used to show the control plane if data is being received on the data plane. Thus the control plane will not say yes for another ping if set. This is also a flag that is used by the GPP to see if it can retrive data from the data plane receiver. This will be connected to the ALU_src_1.
+
+				gpp_trf_cp - this is a flag that is used by the GPP to transfer data from the GPP RAM to the data plane transmitter RAM. This will be connected to the ALU_src_1.
+
+				RAM_rx_data_out - This shows the data that is outputed from the data plane receiver. It will be connected to the RAM of the GPP via a multiplexer.
+
+				data_tx_packet - This is the packet that is transmitted on the data plane.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module comms_processor
 (
 	// commons signals

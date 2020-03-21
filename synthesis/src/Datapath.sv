@@ -1,26 +1,35 @@
-// inputs are the outputs of other components
+/***********************************************************************************
+*	File name
+				Datapath.sv
+*	Description
+				This module describes how the components of the datapath are connected.
+*	Parameters
+				NONE
+*	Inputs
+				clk - The clock for the system.
 
-// COMMENT THE DATAPATH CODE MORE FOR EASE OF UNDERSTANDING
-// GO THROUGH ALL OF THE DATA PATH CODE TO SEE IF IT MAKES SENSE
-// ONE THING TO CHECK WILL BE THE GENERAL PURPOSE REGISTER FILE AS IT HAS THE
-// ID
-// SEE WHAT SIGNALS NEED TO BE ADDED FROM THE COMMS PROCESSOR
-// LOOK AT THE CONSTANTS SEE IF THEY NEED CHANGING
+				rst - Signal to reset the system to the default values.
 
-module Datapath
+				OTHER INPUTS ARE CONNECTED TO THE OTHER BLOCKS THAT CONNECT TO THE DATAPATH
+*	Outputs	
+				OUTPUTS ARE CONNECTED TO THE OTHER BLOCKS THAT CONNECT TO THE DATAPATH
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
+module datapath
 (
 	input logic clk,
 	input logic rst,
-	output logic [15:0] ALU_out_,
 	// Instruction memory
 	output logic [15:0]address_1,
 	output logic [15:0]address_2,
 	input logic [15:0]read_address_1,
 	input logic [15:0]read_address_2,
 	// Data memory
-   	output logic [15:0]address_rw,
-   	output logic [15:0]data_in,
-   	input logic [15:0]data_out,
+    output logic [15:0]address_rw,
+    output logic [15:0]data_in,
+    input logic [15:0]data_out,
 	// Control signals
 	input logic pc_increment_control,
 	input logic [1:0] pc_control,
@@ -41,8 +50,12 @@ module Datapath
 	input logic jump_greater_equal_control,
 	input logic jump_less_control,
 	input logic jump_less_equal_control,
-	input logic memory_write_enable,
-	input logic [1:0] general_register_result_select
+	input logic [1:0] general_register_result_select,
+	// Communications Processor Signals
+	input logic [15:0] RAM_rx_data_out, // gpp
+	input logic data_rx_flag, // gpp
+	input logic gpp_trf_cp, // gpp
+	output logic [15:0] gpp_tx_data // gpp
 );
 
 	// constants
@@ -71,19 +84,15 @@ module Datapath
 	logic [15:0] general_register_result_select_data_mux [3:0];
 	logic [15:0] reg_read_data_1;
 	logic [15:0] stack_control_data_mux [1:0];
-	logic [3:0] stack_control_mux_out;
+	logic [15:0] stack_control_mux_out;
 	logic flags_in [3:0];
 	logic flags_out [3:0];
 
 	logic [15:0] ALU_source_1_data_mux[3:0];
 	logic [15:0] ALU_source_1_mux_out;
-	
-	logic [15:0] pc_prime;
 
 	always_comb
 	begin
-		ALU_out_ = reg_read_data_1;
-	
 		branch_mux_data[1] = read_address_2;
 	
 		pc_control_data_mux[0] = branch_mux_out;
@@ -112,12 +121,14 @@ module Datapath
 		flags_in[1] = sign_flag;
 		flags_in[0] = overflow_flag;
 	
-		WD_control_data_mux[2] = zero;
+		WD_control_data_mux[2] = RAM_rx_data_out;
 
 		ALU_source_1_data_mux[0] = reg_read_data_1;
-		ALU_source_1_data_mux[1] = zero;
-		ALU_source_1_data_mux[2] = zero;
+		ALU_source_1_data_mux[1] = gpp_trf_cp;
+		ALU_source_1_data_mux[2] = data_rx_flag;
 		// ALU_source_1_data_mux_out[3] = 
+
+		gpp_tx_data = general_register_result_select_out;
 	end
 
 	// instantiating branch multiplexer
@@ -125,9 +136,6 @@ module Datapath
 	
 	// instantiating pc control multiplexer
 	Multiplexer #(2, 16) pc_control_multiplexer(pc_control, pc_control_data_mux, next_PC);
-	
-	// instantiating PC_set
-	// PC_set pc_set(rst, pc_prime, address_1);
 
 	// instantiate pc register
 	Register #(16) pc_register(clk, rst, next_PC, address_1);
@@ -148,10 +156,10 @@ module Datapath
 	General_Purpose_Register_File #(5, 16) register_file_0(clk, general_register_write_enable, stack_write_enable, read_address_1[9:5], read_address_1[4:0], read_address_1[4:0], general_register_result_select_out, ALU_out, reg_read_data_1, WD_control_data_mux[0]);
 
 	// instantiate stack control multiplexer
-	Multiplexer #(1, 4) stack_control_multiplexer(stack_control, stack_control_data_mux, stack_control_mux_out);
+	Multiplexer #(1, 16) stack_control_multiplexer(stack_control, stack_control_data_mux, stack_control_mux_out);
 
 	// instantiate a subber for correct stack access
-	ALU #(4) stack_access_subber(reg_read_data_1, stack_control_mux_out, 2'b01, address_rw);
+	ALU #(16) stack_access_subber(reg_read_data_1, stack_control_mux_out, 2'b01, address_rw);
 
 	// instantiate WD control multiplexer
 	Multiplexer #(2, 16) WD_control_multiplexer(write_data_enable, WD_control_data_mux, data_in);

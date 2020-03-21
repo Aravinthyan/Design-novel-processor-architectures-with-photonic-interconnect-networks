@@ -1,3 +1,18 @@
+/***********************************************************************************
+*	File name
+				Jump_Logic.sv
+*	Description
+				This module describes how the flags for the jump instructions should be set so that the instructions work.
+*	Parameters
+				NONE
+*	Inputs
+				INPUTS ARE CONNECTED TO THE OTHER BLOCKS THAT CONNECT TO THE DATAPATH
+*	Outputs	
+				OUTPUTS ARE CONNECTED TO THE OTHER BLOCKS THAT CONNECT TO THE DATAPATH
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module Jump_Logic
 (
 	// control signals

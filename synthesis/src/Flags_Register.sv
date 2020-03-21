@@ -1,10 +1,31 @@
+/***********************************************************************************
+*	File name
+				Flags_Register.sv
+*	Description
+				This module is a register with an enable signal. This is for the flags.
+*	Parameters
+				NONE
+*	Inputs
+				clk - The clock for the system.
+
+				rst - Signal to reset the system to the default values.
+
+				flags_reg_write_enable - This is an enable signal that allows the the contents of the register to be updated if this is set and it is the positive edge of the clock.
+
+				d - This is the input data to the flags register.
+*	Outputs	
+				q - This is the output data to the flags register.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module Flags_Register
 (
-	input logic clk,	// clock signal
-	input logic rst,	// reset signal
-	input logic flags_reg_write_enable,	// write enable signal
-	input logic d[3:0],	// input signal
-	output logic q[3:0]	// output signal
+	input logic clk,
+	input logic rst,
+	input logic flags_reg_write_enable,
+	input logic d[3:0],
+	output logic q[3:0]
 );
 
 	logic zero[3:0];
@@ -25,7 +46,8 @@ module Flags_Register
 		begin
 			q <= zero;
 		end
-		else if(flags_reg_write_enable == 1)	// else set the output to the input value
+		// else set the output to the input value
+		else if(flags_reg_write_enable == 1)	
 		begin
 			q <= d; 
 		end

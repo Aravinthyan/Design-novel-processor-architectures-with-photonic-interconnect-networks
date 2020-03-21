@@ -1,48 +1,63 @@
+/***********************************************************************************
+*	File name
+				comms_processor.sv
+*	Description
+				This module describes how the control plane works.
+*	Parameters
+				NONE
+*	Inputs
+				clk - The clock for the system.
+
+				rst - Signal to reset the system to the default values.
+				
+				node_id - This will be the id that will be given to the node in the system. NOTE: EACH NODE MUST HAVE A DIFFERENT ID OTHERWISE THERE WILL BE ISSUES IN TX/RX.
+				
+				max_node - This shows the maximum number of nodes in the ring topology.
+				
+				data_rx_complete_flag - This flag will reset the data_rx_flag. The value for this is sent from the data plane reciever.
+				
+				control_rx_packet - This is the packet that will be recieved on the control plane.
+
+				data_tx_complete_flag - This flag will reset the data_tx_flag. The value for this is sent from the data plane transmitter.
+
+				RAM_tx_data_out - This input has the value equal to the top of the RAM of the data plane tx RAM.
+
+				sp_tx_current - This has the value of the stack pointer from the data plane tx RAM. This is used to see if the data plane tx RAM is empty or not.
+				
+				enable_rtr - This is a control signal that will allow the GPP to retrive data from the CP if it is possible.
+
+				gpp_rtr_cp - This is a control signal that pauses rx from gpp so that gpp can retrive data from rx RAM.
+*	Outputs	
+				control_tx_packet - This is the packet that is transmitted on the control plane.
+
+				data_rx_node_id - This is the value that is sent to a control unit which sets the wavelength/spatial channel of the reciever.
+
+				data_tx_flag - This is a flag which indicates if the node is transmitting data on the data plane.
+
+				data_rx_flag - This is used to show the control plane if data is being received on the data plane. Thus the control plane will not say yes for another ping if set. This is also a flag that is used by the GPP to see if it can retrive data from the data plane receiver. This will be connected to the ALU_src_1.
+
+				gpp_trf_cp - this is a flag that is used by the GPP to transfer data from the GPP RAM to the data plane transmitter RAM. This will be connected to the ALU_src_1.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module Control_Plane
 (
-	// the clock for this system
 	input logic clk,
-	// signal to reset the system
 	input logic rst,
-	// this input states what the id of this node should be
-	// NOTE: EACH NODE MUST HAVE A DIFFERENT ID OTHERWISE THERE WILL BE
-	// ISSUES
 	input shortint node_id,
-	// this holds the maximum number of nodes in the network
 	input shortint max_node,
-	// this flag will reset the data_rx_flag. The value for this is
-	// sent from the data plane
 	input logic data_rx_complete_flag,	// ***
-	// this is the packet on the control plane reciever
 	input logic [31:0] control_rx_packet,
-	// this flag will reset the data_tx_flag. The value for this is
-	// sent from the data plane
 	input logic data_tx_complete_flag,	// ***
-	// this input has the value equal to the top of the RAM of the data
-	// plane tx RAM
 	input logic [15:0] RAM_tx_data_out,	// ***
-	// this input contains stack pointer from the RAM of data plane tx. this is used to see if it is empty or not
 	input logic [15:0] sp_tx_current,	// ***
 	input logic enable_rtr,
-	// pause rx from gpp so that gpp can retrive data from rx RAM
-	input logic gpp_rtr_cp, 
-	// this output contains the value to be transmitted on the control
-	// plane from this node to other nodes to ask if they can take
-	// incoming data
+	input logic gpp_rtr_cp,
 	output logic [31:0] control_tx_packet,
-	// this will tell the data plane receiver what it wavelength it should
-	// filter out
 	output logic [15:0] data_rx_node_id,
-	// this is a flag which indicates if this node's data plane is
-	// transmitting as you cannot transmit more to more than one
-	// node in this system at any given time
 	output logic data_tx_flag,	// ***
-	// this is used to show the control plane if the data is being
-	// received so that for another ping for this node it will not
-	// say yes for data recieving
 	output logic data_rx_flag,
-	// this is a flag that is used to transfer data from the gpp RAM to
-	// the tx RAM
 	output logic gpp_trf_cp
 );
 
@@ -341,6 +356,7 @@ module Control_Plane
 		end
 	end
 	
+	// this logic is used to see if data can be transfered from the GPP to CP
 	always_comb
 	begin
 		// check if data is being transmitted

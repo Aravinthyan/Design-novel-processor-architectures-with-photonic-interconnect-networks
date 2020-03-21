@@ -6,6 +6,12 @@
 				and/or them.
 *	Parameters
 				WIDTH - This is the width of the input and output data.
+*	Inputs
+				src_a - 1st input
+				src_b - 2nd input
+				ALU_control - Control signal which determins which operation to carry out (add/sub/and/or)
+*	Outputs	
+				ALU_out - The output result after applying the operation on the 2 inputs
 *	Author
 				Sreethyan Aravinthan (UCL)
 **********************************************************************************/
@@ -21,7 +27,6 @@ module ALU
 	output logic [WIDTH - 1:0]ALU_out
 );
 
-	// combinational logic
 	always_comb
 	begin
 		case(ALU_Control)

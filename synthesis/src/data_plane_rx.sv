@@ -1,21 +1,36 @@
+/***********************************************************************************
+*	File name
+				data_plane_rx.sv
+*	Description
+				This module describes how the data plane rx works.
+*	Parameters
+				NONE
+*	Inputs
+				clk - The clock for the system.
+
+				rst - Signal to reset the system to the default values.
+
+				data_rx_packet - This is the packet that is received on the data plane.
+
+				node_id - This will be the id that will be given to the node in the system. NOTE: EACH NODE MUST HAVE A DIFFERENT ID OTHERWISE THERE WILL BE ISSUES IN TX/RX.
+
+				gpp_rtr_dp - This is a control signal which indicates the data plane to modify the stack ponter. Since the values are stored in a stack data structure, the value at the top of the stack is sent to the GPP from the DP reciever.
+*	Outputs	
+				data_rx_complete_flag - This flag will reset the data_rx_flag. The value for this is sent from the data plane reciever.
+
+				RAM_rx_data_out - This shows the data that is outputed from the data plane receiver. It will be connected to the RAM of the GPP via a multiplexer.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module data_plane_rx
 (
-	// the clock for this system
 	input logic clk,
-	// signal to reset the system
 	input logic rst,
-	// this is the packet that is recieved on the data plane
 	input logic [31:0] data_rx_packet,
-	// this will contain the node id
 	input shortint node_id,
-	// this is a control signal that comes from the gpp and it is set if
-	// the gpp wants to retrive data from the RAM
 	input logic gpp_rtr_dp,
-	// this is a flag that is set for one clock cycle which will reset the
-	// data_rx_flag on the control plane
 	output logic data_rx_complete_flag,
-	// this is the output of the RAM and it is connected to the gpp to
-	// transfer the recevied data
 	output logic [15:0] RAM_rx_data_out
 );
 
