@@ -1,0 +1,355 @@
+vlog comms_processor.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:58:01 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor.sv 
+# -- Compiling module Control_Plane
+# -- Compiling module ALU
+# -- Compiling module Data_Memory
+# -- Compiling module Multiplexer
+# -- Compiling module Register
+# -- Compiling module data_plane_tx
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(26)
+# ** at ALU.sv(19): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(27)
+# ** at Data_Memory.sv(22): (vlog-2275) 'Data_Memory' already exists and will be overwritten.
+# -- Compiling module Data_Memory
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(28)
+# ** at Multiplexer.sv(20): (vlog-2275) 'Multiplexer' already exists and will be overwritten.
+# -- Compiling module Multiplexer
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(29)
+# ** at Register.sv(20): (vlog-2275) 'Register' already exists and will be overwritten.
+# -- Compiling module Register
+# -- Compiling module data_plane_rx
+# -- Compiling module data_plane
+# -- Compiling module comms_processor
+# 
+# Top level modules:
+# 	comms_processor
+# End time: 14:58:01 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 4
+vlog comms_processor_tx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:58:11 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor_tx_tb.sv 
+# -- Compiling module comms_processor_tb
+# 
+# Top level modules:
+# 	comms_processor_tb
+# End time: 14:58:11 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim comms_processor_tx_tb
+# vsim comms_processor_tx_tb 
+# Start time: 14:58:21 on Mar 25,2020
+# ** Error: (vsim-3170) Could not find 'comms_processor_tx_tb'.
+#         Searched libraries:
+#             /mnt/d/Documents/University/Year_3/Project/Solution/simulation/CP/work
+# Error loading design
+# End time: 14:58:21 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vlog comms_processor.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:59:07 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor.sv 
+# -- Compiling module Control_Plane
+# -- Compiling module ALU
+# -- Compiling module Data_Memory
+# -- Compiling module Multiplexer
+# -- Compiling module Register
+# -- Compiling module data_plane_tx
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(26)
+# ** at ALU.sv(19): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(27)
+# ** at Data_Memory.sv(22): (vlog-2275) 'Data_Memory' already exists and will be overwritten.
+# -- Compiling module Data_Memory
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(28)
+# ** at Multiplexer.sv(20): (vlog-2275) 'Multiplexer' already exists and will be overwritten.
+# -- Compiling module Multiplexer
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(29)
+# ** at Register.sv(20): (vlog-2275) 'Register' already exists and will be overwritten.
+# -- Compiling module Register
+# -- Compiling module data_plane_rx
+# -- Compiling module data_plane
+# -- Compiling module comms_processor
+# 
+# Top level modules:
+# 	comms_processor
+# End time: 14:59:07 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 4
+vlog comms_processor_tx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:59:12 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor_tx_tb.sv 
+# -- Compiling module comms_processor_tb
+# 
+# Top level modules:
+# 	comms_processor_tb
+# End time: 14:59:13 on Mar 25,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim comms_processor_tx_tb
+# vsim comms_processor_tx_tb 
+# Start time: 14:59:20 on Mar 25,2020
+# ** Error: (vsim-3170) Could not find 'comms_processor_tx_tb'.
+#         Searched libraries:
+#             /mnt/d/Documents/University/Year_3/Project/Solution/simulation/CP/work
+# Error loading design
+# End time: 14:59:20 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vlog comms_processor.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:59:50 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor.sv 
+# -- Compiling module Control_Plane
+# -- Compiling module ALU
+# -- Compiling module Data_Memory
+# -- Compiling module Multiplexer
+# -- Compiling module Register
+# -- Compiling module data_plane_tx
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(26)
+# ** at ALU.sv(19): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(27)
+# ** at Data_Memory.sv(22): (vlog-2275) 'Data_Memory' already exists and will be overwritten.
+# -- Compiling module Data_Memory
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(28)
+# ** at Multiplexer.sv(20): (vlog-2275) 'Multiplexer' already exists and will be overwritten.
+# -- Compiling module Multiplexer
+# ** Warning: ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(29)
+# ** at Register.sv(20): (vlog-2275) 'Register' already exists and will be overwritten.
+# -- Compiling module Register
+# -- Compiling module data_plane_rx
+# -- Compiling module data_plane
+# -- Compiling module comms_processor
+# 
+# Top level modules:
+# 	comms_processor
+# End time: 14:59:50 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 4
+vlog comms_processor_tx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:59:55 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor_tx_tb.sv 
+# -- Compiling module comms_processor_tx_tb
+# 
+# Top level modules:
+# 	comms_processor_tx_tb
+# End time: 14:59:55 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim comms_processor_tx_tb
+# vsim comms_processor_tx_tb 
+# Start time: 15:00:01 on Mar 25,2020
+# Loading sv_std.std
+# Loading work.comms_processor_tx_tb
+# Loading work.comms_processor
+# Loading work.Control_Plane
+# Loading work.data_plane
+# Loading work.data_plane_tx
+# Loading work.Multiplexer
+# Loading work.Register
+# Loading work.ALU
+# Loading work.Data_Memory
+# Loading work.data_plane_rx
+add wave -position insertpoint  \
+sim:/comms_processor_tx_tb/clk
+add wave -position insertpoint  \
+sim:/comms_processor_tx_tb/node_id \
+sim:/comms_processor_tx_tb/max_node
+add wave -position insertpoint  \
+sim:/comms_processor_tx_tb/control_rx_packet \
+sim:/comms_processor_tx_tb/control_tx_packet
+add wave -position insertpoint  \
+sim:/comms_processor_tx_tb/data_rx_node_id
+add wave -position insertpoint  \
+sim:/comms_processor_tx_tb/data_tx_packet
+add wave -position insertpoint  \
+sim:/comms_processor_tx_tb/data_rx_packet
+add wave -position insertpoint  \
+sim:/comms_processor_tx_tb/dut/cp/count \
+sim:/comms_processor_tx_tb/dut/cp/slot
+add wave -position end  sim:/comms_processor_tx_tb/dut/cp/count
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog comms_processor_rx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:27:59 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor_rx_tb.sv 
+# -- Compiling module comms_processor_rx_tb
+# 
+# Top level modules:
+# 	comms_processor_rx_tb
+# End time: 19:27:59 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim comms_processor_rx_tb
+# End time: 19:28:04 on Mar 25,2020, Elapsed time: 4:28:03
+# Errors: 0, Warnings: 8
+# vsim comms_processor_rx_tb 
+# Start time: 19:28:04 on Mar 25,2020
+# Loading sv_std.std
+# Loading work.comms_processor_rx_tb
+# Loading work.comms_processor
+# Loading work.Control_Plane
+# Loading work.data_plane
+# Loading work.data_plane_tx
+# Loading work.Multiplexer
+# Loading work.Register
+# Loading work.ALU
+# Loading work.Data_Memory
+# Loading work.data_plane_rx
+add wave -position insertpoint  \
+sim:/comms_processor_rx_tb/clk
+add wave -position insertpoint  \
+sim:/comms_processor_rx_tb/control_rx_packet
+add wave -position insertpoint  \
+sim:/comms_processor_rx_tb/data_rx_node_id
+add wave -position insertpoint  \
+sim:/comms_processor_rx_tb/data_rx_packet
+add wave -position insertpoint  \
+sim:/comms_processor_rx_tb/RAM_rx_data_out
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+add wave -position insertpoint  \
+sim:/comms_processor_rx_tb/control_tx_packet
+restart -f
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+add wave -position insertpoint  \
+sim:/comms_processor_rx_tb/dut/cp/slot
+restart -f
+run 1000
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 1000
+vlog comms_processor_rx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:54:37 on Mar 25,2020
+# vlog -reportprogress 300 comms_processor_rx_tb.sv 
+# -- Compiling module comms_processor_rx_tb
+# 
+# Top level modules:
+# 	comms_processor_rx_tb
+# End time: 19:54:37 on Mar 25,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.comms_processor_rx_tb
+run 2000
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# End time: 06:19:55 on Mar 26,2020, Elapsed time: 10:51:51
+# Errors: 0, Warnings: 32

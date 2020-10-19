@@ -1,3 +1,8 @@
+	movi reg0, #0
+	movi reg1, #10
+	movi reg2, #2
+	call division
+	jmp end
 division:
 	; pass into reg1 the dividend
 	; pass into reg2 the divisor
@@ -18,4 +23,8 @@ divide_end:
 	; reg1 contains the remainder
 	pop reg4
 	pop reg3	; retrive old value of reg3
-	return	
+	return
+end:
+	addi reg2, #0
+	addi reg1, #0
+	jmp end

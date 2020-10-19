@@ -1,0 +1,301 @@
+vlog Computer.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 06:29:32 on Mar 26,2020
+# vlog -reportprogress 300 Computer.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_advanced
+# -- Compiling module Multiplexer
+# -- Compiling module Register
+# -- Compiling module General_Purpose_Register_File
+# -- Compiling module Flags_Register
+# -- Compiling module Jump_Logic
+# -- Compiling module Datapath
+# -- Compiling module Control_Unit
+# -- Compiling module GPP
+# -- Compiling module Control_Plane
+# ** Warning: ** while parsing file included at Computer.sv(31)
+# ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(40)
+# ** while parsing file included at data_plane_tx.sv(31)
+# ** at ALU.sv(19): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# -- Compiling module Data_Memory
+# ** Warning: ** while parsing file included at Computer.sv(31)
+# ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(40)
+# ** while parsing file included at data_plane_tx.sv(33)
+# ** at Multiplexer.sv(20): (vlog-2275) 'Multiplexer' already exists and will be overwritten.
+# -- Compiling module Multiplexer
+# ** Warning: ** while parsing file included at Computer.sv(31)
+# ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(40)
+# ** while parsing file included at data_plane_tx.sv(34)
+# ** at Register.sv(20): (vlog-2275) 'Register' already exists and will be overwritten.
+# -- Compiling module Register
+# -- Compiling module data_plane_tx
+# ** Warning: ** while parsing file included at Computer.sv(31)
+# ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(26)
+# ** at ALU.sv(19): (vlog-2275) 'ALU' already exists and will be overwritten.
+# -- Compiling module ALU
+# ** Warning: ** while parsing file included at Computer.sv(31)
+# ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(27)
+# ** at Data_Memory.sv(22): (vlog-2275) 'Data_Memory' already exists and will be overwritten.
+# -- Compiling module Data_Memory
+# ** Warning: ** while parsing file included at Computer.sv(31)
+# ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(28)
+# ** at Multiplexer.sv(20): (vlog-2275) 'Multiplexer' already exists and will be overwritten.
+# -- Compiling module Multiplexer
+# ** Warning: ** while parsing file included at Computer.sv(31)
+# ** while parsing file included at comms_processor.sv(47)
+# ** while parsing file included at data_plane.sv(41)
+# ** while parsing file included at data_plane_rx.sv(29)
+# ** at Register.sv(20): (vlog-2275) 'Register' already exists and will be overwritten.
+# -- Compiling module Register
+# -- Compiling module data_plane_rx
+# -- Compiling module data_plane
+# -- Compiling module comms_processor
+# -- Compiling module Instruction_Memory
+# ** Warning: ** while parsing file included at Computer.sv(33)
+# ** at Data_Memory.sv(22): (vlog-2275) 'Data_Memory' already exists and will be overwritten.
+# -- Compiling module Data_Memory
+# -- Compiling module Computer
+# 
+# Top level modules:
+# 	Computer
+# End time: 06:29:32 on Mar 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 8
+vlog Computer_tx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 06:29:43 on Mar 26,2020
+# vlog -reportprogress 300 Computer_tx_tb.sv 
+# -- Compiling module Computer_tx_tb
+# 
+# Top level modules:
+# 	Computer_tx_tb
+# End time: 06:29:43 on Mar 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim Computer_tx_tb.sv
+# OpenFile Computer_tx_tb.sv
+vsim Computer_tx_tb
+# vsim Computer_tx_tb 
+# Start time: 06:30:12 on Mar 26,2020
+# Loading sv_std.std
+# Loading work.Computer_tx_tb
+# Loading work.Computer
+# Loading work.GPP
+# Loading work.Datapath
+# Loading work.Multiplexer
+# Loading work.Register
+# Loading work.ALU
+# Loading work.General_Purpose_Register_File
+# Loading work.ALU_advanced
+# Loading work.Flags_Register
+# Loading work.Jump_Logic
+# Loading work.Control_Unit
+# Loading work.comms_processor
+# Loading work.Control_Plane
+# Loading work.data_plane
+# Loading work.data_plane_tx
+# Loading work.Data_Memory
+# Loading work.data_plane_rx
+# Loading work.Instruction_Memory
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/clk
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/dut/cp/cp/slot
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/dut/cp/cp/count
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/dut/control_tx_packet
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/dut/control_rx_packet
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/dut/data_tx_packet
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/dut/gpp_tx_data
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 1000
+run 1000
+vlog Computer_tx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:07:26 on Mar 26,2020
+# vlog -reportprogress 300 Computer_tx_tb.sv 
+# -- Compiling module Computer_tx_tb
+# 
+# Top level modules:
+# 	Computer_tx_tb
+# End time: 07:07:26 on Mar 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.Computer_tx_tb
+run 1000
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 1000
+run 300
+run 100
+run 100
+run 100
+run 100
+run 100
+vlog Computer_tx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:14:10 on Mar 26,2020
+# vlog -reportprogress 300 Computer_tx_tb.sv 
+# -- Compiling module Computer_tx_tb
+# 
+# Top level modules:
+# 	Computer_tx_tb
+# End time: 07:14:10 on Mar 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.Computer_tx_tb
+run 2000
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 1000
+run 100
+run 100
+run 100
+run 100
+add wave -position insertpoint  \
+sim:/Computer_tx_tb/dut/cpu/read_address_1
+restart -f
+run 3400
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+vlog Computer_rx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:16:05 on Mar 26,2020
+# vlog -reportprogress 300 Computer_rx_tb.sv 
+# -- Compiling module Computer_rx_tb
+# 
+# Top level modules:
+# 	Computer_rx_tb
+# End time: 11:16:05 on Mar 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+vsim Computer_rx_tb
+# End time: 11:16:16 on Mar 26,2020, Elapsed time: 4:46:04
+# Errors: 0, Warnings: 32
+# vsim Computer_rx_tb 
+# Start time: 11:16:16 on Mar 26,2020
+# Loading sv_std.std
+# Loading work.Computer_rx_tb
+# Loading work.Computer
+# Loading work.GPP
+# Loading work.Datapath
+# Loading work.Multiplexer
+# Loading work.Register
+# Loading work.ALU
+# Loading work.General_Purpose_Register_File
+# Loading work.ALU_advanced
+# Loading work.Flags_Register
+# Loading work.Jump_Logic
+# Loading work.Control_Unit
+# Loading work.comms_processor
+# Loading work.Control_Plane
+# Loading work.data_plane
+# Loading work.data_plane_tx
+# Loading work.Data_Memory
+# Loading work.data_plane_rx
+# Loading work.Instruction_Memory
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/clk
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/dut/cp/cp/slot
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/dut/cp/cp/count
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/dut/cpu/datapath_processor/read_address_1
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/control_tx_packet
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/control_rx_packet
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/data_rx_node_id
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/data_rx_packet
+add wave -position insertpoint  \
+sim:/Computer_rx_tb/dut/RAM_rx_data_out
+run 1000
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+vlog Computer_rx_tb.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:24:04 on Mar 26,2020
+# vlog -reportprogress 300 Computer_rx_tb.sv 
+# -- Compiling module Computer_rx_tb
+# 
+# Top level modules:
+# 	Computer_rx_tb
+# End time: 11:24:04 on Mar 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.Computer_rx_tb
+run 1000
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+restart -f
+run 1000
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 1000
+run 1000
+run 100
+run 100
+run 100
+run 100
+run 100
+# End time: 17:26:59 on Mar 26,2020, Elapsed time: 6:10:43
+# Errors: 0, Warnings: 24

@@ -1,0 +1,67 @@
+vsim Computer_tb
+# vsim Computer_tb 
+# Start time: 13:03:55 on Mar 25,2020
+# Loading sv_std.std
+# Loading work.Computer_tb
+# Loading work.Computer
+# Loading work.GPP
+# Loading work.Datapath
+# Loading work.Multiplexer
+# Loading work.Register
+# Loading work.ALU
+# Loading work.General_Purpose_Register_File
+# Loading work.ALU_advanced
+# Loading work.Flags_Register
+# Loading work.Jump_Logic
+# Loading work.Control_Unit
+# Loading work.Instruction_Memory
+# Loading work.Data_Memory
+add wave -position insertpoint  \
+sim:/Computer_tb/dut/cpu/datapath_processor/clk
+add wave -position insertpoint  \
+sim:/Computer_tb/dut/cpu/datapath_processor/read_address_1
+add wave -position insertpoint  \
+sim:/Computer_tb/dut/cpu/datapath_processor/ALU_out
+run 100
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 1000
+run 100
+run 100
+# End time: 13:12:45 on Mar 25,2020, Elapsed time: 0:08:50
+# Errors: 0, Warnings: 8

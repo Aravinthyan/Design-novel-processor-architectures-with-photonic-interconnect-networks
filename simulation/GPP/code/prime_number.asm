@@ -1,11 +1,11 @@
 	movi reg0, #0	; initalise the stack pointer
-	movi reg5, #10	; value to determine if prime
+	movi reg5, #11	; value to determine if prime
 	call check_prime
 	jmp end
 check_prime:
 	movi reg6, #2	; this is the 1st number that will divide the to_be_prime_number
 	movi reg7, #1	; move 1
-	sub reg5, reg7	; this should hold the upper limit - which will basically be up to the to_be_prime_number being divided
+	sub reg5, reg7	; this should hold the upper limit
 	movi reg8, #0
 continue:
 	mov reg5, reg1	; move dividend into reg1
@@ -43,6 +43,7 @@ divide_end:
 	; reg1 contains the remainder
 	pop reg4
 	pop reg3	; retrive old value of reg3
-	return	
+	return
 end:
 	addi reg10, #0
+	jmp end

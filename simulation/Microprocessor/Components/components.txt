@@ -1,8 +1,0 @@
-- registers
-- multiplexers
-- ALU
-- Adder
-- Instruction Memory
-- Register File
-- Data Memory
-- Control unit
