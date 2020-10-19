@@ -71,7 +71,7 @@ void convert_to_machine_code(char * output_file)
 	
 	// open the file called machine code in write mode which contains the machine code
 	// that will run on the processor
-	FILE * machine_code = xfopen(output_file, "wb");
+	FILE * machine_code = xfopen(output_file, "w");
 	
 	// create memory which holds the mnemonics and the coresponding opcodes
 	instructions * list_of_instr = (instructions *) xmalloc(sizeof(instructions));

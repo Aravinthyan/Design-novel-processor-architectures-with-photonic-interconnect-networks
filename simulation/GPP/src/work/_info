@@ -1,0 +1,346 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/mnt/d/Documents/University/Year_3/Project/Solution/simulation/GPP/src
+vALU
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1585139486
+!i10b 1
+!s100 ;0^?=MSHVa;^bI407YkM_2
+ICoW=jin73caJYM=[e]od91
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 Computer_sv_unit
+S1
+R0
+w1585127881
+8ALU.sv
+FALU.sv
+L0 19
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1585139486.000000
+Z7 !s107 Data_Memory.sv|Instruction_Memory.sv|Control_Unit.sv|Jump_Logic.sv|Flags_Register.sv|General_Purpose_Register_File.sv|Register.sv|Multiplexer.sv|ALU_advanced.sv|ALU.sv|Datapath.sv|GPP.sv|Computer.sv|
+Z8 !s90 -reportprogress|300|Computer.sv|
+!i113 1
+Z9 tCvgOpt 0
+n@a@l@u
+vALU_advanced
+R1
+R2
+!i10b 1
+!s100 zLFUUS^E[IWKOR6@4g`T`3
+IkR3PMgIRZ5@m63Lbj0DbK0
+R3
+R4
+S1
+R0
+w1585127610
+8ALU_advanced.sv
+FALU_advanced.sv
+Z10 L0 22
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@a@l@u_advanced
+vComputer
+R1
+R2
+!i10b 1
+!s100 zZZWRhfi9j=I3iVP?iliO0
+IZ?3fj<e6_CdJ_EXdd7j]d3
+R3
+R4
+S1
+R0
+w1585128423
+8Computer.sv
+FComputer.sv
+R10
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@computer
+vComputer_tb
+R1
+!s110 1585139488
+!i10b 1
+!s100 jMmkAA38Nboh?<MVj1Lel1
+ICgmm0ZeS`=X[aYEb?1aRI0
+R3
+!s105 Computer_tb_sv_unit
+S1
+R0
+w1585128094
+8Computer_tb.sv
+FComputer_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1585139488.000000
+!s107 Computer_tb.sv|
+!s90 -reportprogress|300|Computer_tb.sv|
+!i113 1
+R9
+n@computer_tb
+vControl_Unit
+R1
+R2
+!i10b 1
+!s100 =PkShLTY0G_hHkAD`MFO40
+Il]oaBf4NRDcT390MoIUT@3
+R3
+R4
+S1
+R0
+Z11 w1585127835
+8Control_Unit.sv
+FControl_Unit.sv
+Z12 L0 16
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@control_@unit
+vData_Memory
+R1
+R2
+!i10b 1
+!s100 ah8hL]210YHS8Gm9dn0Sh3
+IB>PC`;8R>HTiW5cHDY5iJ1
+R3
+R4
+S1
+R0
+R11
+8Data_Memory.sv
+FData_Memory.sv
+R10
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@data_@memory
+vDatapath
+R1
+R2
+!i10b 1
+!s100 T0CgG?7YmbS?XZIdQLSAj1
+IKA8]_hg3bPLARS8^EVJLN2
+R3
+R4
+S1
+R0
+w1585128524
+8Datapath.sv
+FDatapath.sv
+L0 28
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@datapath
+vFlags_Register
+R1
+R2
+!i10b 1
+!s100 12FmiWGZmJOFoC=GB3TR?2
+IUMRDVP@]n]>>=dDELcSZj0
+R3
+R4
+S1
+R0
+R11
+8Flags_Register.sv
+FFlags_Register.sv
+R10
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@flags_@register
+vGeneral_Purpose_Register_File
+R1
+R2
+!i10b 1
+!s100 ]P>2i?4DYPPRF06E@fK<V0
+I`H^>Na`DF`N06hYzJLcjz3
+R3
+R4
+S1
+R0
+R11
+8General_Purpose_Register_File.sv
+FGeneral_Purpose_Register_File.sv
+L0 34
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@general_@purpose_@register_@file
+vGPP
+R1
+R2
+!i10b 1
+!s100 U;BZ:?GP>XWVjb[QU<6_G3
+IUPKL`MLJzHzo:h`24a?JJ1
+R3
+R4
+S1
+R0
+w1585128518
+8GPP.sv
+FGPP.sv
+L0 23
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@g@p@p
+vInstruction_Memory
+R1
+R2
+!i10b 1
+!s100 fk37mE?]Vm3SW3>kW?IGU2
+IoamL2lekd<leo`;;eoZJC0
+R3
+R4
+S1
+R0
+R11
+8Instruction_Memory.sv
+FInstruction_Memory.sv
+L0 24
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@instruction_@memory
+vJump_Logic
+R1
+R2
+!i10b 1
+!s100 G_Md=B9F^2>QK@oElHM]Z1
+INkN5jinGK=N0>R<dJ83Yi3
+R3
+R4
+S1
+R0
+R11
+8Jump_Logic.sv
+FJump_Logic.sv
+R12
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@jump_@logic
+vMultiplexer
+R1
+R2
+!i10b 1
+!s100 n0EnQ?j==F]n1kl4ao@_23
+IY5R=[;X_VM3==7@miW4iO2
+R3
+R4
+S1
+R0
+R11
+8Multiplexer.sv
+FMultiplexer.sv
+Z13 L0 20
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@multiplexer
+vRegister
+R1
+R2
+!i10b 1
+!s100 bWo8N[lf3[Eg:z9ZR`nQT2
+Ij=hg^>[CZE9Adb8IY`V]O1
+R3
+R4
+S1
+R0
+R11
+8Register.sv
+FRegister.sv
+R13
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@register

@@ -1,31 +1,45 @@
+/***********************************************************************************
+*	File name
+				data_plane_tx.sv
+*	Description
+				This module describes how the data plane tx works.
+*	Parameters
+				NONE
+*	Inputs
+				clk - The clock for the system.
+
+				rst - Signal to reset the system to the default values.
+
+				gpp_trf_dp - This is a control signal which tells the data plane transmitter that data is going to be transferred from the GPP to the DP transmitter.
+
+				gpp_tx_data - This is the data that will be transferred from the GPP to the DP transmitter RAM.
+
+				node_id - This will be the id that will be given to the node in the system. NOTE: EACH NODE MUST HAVE A DIFFERENT ID OTHERWISE THERE WILL BE ISSUES IN TX/RX.
+
+				data_tx_flag - This is a flag which indicates if the node is transmitting data on the data plane.
+*	Outputs	
+				data_tx_complete_flag - This flag will reset the data_tx_flag. The value for this is sent from the data plane transmitter.
+
+				data_tx_packet - This is the packet that is transmitted on the data plane.
+
+				RAM_tx_data_out - This input has the value equal to the top of the RAM of the data plane tx RAM.
+
+				sp_tx_current - This has the value of the stack pointer from the data plane tx RAM. This is used to see if the data plane tx RAM is empty or not.
+*	Author
+				Sreethyan Aravinthan (UCL)
+**********************************************************************************/
+
 module data_plane_tx
 (
-	// the clock for this system
 	input logic clk,
-	// signal to reset the system
 	input logic rst,
-	// a control signal from the gpp to transfer data from the gpp RAM to
-	// the data plane tx RAM
-	// this will be a control signal and it will be part of an instruction
 	input logic gpp_trf_dp,
-	// this will be the data that will be written to the RAM
 	input logic [15:0] gpp_tx_data,
-	// this will be the node's id
 	input shortint node_id,
-	// this will be a flag from the control plane which indicates the data
-	// plane for a transmission to happen
 	input logic data_tx_flag,
-	// this will be flag that will be sent from the data plane to the
-	// control plane to indicate that the transmission has completed. Thus
-	// reseting the flag at the control plane and allowing a new
-	// transmission if needed
 	output logic data_tx_complete_flag,
-	// this is the data packet that is getting transmitted to the rx node
-	// on the data plane
 	output logic [31:0] data_tx_packet,
-	// this holds the output of the RAM
 	output logic [15:0] RAM_tx_data_out,
-	// this will be the output value from the register
 	output logic [15:0] sp_tx_current
 );
 	
@@ -62,10 +76,7 @@ module data_plane_tx
 	logic [15:0] RAM_tx_address_mux_data [1:0];
 	// This is RAM address that is currently being accessed
 	logic [15:0] RAM_address;
-	// this is a flag that is used within the data plane to indicate if
-	// there should be a transmission
-	logic tx;
-
+	
 	// this combinational logic sets the values for all the multiplexer
 	// data
 	always_comb
@@ -81,7 +92,7 @@ module data_plane_tx
 	end
 	
 	// wire up the control signal for the stack pointer multiplexer
-	assign sp_tx_mux_control = {tx, gpp_trf_dp};
+	assign sp_tx_mux_control = {data_tx_flag, gpp_trf_dp};
 	// 0 0 - same
 	// 0 1 - plus 1
 	// 1 0 - minus 1
@@ -104,7 +115,7 @@ module data_plane_tx
 	Multiplexer #(1, 16) RAM_tx_address_mux(gpp_trf_dp, RAM_tx_address_mux_data, RAM_address);
 
 	// instantiate RAM modules
-	RAM RAM_tx(RAM_address, clk, gpp_tx_data, gpp_trf_dp, RAM_tx_data_out);
+	Data_Memory #(16) RAM_tx(clk, gpp_trf_dp, RAM_address, gpp_tx_data, RAM_tx_data_out);
 
 	// need to set a variable and not depend on the data_tx_flag_out
 	// not good due to the clock cycles required to reset it as well
@@ -112,9 +123,17 @@ module data_plane_tx
 
 	// get the destination node from the top of
 	// the node
-	always_comb
+	always_latch
 	begin
-		current_dest_node = RAM_tx_data_out;
+		// provided the data plane is not transmitting get the value
+		if(data_tx_flag == 1'b0)
+		begin
+			current_dest_node = RAM_tx_data_out;
+		end
+		else
+		begin
+			current_dest_node = current_dest_node;
+		end
 	end
 
 	// logic for what packet should be transmitted on each clock edge on
@@ -131,14 +150,13 @@ module data_plane_tx
 			data_tx_packet <= 32'h0000;
 			count <= 3'b000;
 			first_flag <= 1'b0;
-			tx <= 1'b0;
 			data_tx_complete_flag <= 1'b0;
 		end
 		else
 		begin
 			// if the tx flag has been set then it means the
 			// system can now transmit the packet
-			if(tx == 1'b1)
+			if(data_tx_flag == 1'b1)
 			begin
 				// this logic is used for the first packet
 				// that is sent
@@ -176,10 +194,6 @@ module data_plane_tx
 						// rest all the flags
 						first_flag <= 1'b0;
 						count <= 0;
-						tx <= 1'b0;
-						// set this flag to reset the
-						// flag at the control plane
-						data_tx_complete_flag <= 1'b1;
 					end
 					// if the count does not equal to
 					// 3 then all the packets have
@@ -188,6 +202,12 @@ module data_plane_tx
 					else
 					begin
 						count <= count + 1;
+					end
+					if(count == 2)
+					begin
+						// set this flag to reset the
+						// flag at the control plane
+						data_tx_complete_flag <= 1'b1;
 					end
 				end
 			end
@@ -204,13 +224,6 @@ module data_plane_tx
 			begin
 				// reset the flag
 				data_tx_complete_flag <= 1'b0;
-			end
-			
-			// On the positive edge of data_tx_flag set tx to 1
-			// provided the reset state is set to 0
-			if(data_tx_flag == 1'b1)
-			begin
-				tx <= 1'b1;
 			end
 		end
 	end
